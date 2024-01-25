@@ -51,16 +51,6 @@ type Webhook struct {
 	// Max Length: 4096
 	CaFilePath *string `json:"ca_file_path,omitempty"`
 
-	// Conditions
-	//
-	// A set of conditions which determine whether the webhook will be generated.
-	Conditions interface{} `json:"conditions,omitempty"`
-
-	// content types
-	// Required: true
-	// Unique: true
-	ContentTypes []string `json:"content_types"`
-
 	// Created
 	// Read Only: true
 	// Format: date-time
@@ -69,9 +59,6 @@ type Webhook struct {
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
-
-	// Enabled
-	Enabled bool `json:"enabled,omitempty"`
 
 	// HTTP content type
 	//
@@ -118,21 +105,6 @@ type Webhook struct {
 	// Enable SSL certificate verification. Disable with caution!
 	SslVerification bool `json:"ssl_verification,omitempty"`
 
-	// Type create
-	//
-	// Call this webhook when a matching object is created.
-	TypeCreate bool `json:"type_create,omitempty"`
-
-	// Type delete
-	//
-	// Call this webhook when a matching object is deleted.
-	TypeDelete bool `json:"type_delete,omitempty"`
-
-	// Type update
-	//
-	// Call this webhook when a matching object is updated.
-	TypeUpdate bool `json:"type_update,omitempty"`
-
 	// Url
 	// Read Only: true
 	// Format: uri
@@ -144,10 +116,6 @@ func (m *Webhook) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCaFilePath(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateContentTypes(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -195,19 +163,6 @@ func (m *Webhook) validateCaFilePath(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("ca_file_path", "body", *m.CaFilePath, 4096); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *Webhook) validateContentTypes(formats strfmt.Registry) error {
-
-	if err := validate.Required("content_types", "body", m.ContentTypes); err != nil {
-		return err
-	}
-
-	if err := validate.UniqueItems("content_types", "body", m.ContentTypes); err != nil {
 		return err
 	}
 

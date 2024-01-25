@@ -40783,27 +40783,6 @@
             "type": "string"
           },
           {
-            "name": "type_create",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "type_update",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "type_delete",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "payload_url",
             "in": "query",
             "description": "",
@@ -40811,21 +40790,7 @@
             "type": "string"
           },
           {
-            "name": "enabled",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "http_method",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "http_content_type",
             "in": "query",
             "description": "",
             "required": false,
@@ -40854,20 +40819,6 @@
           },
           {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_type_id",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types",
             "in": "query",
             "description": "",
             "required": false,
@@ -41260,104 +41211,6 @@
           },
           {
             "name": "ca_file_path__empty",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_type_id__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_type_id__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_type_id__lt",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_type_id__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_type_id__gt",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types__ic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types__nic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types__iew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types__niew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types__isw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types__nisw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types__ie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content_types__nie",
             "in": "query",
             "description": "",
             "required": false,
@@ -82673,7 +82526,6 @@
     },
     "Webhook": {
       "required": [
-        "content_types",
         "name",
         "payload_url"
       ],
@@ -82695,33 +82547,11 @@
           "type": "string",
           "readOnly": true
         },
-        "content_types": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "uniqueItems": true
-        },
         "name": {
           "title": "Name",
           "type": "string",
           "maxLength": 150,
           "minLength": 1
-        },
-        "type_create": {
-          "title": "Type create",
-          "description": "Call this webhook when a matching object is created.",
-          "type": "boolean"
-        },
-        "type_update": {
-          "title": "Type update",
-          "description": "Call this webhook when a matching object is updated.",
-          "type": "boolean"
-        },
-        "type_delete": {
-          "title": "Type delete",
-          "description": "Call this webhook when a matching object is deleted.",
-          "type": "boolean"
         },
         "payload_url": {
           "title": "URL",
@@ -82729,10 +82559,6 @@
           "type": "string",
           "maxLength": 500,
           "minLength": 1
-        },
-        "enabled": {
-          "title": "Enabled",
-          "type": "boolean"
         },
         "http_method": {
           "title": "HTTP method",
@@ -82767,12 +82593,6 @@
           "description": "When provided, the request will include a 'X-Hook-Signature' header containing a HMAC hex digest of the payload body using the secret as the key. The secret is not transmitted in the request.",
           "type": "string",
           "maxLength": 255
-        },
-        "conditions": {
-          "title": "Conditions",
-          "description": "A set of conditions which determine whether the webhook will be generated.",
-          "type": "object",
-          "x-nullable": true
         },
         "ssl_verification": {
           "title": "SSL verification",
