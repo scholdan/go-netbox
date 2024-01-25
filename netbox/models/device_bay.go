@@ -330,6 +330,7 @@ func (m *DeviceBay) contextValidateCreated(ctx context.Context, formats strfmt.R
 func (m *DeviceBay) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -364,6 +365,11 @@ func (m *DeviceBay) contextValidateID(ctx context.Context, formats strfmt.Regist
 func (m *DeviceBay) contextValidateInstalledDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.InstalledDevice != nil {
+
+		if swag.IsZero(m.InstalledDevice) { // not required
+			return nil
+		}
+
 		if err := m.InstalledDevice.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("installed_device")
@@ -391,6 +397,11 @@ func (m *DeviceBay) contextValidateTags(ctx context.Context, formats strfmt.Regi
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

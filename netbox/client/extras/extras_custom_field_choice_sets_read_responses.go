@@ -95,6 +95,11 @@ func (o *ExtrasCustomFieldChoiceSetsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras custom field choice sets read o k response
+func (o *ExtrasCustomFieldChoiceSetsReadOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasCustomFieldChoiceSetsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasCustomFieldChoiceSetsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom field choice sets read default response
-func (o *ExtrasCustomFieldChoiceSetsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom field choice sets read default response has a 2xx status code
 func (o *ExtrasCustomFieldChoiceSetsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasCustomFieldChoiceSetsReadDefault) IsServerError() bool {
 // IsCode returns true when this extras custom field choice sets read default response a status code equal to that given
 func (o *ExtrasCustomFieldChoiceSetsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom field choice sets read default response
+func (o *ExtrasCustomFieldChoiceSetsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomFieldChoiceSetsReadDefault) Error() string {

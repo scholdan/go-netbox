@@ -1104,6 +1104,11 @@ func (m *Interface) contextValidateOccupied(ctx context.Context, formats strfmt.
 func (m *Interface) contextValidateBridge(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Bridge != nil {
+
+		if swag.IsZero(m.Bridge) { // not required
+			return nil
+		}
+
 		if err := m.Bridge.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("bridge")
@@ -1120,6 +1125,11 @@ func (m *Interface) contextValidateBridge(ctx context.Context, formats strfmt.Re
 func (m *Interface) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cable != nil {
+
+		if swag.IsZero(m.Cable) { // not required
+			return nil
+		}
+
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
@@ -1199,6 +1209,7 @@ func (m *Interface) contextValidateCreated(ctx context.Context, formats strfmt.R
 func (m *Interface) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -1224,6 +1235,11 @@ func (m *Interface) contextValidateDisplay(ctx context.Context, formats strfmt.R
 func (m *Interface) contextValidateDuplex(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Duplex != nil {
+
+		if swag.IsZero(m.Duplex) { // not required
+			return nil
+		}
+
 		if err := m.Duplex.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("duplex")
@@ -1249,6 +1265,11 @@ func (m *Interface) contextValidateID(ctx context.Context, formats strfmt.Regist
 func (m *Interface) contextValidateL2vpnTermination(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.L2vpnTermination != nil {
+
+		if swag.IsZero(m.L2vpnTermination) { // not required
+			return nil
+		}
+
 		if err := m.L2vpnTermination.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("l2vpn_termination")
@@ -1265,6 +1286,11 @@ func (m *Interface) contextValidateL2vpnTermination(ctx context.Context, formats
 func (m *Interface) contextValidateLag(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Lag != nil {
+
+		if swag.IsZero(m.Lag) { // not required
+			return nil
+		}
+
 		if err := m.Lag.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("lag")
@@ -1308,6 +1334,11 @@ func (m *Interface) contextValidateLinkPeersType(ctx context.Context, formats st
 func (m *Interface) contextValidateMode(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Mode != nil {
+
+		if swag.IsZero(m.Mode) { // not required
+			return nil
+		}
+
 		if err := m.Mode.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("mode")
@@ -1324,6 +1355,11 @@ func (m *Interface) contextValidateMode(ctx context.Context, formats strfmt.Regi
 func (m *Interface) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Module != nil {
+
+		if swag.IsZero(m.Module) { // not required
+			return nil
+		}
+
 		if err := m.Module.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module")
@@ -1340,6 +1376,11 @@ func (m *Interface) contextValidateModule(ctx context.Context, formats strfmt.Re
 func (m *Interface) contextValidateParent(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Parent != nil {
+
+		if swag.IsZero(m.Parent) { // not required
+			return nil
+		}
+
 		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
@@ -1356,6 +1397,11 @@ func (m *Interface) contextValidateParent(ctx context.Context, formats strfmt.Re
 func (m *Interface) contextValidatePoeMode(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PoeMode != nil {
+
+		if swag.IsZero(m.PoeMode) { // not required
+			return nil
+		}
+
 		if err := m.PoeMode.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("poe_mode")
@@ -1372,6 +1418,11 @@ func (m *Interface) contextValidatePoeMode(ctx context.Context, formats strfmt.R
 func (m *Interface) contextValidatePoeType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PoeType != nil {
+
+		if swag.IsZero(m.PoeType) { // not required
+			return nil
+		}
+
 		if err := m.PoeType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("poe_type")
@@ -1388,6 +1439,11 @@ func (m *Interface) contextValidatePoeType(ctx context.Context, formats strfmt.R
 func (m *Interface) contextValidateRfChannel(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.RfChannel != nil {
+
+		if swag.IsZero(m.RfChannel) { // not required
+			return nil
+		}
+
 		if err := m.RfChannel.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rf_channel")
@@ -1404,6 +1460,11 @@ func (m *Interface) contextValidateRfChannel(ctx context.Context, formats strfmt
 func (m *Interface) contextValidateRfRole(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.RfRole != nil {
+
+		if swag.IsZero(m.RfRole) { // not required
+			return nil
+		}
+
 		if err := m.RfRole.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rf_role")
@@ -1422,6 +1483,11 @@ func (m *Interface) contextValidateTaggedVlans(ctx context.Context, formats strf
 	for i := 0; i < len(m.TaggedVlans); i++ {
 
 		if m.TaggedVlans[i] != nil {
+
+			if swag.IsZero(m.TaggedVlans[i]) { // not required
+				return nil
+			}
+
 			if err := m.TaggedVlans[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
@@ -1442,6 +1508,11 @@ func (m *Interface) contextValidateTags(ctx context.Context, formats strfmt.Regi
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -1460,6 +1531,7 @@ func (m *Interface) contextValidateTags(ctx context.Context, formats strfmt.Regi
 func (m *Interface) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
@@ -1476,6 +1548,11 @@ func (m *Interface) contextValidateType(ctx context.Context, formats strfmt.Regi
 func (m *Interface) contextValidateUntaggedVlan(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.UntaggedVlan != nil {
+
+		if swag.IsZero(m.UntaggedVlan) { // not required
+			return nil
+		}
+
 		if err := m.UntaggedVlan.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("untagged_vlan")
@@ -1503,6 +1580,11 @@ func (m *Interface) contextValidateVdcs(ctx context.Context, formats strfmt.Regi
 	for i := 0; i < len(m.Vdcs); i++ {
 
 		if m.Vdcs[i] != nil {
+
+			if swag.IsZero(m.Vdcs[i]) { // not required
+				return nil
+			}
+
 			if err := m.Vdcs[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("vdcs" + "." + strconv.Itoa(i))
@@ -1521,6 +1603,11 @@ func (m *Interface) contextValidateVdcs(ctx context.Context, formats strfmt.Regi
 func (m *Interface) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Vrf != nil {
+
+		if swag.IsZero(m.Vrf) { // not required
+			return nil
+		}
+
 		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
@@ -1539,6 +1626,11 @@ func (m *Interface) contextValidateWirelessLans(ctx context.Context, formats str
 	for i := 0; i < len(m.WirelessLans); i++ {
 
 		if m.WirelessLans[i] != nil {
+
+			if swag.IsZero(m.WirelessLans[i]) { // not required
+				return nil
+			}
+
 			if err := m.WirelessLans[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("wireless_lans" + "." + strconv.Itoa(i))
@@ -1557,6 +1649,11 @@ func (m *Interface) contextValidateWirelessLans(ctx context.Context, formats str
 func (m *Interface) contextValidateWirelessLink(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.WirelessLink != nil {
+
+		if swag.IsZero(m.WirelessLink) { // not required
+			return nil
+		}
+
 		if err := m.WirelessLink.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("wireless_link")

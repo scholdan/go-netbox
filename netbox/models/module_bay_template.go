@@ -285,6 +285,7 @@ func (m *ModuleBayTemplate) contextValidateCreated(ctx context.Context, formats 
 func (m *ModuleBayTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DeviceType != nil {
+
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")

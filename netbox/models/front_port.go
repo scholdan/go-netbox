@@ -531,6 +531,11 @@ func (m *FrontPort) contextValidateOccupied(ctx context.Context, formats strfmt.
 func (m *FrontPort) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cable != nil {
+
+		if swag.IsZero(m.Cable) { // not required
+			return nil
+		}
+
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
@@ -565,6 +570,7 @@ func (m *FrontPort) contextValidateCreated(ctx context.Context, formats strfmt.R
 func (m *FrontPort) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -626,6 +632,11 @@ func (m *FrontPort) contextValidateLinkPeersType(ctx context.Context, formats st
 func (m *FrontPort) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Module != nil {
+
+		if swag.IsZero(m.Module) { // not required
+			return nil
+		}
+
 		if err := m.Module.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module")
@@ -642,6 +653,7 @@ func (m *FrontPort) contextValidateModule(ctx context.Context, formats strfmt.Re
 func (m *FrontPort) contextValidateRearPort(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.RearPort != nil {
+
 		if err := m.RearPort.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rear_port")
@@ -660,6 +672,11 @@ func (m *FrontPort) contextValidateTags(ctx context.Context, formats strfmt.Regi
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -678,6 +695,7 @@ func (m *FrontPort) contextValidateTags(ctx context.Context, formats strfmt.Regi
 func (m *FrontPort) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

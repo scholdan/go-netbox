@@ -361,6 +361,11 @@ func (m *Aggregate) contextValidateDisplay(ctx context.Context, formats strfmt.R
 func (m *Aggregate) contextValidateFamily(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Family != nil {
+
+		if swag.IsZero(m.Family) { // not required
+			return nil
+		}
+
 		if err := m.Family.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
@@ -395,6 +400,7 @@ func (m *Aggregate) contextValidateLastUpdated(ctx context.Context, formats strf
 func (m *Aggregate) contextValidateRir(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Rir != nil {
+
 		if err := m.Rir.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rir")
@@ -413,6 +419,11 @@ func (m *Aggregate) contextValidateTags(ctx context.Context, formats strfmt.Regi
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -431,6 +442,11 @@ func (m *Aggregate) contextValidateTags(ctx context.Context, formats strfmt.Regi
 func (m *Aggregate) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")

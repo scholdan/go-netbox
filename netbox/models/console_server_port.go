@@ -503,6 +503,11 @@ func (m *ConsoleServerPort) contextValidateOccupied(ctx context.Context, formats
 func (m *ConsoleServerPort) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cable != nil {
+
+		if swag.IsZero(m.Cable) { // not required
+			return nil
+		}
+
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
@@ -564,6 +569,7 @@ func (m *ConsoleServerPort) contextValidateCreated(ctx context.Context, formats 
 func (m *ConsoleServerPort) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -625,6 +631,11 @@ func (m *ConsoleServerPort) contextValidateLinkPeersType(ctx context.Context, fo
 func (m *ConsoleServerPort) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Module != nil {
+
+		if swag.IsZero(m.Module) { // not required
+			return nil
+		}
+
 		if err := m.Module.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module")
@@ -641,6 +652,11 @@ func (m *ConsoleServerPort) contextValidateModule(ctx context.Context, formats s
 func (m *ConsoleServerPort) contextValidateSpeed(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Speed != nil {
+
+		if swag.IsZero(m.Speed) { // not required
+			return nil
+		}
+
 		if err := m.Speed.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("speed")
@@ -659,6 +675,11 @@ func (m *ConsoleServerPort) contextValidateTags(ctx context.Context, formats str
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -677,6 +698,11 @@ func (m *ConsoleServerPort) contextValidateTags(ctx context.Context, formats str
 func (m *ConsoleServerPort) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
+		if swag.IsZero(m.Type) { // not required
+			return nil
+		}
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

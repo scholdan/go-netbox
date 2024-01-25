@@ -292,6 +292,7 @@ func (m *L2VPNTermination) contextValidateID(ctx context.Context, formats strfmt
 func (m *L2VPNTermination) contextValidateL2vpn(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.L2vpn != nil {
+
 		if err := m.L2vpn.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("l2vpn")
@@ -319,6 +320,11 @@ func (m *L2VPNTermination) contextValidateTags(ctx context.Context, formats strf
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

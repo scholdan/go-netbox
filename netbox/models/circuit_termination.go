@@ -542,6 +542,11 @@ func (m *CircuitTermination) contextValidateOccupied(ctx context.Context, format
 func (m *CircuitTermination) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cable != nil {
+
+		if swag.IsZero(m.Cable) { // not required
+			return nil
+		}
+
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
@@ -567,6 +572,7 @@ func (m *CircuitTermination) contextValidateCableEnd(ctx context.Context, format
 func (m *CircuitTermination) contextValidateCircuit(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Circuit != nil {
+
 		if err := m.Circuit.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("circuit")
@@ -637,6 +643,11 @@ func (m *CircuitTermination) contextValidateLinkPeersType(ctx context.Context, f
 func (m *CircuitTermination) contextValidateProviderNetwork(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ProviderNetwork != nil {
+
+		if swag.IsZero(m.ProviderNetwork) { // not required
+			return nil
+		}
+
 		if err := m.ProviderNetwork.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider_network")
@@ -653,6 +664,11 @@ func (m *CircuitTermination) contextValidateProviderNetwork(ctx context.Context,
 func (m *CircuitTermination) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Site != nil {
+
+		if swag.IsZero(m.Site) { // not required
+			return nil
+		}
+
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
@@ -671,6 +687,11 @@ func (m *CircuitTermination) contextValidateTags(ctx context.Context, formats st
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

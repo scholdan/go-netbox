@@ -839,6 +839,11 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 func (m *DeviceWithConfigContext) contextValidateAirflow(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Airflow != nil {
+
+		if swag.IsZero(m.Airflow) { // not required
+			return nil
+		}
+
 		if err := m.Airflow.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("airflow")
@@ -855,6 +860,11 @@ func (m *DeviceWithConfigContext) contextValidateAirflow(ctx context.Context, fo
 func (m *DeviceWithConfigContext) contextValidateCluster(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cluster != nil {
+
+		if swag.IsZero(m.Cluster) { // not required
+			return nil
+		}
+
 		if err := m.Cluster.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cluster")
@@ -880,6 +890,7 @@ func (m *DeviceWithConfigContext) contextValidateCreated(ctx context.Context, fo
 func (m *DeviceWithConfigContext) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DeviceType != nil {
+
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
@@ -905,6 +916,11 @@ func (m *DeviceWithConfigContext) contextValidateDisplay(ctx context.Context, fo
 func (m *DeviceWithConfigContext) contextValidateFace(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Face != nil {
+
+		if swag.IsZero(m.Face) { // not required
+			return nil
+		}
+
 		if err := m.Face.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("face")
@@ -939,6 +955,11 @@ func (m *DeviceWithConfigContext) contextValidateLastUpdated(ctx context.Context
 func (m *DeviceWithConfigContext) contextValidateLocation(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Location != nil {
+
+		if swag.IsZero(m.Location) { // not required
+			return nil
+		}
+
 		if err := m.Location.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("location")
@@ -955,6 +976,11 @@ func (m *DeviceWithConfigContext) contextValidateLocation(ctx context.Context, f
 func (m *DeviceWithConfigContext) contextValidateParentDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ParentDevice != nil {
+
+		if swag.IsZero(m.ParentDevice) { // not required
+			return nil
+		}
+
 		if err := m.ParentDevice.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent_device")
@@ -971,6 +997,11 @@ func (m *DeviceWithConfigContext) contextValidateParentDevice(ctx context.Contex
 func (m *DeviceWithConfigContext) contextValidatePlatform(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Platform != nil {
+
+		if swag.IsZero(m.Platform) { // not required
+			return nil
+		}
+
 		if err := m.Platform.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("platform")
@@ -987,6 +1018,11 @@ func (m *DeviceWithConfigContext) contextValidatePlatform(ctx context.Context, f
 func (m *DeviceWithConfigContext) contextValidatePrimaryIP(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PrimaryIP != nil {
+
+		if swag.IsZero(m.PrimaryIP) { // not required
+			return nil
+		}
+
 		if err := m.PrimaryIP.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip")
@@ -1003,6 +1039,11 @@ func (m *DeviceWithConfigContext) contextValidatePrimaryIP(ctx context.Context, 
 func (m *DeviceWithConfigContext) contextValidatePrimaryIp4(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PrimaryIp4 != nil {
+
+		if swag.IsZero(m.PrimaryIp4) { // not required
+			return nil
+		}
+
 		if err := m.PrimaryIp4.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip4")
@@ -1019,6 +1060,11 @@ func (m *DeviceWithConfigContext) contextValidatePrimaryIp4(ctx context.Context,
 func (m *DeviceWithConfigContext) contextValidatePrimaryIp6(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PrimaryIp6 != nil {
+
+		if swag.IsZero(m.PrimaryIp6) { // not required
+			return nil
+		}
+
 		if err := m.PrimaryIp6.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip6")
@@ -1035,6 +1081,11 @@ func (m *DeviceWithConfigContext) contextValidatePrimaryIp6(ctx context.Context,
 func (m *DeviceWithConfigContext) contextValidateRack(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Rack != nil {
+
+		if swag.IsZero(m.Rack) { // not required
+			return nil
+		}
+
 		if err := m.Rack.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
@@ -1051,6 +1102,7 @@ func (m *DeviceWithConfigContext) contextValidateRack(ctx context.Context, forma
 func (m *DeviceWithConfigContext) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Role != nil {
+
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
@@ -1067,6 +1119,7 @@ func (m *DeviceWithConfigContext) contextValidateRole(ctx context.Context, forma
 func (m *DeviceWithConfigContext) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Site != nil {
+
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
@@ -1083,6 +1136,11 @@ func (m *DeviceWithConfigContext) contextValidateSite(ctx context.Context, forma
 func (m *DeviceWithConfigContext) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -1101,6 +1159,11 @@ func (m *DeviceWithConfigContext) contextValidateTags(ctx context.Context, forma
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -1119,6 +1182,11 @@ func (m *DeviceWithConfigContext) contextValidateTags(ctx context.Context, forma
 func (m *DeviceWithConfigContext) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
@@ -1144,6 +1212,11 @@ func (m *DeviceWithConfigContext) contextValidateURL(ctx context.Context, format
 func (m *DeviceWithConfigContext) contextValidateVirtualChassis(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.VirtualChassis != nil {
+
+		if swag.IsZero(m.VirtualChassis) { // not required
+			return nil
+		}
+
 		if err := m.VirtualChassis.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_chassis")

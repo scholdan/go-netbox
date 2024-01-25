@@ -392,6 +392,7 @@ func (m *InventoryItemTemplate) contextValidateCreated(ctx context.Context, form
 func (m *InventoryItemTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DeviceType != nil {
+
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
@@ -435,6 +436,11 @@ func (m *InventoryItemTemplate) contextValidateLastUpdated(ctx context.Context, 
 func (m *InventoryItemTemplate) contextValidateManufacturer(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Manufacturer != nil {
+
+		if swag.IsZero(m.Manufacturer) { // not required
+			return nil
+		}
+
 		if err := m.Manufacturer.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
@@ -451,6 +457,11 @@ func (m *InventoryItemTemplate) contextValidateManufacturer(ctx context.Context,
 func (m *InventoryItemTemplate) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Role != nil {
+
+		if swag.IsZero(m.Role) { // not required
+			return nil
+		}
+
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")

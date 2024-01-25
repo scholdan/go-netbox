@@ -100,6 +100,11 @@ func (o *DcimFrontPortTemplatesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim front port templates list o k response
+func (o *DcimFrontPortTemplatesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimFrontPortTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcimFrontPortTemplatesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimFrontPortTemplatesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim front port templates list default response
-func (o *DcimFrontPortTemplatesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim front port templates list default response has a 2xx status code
 func (o *DcimFrontPortTemplatesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimFrontPortTemplatesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim front port templates list default response a status code equal to that given
 func (o *DcimFrontPortTemplatesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim front port templates list default response
+func (o *DcimFrontPortTemplatesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimFrontPortTemplatesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *DcimFrontPortTemplatesListOKBody) contextValidateResults(ctx context.Co
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimFrontPortTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))

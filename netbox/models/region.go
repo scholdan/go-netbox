@@ -360,6 +360,11 @@ func (m *Region) contextValidateLastUpdated(ctx context.Context, formats strfmt.
 func (m *Region) contextValidateParent(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Parent != nil {
+
+		if swag.IsZero(m.Parent) { // not required
+			return nil
+		}
+
 		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
@@ -387,6 +392,11 @@ func (m *Region) contextValidateTags(ctx context.Context, formats strfmt.Registr
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

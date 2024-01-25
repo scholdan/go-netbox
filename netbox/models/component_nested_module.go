@@ -164,6 +164,11 @@ func (m *ComponentNestedModule) contextValidateID(ctx context.Context, formats s
 func (m *ComponentNestedModule) contextValidateModuleBay(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ModuleBay != nil {
+
+		if swag.IsZero(m.ModuleBay) { // not required
+			return nil
+		}
+
 		if err := m.ModuleBay.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_bay")

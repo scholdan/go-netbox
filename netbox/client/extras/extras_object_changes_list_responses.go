@@ -100,6 +100,11 @@ func (o *ExtrasObjectChangesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras object changes list o k response
+func (o *ExtrasObjectChangesListOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasObjectChangesListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/object-changes/][%d] extrasObjectChangesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type ExtrasObjectChangesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras object changes list default response
-func (o *ExtrasObjectChangesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras object changes list default response has a 2xx status code
 func (o *ExtrasObjectChangesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *ExtrasObjectChangesListDefault) IsServerError() bool {
 // IsCode returns true when this extras object changes list default response a status code equal to that given
 func (o *ExtrasObjectChangesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras object changes list default response
+func (o *ExtrasObjectChangesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasObjectChangesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *ExtrasObjectChangesListOKBody) contextValidateResults(ctx context.Conte
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasObjectChangesListOK" + "." + "results" + "." + strconv.Itoa(i))

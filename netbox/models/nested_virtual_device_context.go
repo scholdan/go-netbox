@@ -185,6 +185,7 @@ func (m *NestedVirtualDeviceContext) ContextValidate(ctx context.Context, format
 func (m *NestedVirtualDeviceContext) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")

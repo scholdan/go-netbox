@@ -391,6 +391,7 @@ func (m *Module) contextValidateCreated(ctx context.Context, formats strfmt.Regi
 func (m *Module) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -434,6 +435,7 @@ func (m *Module) contextValidateLastUpdated(ctx context.Context, formats strfmt.
 func (m *Module) contextValidateModuleBay(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ModuleBay != nil {
+
 		if err := m.ModuleBay.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_bay")
@@ -450,6 +452,7 @@ func (m *Module) contextValidateModuleBay(ctx context.Context, formats strfmt.Re
 func (m *Module) contextValidateModuleType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ModuleType != nil {
+
 		if err := m.ModuleType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_type")
@@ -466,6 +469,11 @@ func (m *Module) contextValidateModuleType(ctx context.Context, formats strfmt.R
 func (m *Module) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -484,6 +492,11 @@ func (m *Module) contextValidateTags(ctx context.Context, formats strfmt.Registr
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

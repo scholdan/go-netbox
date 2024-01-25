@@ -100,6 +100,11 @@ func (o *TenancyTenantGroupsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the tenancy tenant groups list o k response
+func (o *TenancyTenantGroupsListOK) Code() int {
+	return 200
+}
+
 func (o *TenancyTenantGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenant-groups/][%d] tenancyTenantGroupsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type TenancyTenantGroupsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the tenancy tenant groups list default response
-func (o *TenancyTenantGroupsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this tenancy tenant groups list default response has a 2xx status code
 func (o *TenancyTenantGroupsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *TenancyTenantGroupsListDefault) IsServerError() bool {
 // IsCode returns true when this tenancy tenant groups list default response a status code equal to that given
 func (o *TenancyTenantGroupsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the tenancy tenant groups list default response
+func (o *TenancyTenantGroupsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *TenancyTenantGroupsListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *TenancyTenantGroupsListOKBody) contextValidateResults(ctx context.Conte
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tenancyTenantGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))

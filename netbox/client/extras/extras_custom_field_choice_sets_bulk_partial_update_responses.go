@@ -95,6 +95,11 @@ func (o *ExtrasCustomFieldChoiceSetsBulkPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras custom field choice sets bulk partial update o k response
+func (o *ExtrasCustomFieldChoiceSetsBulkPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasCustomFieldChoiceSetsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasCustomFieldChoiceSetsBulkPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom field choice sets bulk partial update default response
-func (o *ExtrasCustomFieldChoiceSetsBulkPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom field choice sets bulk partial update default response has a 2xx status code
 func (o *ExtrasCustomFieldChoiceSetsBulkPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasCustomFieldChoiceSetsBulkPartialUpdateDefault) IsServerError() bo
 // IsCode returns true when this extras custom field choice sets bulk partial update default response a status code equal to that given
 func (o *ExtrasCustomFieldChoiceSetsBulkPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom field choice sets bulk partial update default response
+func (o *ExtrasCustomFieldChoiceSetsBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomFieldChoiceSetsBulkPartialUpdateDefault) Error() string {

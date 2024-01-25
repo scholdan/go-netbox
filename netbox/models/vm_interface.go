@@ -539,6 +539,11 @@ func (m *VMInterface) ContextValidate(ctx context.Context, formats strfmt.Regist
 func (m *VMInterface) contextValidateBridge(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Bridge != nil {
+
+		if swag.IsZero(m.Bridge) { // not required
+			return nil
+		}
+
 		if err := m.Bridge.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("bridge")
@@ -600,6 +605,11 @@ func (m *VMInterface) contextValidateID(ctx context.Context, formats strfmt.Regi
 func (m *VMInterface) contextValidateL2vpnTermination(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.L2vpnTermination != nil {
+
+		if swag.IsZero(m.L2vpnTermination) { // not required
+			return nil
+		}
+
 		if err := m.L2vpnTermination.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("l2vpn_termination")
@@ -625,6 +635,11 @@ func (m *VMInterface) contextValidateLastUpdated(ctx context.Context, formats st
 func (m *VMInterface) contextValidateMode(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Mode != nil {
+
+		if swag.IsZero(m.Mode) { // not required
+			return nil
+		}
+
 		if err := m.Mode.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("mode")
@@ -641,6 +656,11 @@ func (m *VMInterface) contextValidateMode(ctx context.Context, formats strfmt.Re
 func (m *VMInterface) contextValidateParent(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Parent != nil {
+
+		if swag.IsZero(m.Parent) { // not required
+			return nil
+		}
+
 		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
@@ -659,6 +679,11 @@ func (m *VMInterface) contextValidateTaggedVlans(ctx context.Context, formats st
 	for i := 0; i < len(m.TaggedVlans); i++ {
 
 		if m.TaggedVlans[i] != nil {
+
+			if swag.IsZero(m.TaggedVlans[i]) { // not required
+				return nil
+			}
+
 			if err := m.TaggedVlans[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
@@ -679,6 +704,11 @@ func (m *VMInterface) contextValidateTags(ctx context.Context, formats strfmt.Re
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -697,6 +727,11 @@ func (m *VMInterface) contextValidateTags(ctx context.Context, formats strfmt.Re
 func (m *VMInterface) contextValidateUntaggedVlan(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.UntaggedVlan != nil {
+
+		if swag.IsZero(m.UntaggedVlan) { // not required
+			return nil
+		}
+
 		if err := m.UntaggedVlan.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("untagged_vlan")
@@ -722,6 +757,7 @@ func (m *VMInterface) contextValidateURL(ctx context.Context, formats strfmt.Reg
 func (m *VMInterface) contextValidateVirtualMachine(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.VirtualMachine != nil {
+
 		if err := m.VirtualMachine.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")
@@ -738,6 +774,11 @@ func (m *VMInterface) contextValidateVirtualMachine(ctx context.Context, formats
 func (m *VMInterface) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Vrf != nil {
+
+		if swag.IsZero(m.Vrf) { // not required
+			return nil
+		}
+
 		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")

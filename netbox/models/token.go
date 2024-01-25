@@ -285,6 +285,7 @@ func (m *Token) contextValidateURL(ctx context.Context, formats strfmt.Registry)
 func (m *Token) contextValidateUser(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.User != nil {
+
 		if err := m.User.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")

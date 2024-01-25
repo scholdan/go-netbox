@@ -417,6 +417,11 @@ func (m *VRF) contextValidateExportTargets(ctx context.Context, formats strfmt.R
 	for i := 0; i < len(m.ExportTargets); i++ {
 
 		if m.ExportTargets[i] != nil {
+
+			if swag.IsZero(m.ExportTargets[i]) { // not required
+				return nil
+			}
+
 			if err := m.ExportTargets[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("export_targets" + "." + strconv.Itoa(i))
@@ -446,6 +451,11 @@ func (m *VRF) contextValidateImportTargets(ctx context.Context, formats strfmt.R
 	for i := 0; i < len(m.ImportTargets); i++ {
 
 		if m.ImportTargets[i] != nil {
+
+			if swag.IsZero(m.ImportTargets[i]) { // not required
+				return nil
+			}
+
 			if err := m.ImportTargets[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("import_targets" + "." + strconv.Itoa(i))
@@ -493,6 +503,11 @@ func (m *VRF) contextValidateTags(ctx context.Context, formats strfmt.Registry) 
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -511,6 +526,11 @@ func (m *VRF) contextValidateTags(ctx context.Context, formats strfmt.Registry) 
 func (m *VRF) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")

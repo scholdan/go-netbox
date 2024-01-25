@@ -621,6 +621,11 @@ func (m *PowerFeed) contextValidateOccupied(ctx context.Context, formats strfmt.
 func (m *PowerFeed) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cable != nil {
+
+		if swag.IsZero(m.Cable) { // not required
+			return nil
+		}
+
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
@@ -727,6 +732,11 @@ func (m *PowerFeed) contextValidateLinkPeersType(ctx context.Context, formats st
 func (m *PowerFeed) contextValidatePhase(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Phase != nil {
+
+		if swag.IsZero(m.Phase) { // not required
+			return nil
+		}
+
 		if err := m.Phase.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("phase")
@@ -743,6 +753,7 @@ func (m *PowerFeed) contextValidatePhase(ctx context.Context, formats strfmt.Reg
 func (m *PowerFeed) contextValidatePowerPanel(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PowerPanel != nil {
+
 		if err := m.PowerPanel.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("power_panel")
@@ -759,6 +770,11 @@ func (m *PowerFeed) contextValidatePowerPanel(ctx context.Context, formats strfm
 func (m *PowerFeed) contextValidateRack(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Rack != nil {
+
+		if swag.IsZero(m.Rack) { // not required
+			return nil
+		}
+
 		if err := m.Rack.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
@@ -775,6 +791,11 @@ func (m *PowerFeed) contextValidateRack(ctx context.Context, formats strfmt.Regi
 func (m *PowerFeed) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -791,6 +812,11 @@ func (m *PowerFeed) contextValidateStatus(ctx context.Context, formats strfmt.Re
 func (m *PowerFeed) contextValidateSupply(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Supply != nil {
+
+		if swag.IsZero(m.Supply) { // not required
+			return nil
+		}
+
 		if err := m.Supply.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("supply")
@@ -809,6 +835,11 @@ func (m *PowerFeed) contextValidateTags(ctx context.Context, formats strfmt.Regi
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -827,6 +858,11 @@ func (m *PowerFeed) contextValidateTags(ctx context.Context, formats strfmt.Regi
 func (m *PowerFeed) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
+		if swag.IsZero(m.Type) { // not required
+			return nil
+		}
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

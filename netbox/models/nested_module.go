@@ -189,6 +189,11 @@ func (m *NestedModule) ContextValidate(ctx context.Context, formats strfmt.Regis
 func (m *NestedModule) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
+		if swag.IsZero(m.Device) { // not required
+			return nil
+		}
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -223,6 +228,11 @@ func (m *NestedModule) contextValidateID(ctx context.Context, formats strfmt.Reg
 func (m *NestedModule) contextValidateModuleBay(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ModuleBay != nil {
+
+		if swag.IsZero(m.ModuleBay) { // not required
+			return nil
+		}
+
 		if err := m.ModuleBay.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_bay")
@@ -239,6 +249,11 @@ func (m *NestedModule) contextValidateModuleBay(ctx context.Context, formats str
 func (m *NestedModule) contextValidateModuleType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ModuleType != nil {
+
+		if swag.IsZero(m.ModuleType) { // not required
+			return nil
+		}
+
 		if err := m.ModuleType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_type")

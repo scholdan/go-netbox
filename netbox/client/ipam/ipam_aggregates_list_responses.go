@@ -100,6 +100,11 @@ func (o *IpamAggregatesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam aggregates list o k response
+func (o *IpamAggregatesListOK) Code() int {
+	return 200
+}
+
 func (o *IpamAggregatesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipamAggregatesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamAggregatesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam aggregates list default response
-func (o *IpamAggregatesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam aggregates list default response has a 2xx status code
 func (o *IpamAggregatesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamAggregatesListDefault) IsServerError() bool {
 // IsCode returns true when this ipam aggregates list default response a status code equal to that given
 func (o *IpamAggregatesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam aggregates list default response
+func (o *IpamAggregatesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamAggregatesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *IpamAggregatesListOKBody) contextValidateResults(ctx context.Context, f
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamAggregatesListOK" + "." + "results" + "." + strconv.Itoa(i))

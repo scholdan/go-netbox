@@ -139,6 +139,11 @@ func (m *AvailablePrefix) contextValidatePrefix(ctx context.Context, formats str
 func (m *AvailablePrefix) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Vrf != nil {
+
+		if swag.IsZero(m.Vrf) { // not required
+			return nil
+		}
+
 		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")

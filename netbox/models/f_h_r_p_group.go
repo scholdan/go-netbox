@@ -469,6 +469,11 @@ func (m *FHRPGroup) contextValidateIPAddresses(ctx context.Context, formats strf
 	for i := 0; i < len(m.IPAddresses); i++ {
 
 		if m.IPAddresses[i] != nil {
+
+			if swag.IsZero(m.IPAddresses[i]) { // not required
+				return nil
+			}
+
 			if err := m.IPAddresses[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ip_addresses" + "." + strconv.Itoa(i))
@@ -498,6 +503,11 @@ func (m *FHRPGroup) contextValidateTags(ctx context.Context, formats strfmt.Regi
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

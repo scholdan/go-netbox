@@ -149,6 +149,7 @@ func (m *NestedL2VPNTermination) contextValidateID(ctx context.Context, formats 
 func (m *NestedL2VPNTermination) contextValidateL2vpn(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.L2vpn != nil {
+
 		if err := m.L2vpn.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("l2vpn")

@@ -100,6 +100,11 @@ func (o *ExtrasExportTemplatesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras export templates list o k response
+func (o *ExtrasExportTemplatesListOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasExportTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/export-templates/][%d] extrasExportTemplatesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type ExtrasExportTemplatesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras export templates list default response
-func (o *ExtrasExportTemplatesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras export templates list default response has a 2xx status code
 func (o *ExtrasExportTemplatesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *ExtrasExportTemplatesListDefault) IsServerError() bool {
 // IsCode returns true when this extras export templates list default response a status code equal to that given
 func (o *ExtrasExportTemplatesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras export templates list default response
+func (o *ExtrasExportTemplatesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasExportTemplatesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *ExtrasExportTemplatesListOKBody) contextValidateResults(ctx context.Con
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasExportTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))

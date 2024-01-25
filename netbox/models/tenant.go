@@ -427,6 +427,11 @@ func (m *Tenant) contextValidateDisplay(ctx context.Context, formats strfmt.Regi
 func (m *Tenant) contextValidateGroup(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Group != nil {
+
+		if swag.IsZero(m.Group) { // not required
+			return nil
+		}
+
 		if err := m.Group.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
@@ -499,6 +504,11 @@ func (m *Tenant) contextValidateTags(ctx context.Context, formats strfmt.Registr
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

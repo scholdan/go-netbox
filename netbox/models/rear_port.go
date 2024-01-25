@@ -499,6 +499,11 @@ func (m *RearPort) contextValidateOccupied(ctx context.Context, formats strfmt.R
 func (m *RearPort) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cable != nil {
+
+		if swag.IsZero(m.Cable) { // not required
+			return nil
+		}
+
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
@@ -533,6 +538,7 @@ func (m *RearPort) contextValidateCreated(ctx context.Context, formats strfmt.Re
 func (m *RearPort) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -594,6 +600,11 @@ func (m *RearPort) contextValidateLinkPeersType(ctx context.Context, formats str
 func (m *RearPort) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Module != nil {
+
+		if swag.IsZero(m.Module) { // not required
+			return nil
+		}
+
 		if err := m.Module.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module")
@@ -612,6 +623,11 @@ func (m *RearPort) contextValidateTags(ctx context.Context, formats strfmt.Regis
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -630,6 +646,7 @@ func (m *RearPort) contextValidateTags(ctx context.Context, formats strfmt.Regis
 func (m *RearPort) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

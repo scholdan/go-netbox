@@ -100,6 +100,11 @@ func (o *WirelessWirelessLansListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the wireless wireless lans list o k response
+func (o *WirelessWirelessLansListOK) Code() int {
+	return 200
+}
+
 func (o *WirelessWirelessLansListOK) Error() string {
 	return fmt.Sprintf("[GET /wireless/wireless-lans/][%d] wirelessWirelessLansListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type WirelessWirelessLansListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the wireless wireless lans list default response
-func (o *WirelessWirelessLansListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this wireless wireless lans list default response has a 2xx status code
 func (o *WirelessWirelessLansListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *WirelessWirelessLansListDefault) IsServerError() bool {
 // IsCode returns true when this wireless wireless lans list default response a status code equal to that given
 func (o *WirelessWirelessLansListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the wireless wireless lans list default response
+func (o *WirelessWirelessLansListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *WirelessWirelessLansListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *WirelessWirelessLansListOKBody) contextValidateResults(ctx context.Cont
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("wirelessWirelessLansListOK" + "." + "results" + "." + strconv.Itoa(i))

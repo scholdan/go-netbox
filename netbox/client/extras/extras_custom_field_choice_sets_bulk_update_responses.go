@@ -95,6 +95,11 @@ func (o *ExtrasCustomFieldChoiceSetsBulkUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras custom field choice sets bulk update o k response
+func (o *ExtrasCustomFieldChoiceSetsBulkUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasCustomFieldChoiceSetsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsBulkUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasCustomFieldChoiceSetsBulkUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom field choice sets bulk update default response
-func (o *ExtrasCustomFieldChoiceSetsBulkUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom field choice sets bulk update default response has a 2xx status code
 func (o *ExtrasCustomFieldChoiceSetsBulkUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasCustomFieldChoiceSetsBulkUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras custom field choice sets bulk update default response a status code equal to that given
 func (o *ExtrasCustomFieldChoiceSetsBulkUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom field choice sets bulk update default response
+func (o *ExtrasCustomFieldChoiceSetsBulkUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomFieldChoiceSetsBulkUpdateDefault) Error() string {

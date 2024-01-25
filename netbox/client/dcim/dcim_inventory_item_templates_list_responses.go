@@ -100,6 +100,11 @@ func (o *DcimInventoryItemTemplatesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim inventory item templates list o k response
+func (o *DcimInventoryItemTemplatesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimInventoryItemTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/inventory-item-templates/][%d] dcimInventoryItemTemplatesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimInventoryItemTemplatesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim inventory item templates list default response
-func (o *DcimInventoryItemTemplatesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim inventory item templates list default response has a 2xx status code
 func (o *DcimInventoryItemTemplatesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimInventoryItemTemplatesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim inventory item templates list default response a status code equal to that given
 func (o *DcimInventoryItemTemplatesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim inventory item templates list default response
+func (o *DcimInventoryItemTemplatesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimInventoryItemTemplatesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *DcimInventoryItemTemplatesListOKBody) contextValidateResults(ctx contex
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimInventoryItemTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))

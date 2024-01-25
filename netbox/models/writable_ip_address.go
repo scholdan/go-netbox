@@ -526,6 +526,11 @@ func (m *WritableIPAddress) contextValidateNatOutside(ctx context.Context, forma
 	for i := 0; i < len(m.NatOutside); i++ {
 
 		if m.NatOutside[i] != nil {
+
+			if swag.IsZero(m.NatOutside[i]) { // not required
+				return nil
+			}
+
 			if err := m.NatOutside[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("nat_outside" + "." + strconv.Itoa(i))
@@ -546,6 +551,11 @@ func (m *WritableIPAddress) contextValidateTags(ctx context.Context, formats str
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

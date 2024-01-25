@@ -387,6 +387,11 @@ func (m *Platform) contextValidateLastUpdated(ctx context.Context, formats strfm
 func (m *Platform) contextValidateManufacturer(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Manufacturer != nil {
+
+		if swag.IsZero(m.Manufacturer) { // not required
+			return nil
+		}
+
 		if err := m.Manufacturer.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
@@ -405,6 +410,11 @@ func (m *Platform) contextValidateTags(ctx context.Context, formats strfmt.Regis
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

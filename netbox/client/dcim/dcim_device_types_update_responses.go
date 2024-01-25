@@ -95,6 +95,11 @@ func (o *DcimDeviceTypesUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim device types update o k response
+func (o *DcimDeviceTypesUpdateOK) Code() int {
+	return 200
+}
+
 func (o *DcimDeviceTypesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/device-types/{id}/][%d] dcimDeviceTypesUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimDeviceTypesUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim device types update default response
-func (o *DcimDeviceTypesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim device types update default response has a 2xx status code
 func (o *DcimDeviceTypesUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimDeviceTypesUpdateDefault) IsServerError() bool {
 // IsCode returns true when this dcim device types update default response a status code equal to that given
 func (o *DcimDeviceTypesUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim device types update default response
+func (o *DcimDeviceTypesUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimDeviceTypesUpdateDefault) Error() string {

@@ -474,6 +474,11 @@ func (m *VLAN) contextValidateDisplay(ctx context.Context, formats strfmt.Regist
 func (m *VLAN) contextValidateGroup(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Group != nil {
+
+		if swag.IsZero(m.Group) { // not required
+			return nil
+		}
+
 		if err := m.Group.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
@@ -499,6 +504,11 @@ func (m *VLAN) contextValidateID(ctx context.Context, formats strfmt.Registry) e
 func (m *VLAN) contextValidateL2vpnTermination(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.L2vpnTermination != nil {
+
+		if swag.IsZero(m.L2vpnTermination) { // not required
+			return nil
+		}
+
 		if err := m.L2vpnTermination.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("l2vpn_termination")
@@ -533,6 +543,11 @@ func (m *VLAN) contextValidatePrefixCount(ctx context.Context, formats strfmt.Re
 func (m *VLAN) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Role != nil {
+
+		if swag.IsZero(m.Role) { // not required
+			return nil
+		}
+
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
@@ -549,6 +564,11 @@ func (m *VLAN) contextValidateRole(ctx context.Context, formats strfmt.Registry)
 func (m *VLAN) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Site != nil {
+
+		if swag.IsZero(m.Site) { // not required
+			return nil
+		}
+
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
@@ -565,6 +585,11 @@ func (m *VLAN) contextValidateSite(ctx context.Context, formats strfmt.Registry)
 func (m *VLAN) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -583,6 +608,11 @@ func (m *VLAN) contextValidateTags(ctx context.Context, formats strfmt.Registry)
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -601,6 +631,11 @@ func (m *VLAN) contextValidateTags(ctx context.Context, formats strfmt.Registry)
 func (m *VLAN) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")

@@ -376,6 +376,11 @@ func (m *PowerPortTemplate) contextValidateCreated(ctx context.Context, formats 
 func (m *PowerPortTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DeviceType != nil {
+
+		if swag.IsZero(m.DeviceType) { // not required
+			return nil
+		}
+
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
@@ -419,6 +424,11 @@ func (m *PowerPortTemplate) contextValidateLastUpdated(ctx context.Context, form
 func (m *PowerPortTemplate) contextValidateModuleType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ModuleType != nil {
+
+		if swag.IsZero(m.ModuleType) { // not required
+			return nil
+		}
+
 		if err := m.ModuleType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_type")
@@ -435,6 +445,11 @@ func (m *PowerPortTemplate) contextValidateModuleType(ctx context.Context, forma
 func (m *PowerPortTemplate) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
+		if swag.IsZero(m.Type) { // not required
+			return nil
+		}
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

@@ -285,6 +285,7 @@ func (m *ContactAssignment) ContextValidate(ctx context.Context, formats strfmt.
 func (m *ContactAssignment) contextValidateContact(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Contact != nil {
+
 		if err := m.Contact.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("contact")
@@ -337,6 +338,11 @@ func (m *ContactAssignment) contextValidateLastUpdated(ctx context.Context, form
 func (m *ContactAssignment) contextValidatePriority(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Priority != nil {
+
+		if swag.IsZero(m.Priority) { // not required
+			return nil
+		}
+
 		if err := m.Priority.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("priority")
@@ -353,6 +359,11 @@ func (m *ContactAssignment) contextValidatePriority(ctx context.Context, formats
 func (m *ContactAssignment) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Role != nil {
+
+		if swag.IsZero(m.Role) { // not required
+			return nil
+		}
+
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")

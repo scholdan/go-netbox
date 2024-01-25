@@ -476,6 +476,7 @@ func (m *InventoryItem) contextValidateCreated(ctx context.Context, formats strf
 func (m *InventoryItem) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -519,6 +520,11 @@ func (m *InventoryItem) contextValidateLastUpdated(ctx context.Context, formats 
 func (m *InventoryItem) contextValidateManufacturer(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Manufacturer != nil {
+
+		if swag.IsZero(m.Manufacturer) { // not required
+			return nil
+		}
+
 		if err := m.Manufacturer.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
@@ -535,6 +541,11 @@ func (m *InventoryItem) contextValidateManufacturer(ctx context.Context, formats
 func (m *InventoryItem) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Role != nil {
+
+		if swag.IsZero(m.Role) { // not required
+			return nil
+		}
+
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
@@ -553,6 +564,11 @@ func (m *InventoryItem) contextValidateTags(ctx context.Context, formats strfmt.
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

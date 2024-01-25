@@ -543,6 +543,11 @@ func (m *CustomField) ContextValidate(ctx context.Context, formats strfmt.Regist
 func (m *CustomField) contextValidateChoiceSet(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ChoiceSet != nil {
+
+		if swag.IsZero(m.ChoiceSet) { // not required
+			return nil
+		}
+
 		if err := m.ChoiceSet.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("choice_set")
@@ -586,6 +591,11 @@ func (m *CustomField) contextValidateDisplay(ctx context.Context, formats strfmt
 func (m *CustomField) contextValidateFilterLogic(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.FilterLogic != nil {
+
+		if swag.IsZero(m.FilterLogic) { // not required
+			return nil
+		}
+
 		if err := m.FilterLogic.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("filter_logic")
@@ -620,6 +630,7 @@ func (m *CustomField) contextValidateLastUpdated(ctx context.Context, formats st
 func (m *CustomField) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
@@ -636,6 +647,11 @@ func (m *CustomField) contextValidateType(ctx context.Context, formats strfmt.Re
 func (m *CustomField) contextValidateUIVisibility(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.UIVisibility != nil {
+
+		if swag.IsZero(m.UIVisibility) { // not required
+			return nil
+		}
+
 		if err := m.UIVisibility.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("ui_visibility")

@@ -533,6 +533,11 @@ func (m *PowerOutlet) contextValidateOccupied(ctx context.Context, formats strfm
 func (m *PowerOutlet) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cable != nil {
+
+		if swag.IsZero(m.Cable) { // not required
+			return nil
+		}
+
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
@@ -594,6 +599,7 @@ func (m *PowerOutlet) contextValidateCreated(ctx context.Context, formats strfmt
 func (m *PowerOutlet) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -619,6 +625,11 @@ func (m *PowerOutlet) contextValidateDisplay(ctx context.Context, formats strfmt
 func (m *PowerOutlet) contextValidateFeedLeg(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.FeedLeg != nil {
+
+		if swag.IsZero(m.FeedLeg) { // not required
+			return nil
+		}
+
 		if err := m.FeedLeg.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("feed_leg")
@@ -671,6 +682,11 @@ func (m *PowerOutlet) contextValidateLinkPeersType(ctx context.Context, formats 
 func (m *PowerOutlet) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Module != nil {
+
+		if swag.IsZero(m.Module) { // not required
+			return nil
+		}
+
 		if err := m.Module.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module")
@@ -687,6 +703,11 @@ func (m *PowerOutlet) contextValidateModule(ctx context.Context, formats strfmt.
 func (m *PowerOutlet) contextValidatePowerPort(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PowerPort != nil {
+
+		if swag.IsZero(m.PowerPort) { // not required
+			return nil
+		}
+
 		if err := m.PowerPort.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("power_port")
@@ -705,6 +726,11 @@ func (m *PowerOutlet) contextValidateTags(ctx context.Context, formats strfmt.Re
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -723,6 +749,11 @@ func (m *PowerOutlet) contextValidateTags(ctx context.Context, formats strfmt.Re
 func (m *PowerOutlet) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
+		if swag.IsZero(m.Type) { // not required
+			return nil
+		}
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

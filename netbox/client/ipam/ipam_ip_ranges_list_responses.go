@@ -100,6 +100,11 @@ func (o *IpamIPRangesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam Ip ranges list o k response
+func (o *IpamIPRangesListOK) Code() int {
+	return 200
+}
+
 func (o *IpamIPRangesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/ip-ranges/][%d] ipamIpRangesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamIPRangesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam ip ranges list default response
-func (o *IpamIPRangesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam ip ranges list default response has a 2xx status code
 func (o *IpamIPRangesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamIPRangesListDefault) IsServerError() bool {
 // IsCode returns true when this ipam ip ranges list default response a status code equal to that given
 func (o *IpamIPRangesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam ip ranges list default response
+func (o *IpamIPRangesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamIPRangesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *IpamIPRangesListOKBody) contextValidateResults(ctx context.Context, for
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamIpRangesListOK" + "." + "results" + "." + strconv.Itoa(i))

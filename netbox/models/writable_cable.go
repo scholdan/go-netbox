@@ -569,6 +569,11 @@ func (m *WritableCable) contextValidateATerminations(ctx context.Context, format
 	for i := 0; i < len(m.ATerminations); i++ {
 
 		if m.ATerminations[i] != nil {
+
+			if swag.IsZero(m.ATerminations[i]) { // not required
+				return nil
+			}
+
 			if err := m.ATerminations[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("a_terminations" + "." + strconv.Itoa(i))
@@ -589,6 +594,11 @@ func (m *WritableCable) contextValidateBTerminations(ctx context.Context, format
 	for i := 0; i < len(m.BTerminations); i++ {
 
 		if m.BTerminations[i] != nil {
+
+			if swag.IsZero(m.BTerminations[i]) { // not required
+				return nil
+			}
+
 			if err := m.BTerminations[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("b_terminations" + "." + strconv.Itoa(i))
@@ -645,6 +655,11 @@ func (m *WritableCable) contextValidateTags(ctx context.Context, formats strfmt.
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

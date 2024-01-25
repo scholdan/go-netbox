@@ -387,6 +387,11 @@ func (m *InterfaceTemplate) contextValidateCreated(ctx context.Context, formats 
 func (m *InterfaceTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DeviceType != nil {
+
+		if swag.IsZero(m.DeviceType) { // not required
+			return nil
+		}
+
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
@@ -430,6 +435,11 @@ func (m *InterfaceTemplate) contextValidateLastUpdated(ctx context.Context, form
 func (m *InterfaceTemplate) contextValidateModuleType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ModuleType != nil {
+
+		if swag.IsZero(m.ModuleType) { // not required
+			return nil
+		}
+
 		if err := m.ModuleType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_type")
@@ -446,6 +456,11 @@ func (m *InterfaceTemplate) contextValidateModuleType(ctx context.Context, forma
 func (m *InterfaceTemplate) contextValidatePoeMode(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PoeMode != nil {
+
+		if swag.IsZero(m.PoeMode) { // not required
+			return nil
+		}
+
 		if err := m.PoeMode.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("poe_mode")
@@ -462,6 +477,11 @@ func (m *InterfaceTemplate) contextValidatePoeMode(ctx context.Context, formats 
 func (m *InterfaceTemplate) contextValidatePoeType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PoeType != nil {
+
+		if swag.IsZero(m.PoeType) { // not required
+			return nil
+		}
+
 		if err := m.PoeType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("poe_type")
@@ -478,6 +498,7 @@ func (m *InterfaceTemplate) contextValidatePoeType(ctx context.Context, formats 
 func (m *InterfaceTemplate) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

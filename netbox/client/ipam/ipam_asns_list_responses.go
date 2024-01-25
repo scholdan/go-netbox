@@ -100,6 +100,11 @@ func (o *IpamAsnsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam asns list o k response
+func (o *IpamAsnsListOK) Code() int {
+	return 200
+}
+
 func (o *IpamAsnsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/asns/][%d] ipamAsnsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamAsnsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam asns list default response
-func (o *IpamAsnsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam asns list default response has a 2xx status code
 func (o *IpamAsnsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamAsnsListDefault) IsServerError() bool {
 // IsCode returns true when this ipam asns list default response a status code equal to that given
 func (o *IpamAsnsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam asns list default response
+func (o *IpamAsnsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamAsnsListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *IpamAsnsListOKBody) contextValidateResults(ctx context.Context, formats
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamAsnsListOK" + "." + "results" + "." + strconv.Itoa(i))

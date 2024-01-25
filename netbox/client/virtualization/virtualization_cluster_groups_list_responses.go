@@ -100,6 +100,11 @@ func (o *VirtualizationClusterGroupsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the virtualization cluster groups list o k response
+func (o *VirtualizationClusterGroupsListOK) Code() int {
+	return 200
+}
+
 func (o *VirtualizationClusterGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-groups/][%d] virtualizationClusterGroupsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type VirtualizationClusterGroupsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization cluster groups list default response
-func (o *VirtualizationClusterGroupsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization cluster groups list default response has a 2xx status code
 func (o *VirtualizationClusterGroupsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *VirtualizationClusterGroupsListDefault) IsServerError() bool {
 // IsCode returns true when this virtualization cluster groups list default response a status code equal to that given
 func (o *VirtualizationClusterGroupsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization cluster groups list default response
+func (o *VirtualizationClusterGroupsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationClusterGroupsListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *VirtualizationClusterGroupsListOKBody) contextValidateResults(ctx conte
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("virtualizationClusterGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))

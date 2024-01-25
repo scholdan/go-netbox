@@ -776,6 +776,11 @@ func (m *ConfigContext) contextValidateClusterGroups(ctx context.Context, format
 	for i := 0; i < len(m.ClusterGroups); i++ {
 
 		if m.ClusterGroups[i] != nil {
+
+			if swag.IsZero(m.ClusterGroups[i]) { // not required
+				return nil
+			}
+
 			if err := m.ClusterGroups[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("cluster_groups" + "." + strconv.Itoa(i))
@@ -796,6 +801,11 @@ func (m *ConfigContext) contextValidateClusterTypes(ctx context.Context, formats
 	for i := 0; i < len(m.ClusterTypes); i++ {
 
 		if m.ClusterTypes[i] != nil {
+
+			if swag.IsZero(m.ClusterTypes[i]) { // not required
+				return nil
+			}
+
 			if err := m.ClusterTypes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("cluster_types" + "." + strconv.Itoa(i))
@@ -816,6 +826,11 @@ func (m *ConfigContext) contextValidateClusters(ctx context.Context, formats str
 	for i := 0; i < len(m.Clusters); i++ {
 
 		if m.Clusters[i] != nil {
+
+			if swag.IsZero(m.Clusters[i]) { // not required
+				return nil
+			}
+
 			if err := m.Clusters[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("clusters" + "." + strconv.Itoa(i))
@@ -845,6 +860,11 @@ func (m *ConfigContext) contextValidateDeviceTypes(ctx context.Context, formats 
 	for i := 0; i < len(m.DeviceTypes); i++ {
 
 		if m.DeviceTypes[i] != nil {
+
+			if swag.IsZero(m.DeviceTypes[i]) { // not required
+				return nil
+			}
+
 			if err := m.DeviceTypes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("device_types" + "." + strconv.Itoa(i))
@@ -892,6 +912,11 @@ func (m *ConfigContext) contextValidateLocations(ctx context.Context, formats st
 	for i := 0; i < len(m.Locations); i++ {
 
 		if m.Locations[i] != nil {
+
+			if swag.IsZero(m.Locations[i]) { // not required
+				return nil
+			}
+
 			if err := m.Locations[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("locations" + "." + strconv.Itoa(i))
@@ -912,6 +937,11 @@ func (m *ConfigContext) contextValidatePlatforms(ctx context.Context, formats st
 	for i := 0; i < len(m.Platforms); i++ {
 
 		if m.Platforms[i] != nil {
+
+			if swag.IsZero(m.Platforms[i]) { // not required
+				return nil
+			}
+
 			if err := m.Platforms[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("platforms" + "." + strconv.Itoa(i))
@@ -932,6 +962,11 @@ func (m *ConfigContext) contextValidateRegions(ctx context.Context, formats strf
 	for i := 0; i < len(m.Regions); i++ {
 
 		if m.Regions[i] != nil {
+
+			if swag.IsZero(m.Regions[i]) { // not required
+				return nil
+			}
+
 			if err := m.Regions[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("regions" + "." + strconv.Itoa(i))
@@ -952,6 +987,11 @@ func (m *ConfigContext) contextValidateRoles(ctx context.Context, formats strfmt
 	for i := 0; i < len(m.Roles); i++ {
 
 		if m.Roles[i] != nil {
+
+			if swag.IsZero(m.Roles[i]) { // not required
+				return nil
+			}
+
 			if err := m.Roles[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("roles" + "." + strconv.Itoa(i))
@@ -972,6 +1012,11 @@ func (m *ConfigContext) contextValidateSiteGroups(ctx context.Context, formats s
 	for i := 0; i < len(m.SiteGroups); i++ {
 
 		if m.SiteGroups[i] != nil {
+
+			if swag.IsZero(m.SiteGroups[i]) { // not required
+				return nil
+			}
+
 			if err := m.SiteGroups[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("site_groups" + "." + strconv.Itoa(i))
@@ -992,6 +1037,11 @@ func (m *ConfigContext) contextValidateSites(ctx context.Context, formats strfmt
 	for i := 0; i < len(m.Sites); i++ {
 
 		if m.Sites[i] != nil {
+
+			if swag.IsZero(m.Sites[i]) { // not required
+				return nil
+			}
+
 			if err := m.Sites[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("sites" + "." + strconv.Itoa(i))
@@ -1012,6 +1062,11 @@ func (m *ConfigContext) contextValidateTenantGroups(ctx context.Context, formats
 	for i := 0; i < len(m.TenantGroups); i++ {
 
 		if m.TenantGroups[i] != nil {
+
+			if swag.IsZero(m.TenantGroups[i]) { // not required
+				return nil
+			}
+
 			if err := m.TenantGroups[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tenant_groups" + "." + strconv.Itoa(i))
@@ -1032,6 +1087,11 @@ func (m *ConfigContext) contextValidateTenants(ctx context.Context, formats strf
 	for i := 0; i < len(m.Tenants); i++ {
 
 		if m.Tenants[i] != nil {
+
+			if swag.IsZero(m.Tenants[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tenants[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tenants" + "." + strconv.Itoa(i))

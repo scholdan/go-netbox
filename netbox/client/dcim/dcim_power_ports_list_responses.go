@@ -100,6 +100,11 @@ func (o *DcimPowerPortsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim power ports list o k response
+func (o *DcimPowerPortsListOK) Code() int {
+	return 200
+}
+
 func (o *DcimPowerPortsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-ports/][%d] dcimPowerPortsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimPowerPortsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim power ports list default response
-func (o *DcimPowerPortsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim power ports list default response has a 2xx status code
 func (o *DcimPowerPortsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimPowerPortsListDefault) IsServerError() bool {
 // IsCode returns true when this dcim power ports list default response a status code equal to that given
 func (o *DcimPowerPortsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim power ports list default response
+func (o *DcimPowerPortsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPowerPortsListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *DcimPowerPortsListOKBody) contextValidateResults(ctx context.Context, f
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimPowerPortsListOK" + "." + "results" + "." + strconv.Itoa(i))

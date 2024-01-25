@@ -100,6 +100,11 @@ func (o *ExtrasCustomFieldChoiceSetsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras custom field choice sets list o k response
+func (o *ExtrasCustomFieldChoiceSetsListOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasCustomFieldChoiceSetsListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type ExtrasCustomFieldChoiceSetsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom field choice sets list default response
-func (o *ExtrasCustomFieldChoiceSetsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom field choice sets list default response has a 2xx status code
 func (o *ExtrasCustomFieldChoiceSetsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *ExtrasCustomFieldChoiceSetsListDefault) IsServerError() bool {
 // IsCode returns true when this extras custom field choice sets list default response a status code equal to that given
 func (o *ExtrasCustomFieldChoiceSetsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom field choice sets list default response
+func (o *ExtrasCustomFieldChoiceSetsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomFieldChoiceSetsListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *ExtrasCustomFieldChoiceSetsListOKBody) contextValidateResults(ctx conte
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasCustomFieldChoiceSetsListOK" + "." + "results" + "." + strconv.Itoa(i))

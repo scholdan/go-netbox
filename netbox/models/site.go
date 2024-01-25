@@ -560,6 +560,11 @@ func (m *Site) contextValidateAsns(ctx context.Context, formats strfmt.Registry)
 	for i := 0; i < len(m.Asns); i++ {
 
 		if m.Asns[i] != nil {
+
+			if swag.IsZero(m.Asns[i]) { // not required
+				return nil
+			}
+
 			if err := m.Asns[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("asns" + "." + strconv.Itoa(i))
@@ -614,6 +619,11 @@ func (m *Site) contextValidateDisplay(ctx context.Context, formats strfmt.Regist
 func (m *Site) contextValidateGroup(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Group != nil {
+
+		if swag.IsZero(m.Group) { // not required
+			return nil
+		}
+
 		if err := m.Group.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
@@ -666,6 +676,11 @@ func (m *Site) contextValidateRackCount(ctx context.Context, formats strfmt.Regi
 func (m *Site) contextValidateRegion(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Region != nil {
+
+		if swag.IsZero(m.Region) { // not required
+			return nil
+		}
+
 		if err := m.Region.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("region")
@@ -682,6 +697,11 @@ func (m *Site) contextValidateRegion(ctx context.Context, formats strfmt.Registr
 func (m *Site) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -700,6 +720,11 @@ func (m *Site) contextValidateTags(ctx context.Context, formats strfmt.Registry)
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -718,6 +743,11 @@ func (m *Site) contextValidateTags(ctx context.Context, formats strfmt.Registry)
 func (m *Site) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")

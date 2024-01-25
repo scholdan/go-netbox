@@ -183,6 +183,11 @@ func (m *NestedVMInterface) contextValidateURL(ctx context.Context, formats strf
 func (m *NestedVMInterface) contextValidateVirtualMachine(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.VirtualMachine != nil {
+
+		if swag.IsZero(m.VirtualMachine) { // not required
+			return nil
+		}
+
 		if err := m.VirtualMachine.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")

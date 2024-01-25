@@ -382,6 +382,11 @@ func (m *PowerOutletTemplate) contextValidateCreated(ctx context.Context, format
 func (m *PowerOutletTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DeviceType != nil {
+
+		if swag.IsZero(m.DeviceType) { // not required
+			return nil
+		}
+
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
@@ -407,6 +412,11 @@ func (m *PowerOutletTemplate) contextValidateDisplay(ctx context.Context, format
 func (m *PowerOutletTemplate) contextValidateFeedLeg(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.FeedLeg != nil {
+
+		if swag.IsZero(m.FeedLeg) { // not required
+			return nil
+		}
+
 		if err := m.FeedLeg.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("feed_leg")
@@ -441,6 +451,11 @@ func (m *PowerOutletTemplate) contextValidateLastUpdated(ctx context.Context, fo
 func (m *PowerOutletTemplate) contextValidateModuleType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ModuleType != nil {
+
+		if swag.IsZero(m.ModuleType) { // not required
+			return nil
+		}
+
 		if err := m.ModuleType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_type")
@@ -457,6 +472,11 @@ func (m *PowerOutletTemplate) contextValidateModuleType(ctx context.Context, for
 func (m *PowerOutletTemplate) contextValidatePowerPort(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PowerPort != nil {
+
+		if swag.IsZero(m.PowerPort) { // not required
+			return nil
+		}
+
 		if err := m.PowerPort.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("power_port")
@@ -473,6 +493,11 @@ func (m *PowerOutletTemplate) contextValidatePowerPort(ctx context.Context, form
 func (m *PowerOutletTemplate) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
+		if swag.IsZero(m.Type) { // not required
+			return nil
+		}
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

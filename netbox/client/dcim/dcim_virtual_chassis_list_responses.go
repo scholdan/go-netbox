@@ -100,6 +100,11 @@ func (o *DcimVirtualChassisListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim virtual chassis list o k response
+func (o *DcimVirtualChassisListOK) Code() int {
+	return 200
+}
+
 func (o *DcimVirtualChassisListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcimVirtualChassisListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimVirtualChassisListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim virtual chassis list default response
-func (o *DcimVirtualChassisListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim virtual chassis list default response has a 2xx status code
 func (o *DcimVirtualChassisListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimVirtualChassisListDefault) IsServerError() bool {
 // IsCode returns true when this dcim virtual chassis list default response a status code equal to that given
 func (o *DcimVirtualChassisListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim virtual chassis list default response
+func (o *DcimVirtualChassisListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimVirtualChassisListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *DcimVirtualChassisListOKBody) contextValidateResults(ctx context.Contex
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimVirtualChassisListOK" + "." + "results" + "." + strconv.Itoa(i))

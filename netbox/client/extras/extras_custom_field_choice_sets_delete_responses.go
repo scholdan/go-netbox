@@ -92,6 +92,11 @@ func (o *ExtrasCustomFieldChoiceSetsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the extras custom field choice sets delete no content response
+func (o *ExtrasCustomFieldChoiceSetsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *ExtrasCustomFieldChoiceSetsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type ExtrasCustomFieldChoiceSetsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom field choice sets delete default response
-func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom field choice sets delete default response has a 2xx status code
 func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this extras custom field choice sets delete default response a status code equal to that given
 func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom field choice sets delete default response
+func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) Error() string {

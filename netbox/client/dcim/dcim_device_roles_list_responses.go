@@ -100,6 +100,11 @@ func (o *DcimDeviceRolesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim device roles list o k response
+func (o *DcimDeviceRolesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimDeviceRolesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcimDeviceRolesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimDeviceRolesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim device roles list default response
-func (o *DcimDeviceRolesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim device roles list default response has a 2xx status code
 func (o *DcimDeviceRolesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimDeviceRolesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim device roles list default response a status code equal to that given
 func (o *DcimDeviceRolesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim device roles list default response
+func (o *DcimDeviceRolesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimDeviceRolesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *DcimDeviceRolesListOKBody) contextValidateResults(ctx context.Context, 
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimDeviceRolesListOK" + "." + "results" + "." + strconv.Itoa(i))

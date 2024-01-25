@@ -523,6 +523,11 @@ func (m *IPAddress) contextValidateDisplay(ctx context.Context, formats strfmt.R
 func (m *IPAddress) contextValidateFamily(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Family != nil {
+
+		if swag.IsZero(m.Family) { // not required
+			return nil
+		}
+
 		if err := m.Family.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
@@ -557,6 +562,11 @@ func (m *IPAddress) contextValidateLastUpdated(ctx context.Context, formats strf
 func (m *IPAddress) contextValidateNatInside(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.NatInside != nil {
+
+		if swag.IsZero(m.NatInside) { // not required
+			return nil
+		}
+
 		if err := m.NatInside.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("nat_inside")
@@ -579,6 +589,11 @@ func (m *IPAddress) contextValidateNatOutside(ctx context.Context, formats strfm
 	for i := 0; i < len(m.NatOutside); i++ {
 
 		if m.NatOutside[i] != nil {
+
+			if swag.IsZero(m.NatOutside[i]) { // not required
+				return nil
+			}
+
 			if err := m.NatOutside[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("nat_outside" + "." + strconv.Itoa(i))
@@ -597,6 +612,11 @@ func (m *IPAddress) contextValidateNatOutside(ctx context.Context, formats strfm
 func (m *IPAddress) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Role != nil {
+
+		if swag.IsZero(m.Role) { // not required
+			return nil
+		}
+
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
@@ -613,6 +633,11 @@ func (m *IPAddress) contextValidateRole(ctx context.Context, formats strfmt.Regi
 func (m *IPAddress) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -631,6 +656,11 @@ func (m *IPAddress) contextValidateTags(ctx context.Context, formats strfmt.Regi
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -649,6 +679,11 @@ func (m *IPAddress) contextValidateTags(ctx context.Context, formats strfmt.Regi
 func (m *IPAddress) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
@@ -674,6 +709,11 @@ func (m *IPAddress) contextValidateURL(ctx context.Context, formats strfmt.Regis
 func (m *IPAddress) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Vrf != nil {
+
+		if swag.IsZero(m.Vrf) { // not required
+			return nil
+		}
+
 		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")

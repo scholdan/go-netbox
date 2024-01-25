@@ -100,6 +100,11 @@ func (o *DcimPowerOutletTemplatesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim power outlet templates list o k response
+func (o *DcimPowerOutletTemplatesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimPowerOutletTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcimPowerOutletTemplatesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimPowerOutletTemplatesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim power outlet templates list default response
-func (o *DcimPowerOutletTemplatesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim power outlet templates list default response has a 2xx status code
 func (o *DcimPowerOutletTemplatesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimPowerOutletTemplatesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim power outlet templates list default response a status code equal to that given
 func (o *DcimPowerOutletTemplatesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim power outlet templates list default response
+func (o *DcimPowerOutletTemplatesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPowerOutletTemplatesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *DcimPowerOutletTemplatesListOKBody) contextValidateResults(ctx context.
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimPowerOutletTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))

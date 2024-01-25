@@ -100,6 +100,11 @@ func (o *DcimModuleBayTemplatesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim module bay templates list o k response
+func (o *DcimModuleBayTemplatesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimModuleBayTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/module-bay-templates/][%d] dcimModuleBayTemplatesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimModuleBayTemplatesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim module bay templates list default response
-func (o *DcimModuleBayTemplatesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim module bay templates list default response has a 2xx status code
 func (o *DcimModuleBayTemplatesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimModuleBayTemplatesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim module bay templates list default response a status code equal to that given
 func (o *DcimModuleBayTemplatesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim module bay templates list default response
+func (o *DcimModuleBayTemplatesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimModuleBayTemplatesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *DcimModuleBayTemplatesListOKBody) contextValidateResults(ctx context.Co
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimModuleBayTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))

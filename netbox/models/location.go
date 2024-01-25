@@ -470,6 +470,11 @@ func (m *Location) contextValidateLastUpdated(ctx context.Context, formats strfm
 func (m *Location) contextValidateParent(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Parent != nil {
+
+		if swag.IsZero(m.Parent) { // not required
+			return nil
+		}
+
 		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
@@ -495,6 +500,7 @@ func (m *Location) contextValidateRackCount(ctx context.Context, formats strfmt.
 func (m *Location) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Site != nil {
+
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
@@ -511,6 +517,11 @@ func (m *Location) contextValidateSite(ctx context.Context, formats strfmt.Regis
 func (m *Location) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -529,6 +540,11 @@ func (m *Location) contextValidateTags(ctx context.Context, formats strfmt.Regis
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -547,6 +563,11 @@ func (m *Location) contextValidateTags(ctx context.Context, formats strfmt.Regis
 func (m *Location) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")

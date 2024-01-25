@@ -100,6 +100,11 @@ func (o *DcimLocationsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim locations list o k response
+func (o *DcimLocationsListOK) Code() int {
+	return 200
+}
+
 func (o *DcimLocationsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/locations/][%d] dcimLocationsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimLocationsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim locations list default response
-func (o *DcimLocationsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim locations list default response has a 2xx status code
 func (o *DcimLocationsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimLocationsListDefault) IsServerError() bool {
 // IsCode returns true when this dcim locations list default response a status code equal to that given
 func (o *DcimLocationsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim locations list default response
+func (o *DcimLocationsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimLocationsListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *DcimLocationsListOKBody) contextValidateResults(ctx context.Context, fo
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimLocationsListOK" + "." + "results" + "." + strconv.Itoa(i))

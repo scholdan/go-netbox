@@ -411,6 +411,11 @@ func (m *Service) contextValidateCreated(ctx context.Context, formats strfmt.Reg
 func (m *Service) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
+		if swag.IsZero(m.Device) { // not required
+			return nil
+		}
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -447,6 +452,11 @@ func (m *Service) contextValidateIpaddresses(ctx context.Context, formats strfmt
 	for i := 0; i < len(m.Ipaddresses); i++ {
 
 		if m.Ipaddresses[i] != nil {
+
+			if swag.IsZero(m.Ipaddresses[i]) { // not required
+				return nil
+			}
+
 			if err := m.Ipaddresses[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipaddresses" + "." + strconv.Itoa(i))
@@ -474,6 +484,11 @@ func (m *Service) contextValidateLastUpdated(ctx context.Context, formats strfmt
 func (m *Service) contextValidateProtocol(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Protocol != nil {
+
+		if swag.IsZero(m.Protocol) { // not required
+			return nil
+		}
+
 		if err := m.Protocol.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("protocol")
@@ -492,6 +507,11 @@ func (m *Service) contextValidateTags(ctx context.Context, formats strfmt.Regist
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -519,6 +539,11 @@ func (m *Service) contextValidateURL(ctx context.Context, formats strfmt.Registr
 func (m *Service) contextValidateVirtualMachine(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.VirtualMachine != nil {
+
+		if swag.IsZero(m.VirtualMachine) { // not required
+			return nil
+		}
+
 		if err := m.VirtualMachine.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")

@@ -95,6 +95,11 @@ func (o *WirelessWirelessLansUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the wireless wireless lans update o k response
+func (o *WirelessWirelessLansUpdateOK) Code() int {
+	return 200
+}
+
 func (o *WirelessWirelessLansUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /wireless/wireless-lans/{id}/][%d] wirelessWirelessLansUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type WirelessWirelessLansUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the wireless wireless lans update default response
-func (o *WirelessWirelessLansUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this wireless wireless lans update default response has a 2xx status code
 func (o *WirelessWirelessLansUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *WirelessWirelessLansUpdateDefault) IsServerError() bool {
 // IsCode returns true when this wireless wireless lans update default response a status code equal to that given
 func (o *WirelessWirelessLansUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the wireless wireless lans update default response
+func (o *WirelessWirelessLansUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *WirelessWirelessLansUpdateDefault) Error() string {

@@ -364,6 +364,7 @@ func (m *ModuleType) contextValidateLastUpdated(ctx context.Context, formats str
 func (m *ModuleType) contextValidateManufacturer(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Manufacturer != nil {
+
 		if err := m.Manufacturer.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
@@ -382,6 +383,11 @@ func (m *ModuleType) contextValidateTags(ctx context.Context, formats strfmt.Reg
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -409,6 +415,11 @@ func (m *ModuleType) contextValidateURL(ctx context.Context, formats strfmt.Regi
 func (m *ModuleType) contextValidateWeightUnit(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.WeightUnit != nil {
+
+		if swag.IsZero(m.WeightUnit) { // not required
+			return nil
+		}
+
 		if err := m.WeightUnit.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("weight_unit")

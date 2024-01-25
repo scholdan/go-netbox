@@ -139,6 +139,11 @@ func (m *AvailableIP) contextValidateFamily(ctx context.Context, formats strfmt.
 func (m *AvailableIP) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Vrf != nil {
+
+		if swag.IsZero(m.Vrf) { // not required
+			return nil
+		}
+
 		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")

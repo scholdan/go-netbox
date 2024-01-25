@@ -526,6 +526,7 @@ func (m *Circuit) contextValidateLastUpdated(ctx context.Context, formats strfmt
 func (m *Circuit) contextValidateProvider(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Provider != nil {
+
 		if err := m.Provider.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider")
@@ -542,6 +543,11 @@ func (m *Circuit) contextValidateProvider(ctx context.Context, formats strfmt.Re
 func (m *Circuit) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -560,6 +566,11 @@ func (m *Circuit) contextValidateTags(ctx context.Context, formats strfmt.Regist
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -578,6 +589,11 @@ func (m *Circuit) contextValidateTags(ctx context.Context, formats strfmt.Regist
 func (m *Circuit) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
@@ -594,6 +610,11 @@ func (m *Circuit) contextValidateTenant(ctx context.Context, formats strfmt.Regi
 func (m *Circuit) contextValidateTerminationa(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Terminationa != nil {
+
+		if swag.IsZero(m.Terminationa) { // not required
+			return nil
+		}
+
 		if err := m.Terminationa.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("termination_a")
@@ -610,6 +631,11 @@ func (m *Circuit) contextValidateTerminationa(ctx context.Context, formats strfm
 func (m *Circuit) contextValidateTerminationz(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Terminationz != nil {
+
+		if swag.IsZero(m.Terminationz) { // not required
+			return nil
+		}
+
 		if err := m.Terminationz.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("termination_z")
@@ -626,6 +652,7 @@ func (m *Circuit) contextValidateTerminationz(ctx context.Context, formats strfm
 func (m *Circuit) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

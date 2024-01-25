@@ -352,6 +352,7 @@ func (m *ModuleBay) contextValidateCreated(ctx context.Context, formats strfmt.R
 func (m *ModuleBay) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -386,6 +387,11 @@ func (m *ModuleBay) contextValidateID(ctx context.Context, formats strfmt.Regist
 func (m *ModuleBay) contextValidateInstalledModule(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.InstalledModule != nil {
+
+		if swag.IsZero(m.InstalledModule) { // not required
+			return nil
+		}
+
 		if err := m.InstalledModule.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("installed_module")
@@ -413,6 +419,11 @@ func (m *ModuleBay) contextValidateTags(ctx context.Context, formats strfmt.Regi
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))

@@ -95,6 +95,11 @@ func (o *ExtrasCustomFieldChoiceSetsCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the extras custom field choice sets create created response
+func (o *ExtrasCustomFieldChoiceSetsCreateCreated) Code() int {
+	return 201
+}
+
 func (o *ExtrasCustomFieldChoiceSetsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasCustomFieldChoiceSetsCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom field choice sets create default response
-func (o *ExtrasCustomFieldChoiceSetsCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom field choice sets create default response has a 2xx status code
 func (o *ExtrasCustomFieldChoiceSetsCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasCustomFieldChoiceSetsCreateDefault) IsServerError() bool {
 // IsCode returns true when this extras custom field choice sets create default response a status code equal to that given
 func (o *ExtrasCustomFieldChoiceSetsCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom field choice sets create default response
+func (o *ExtrasCustomFieldChoiceSetsCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomFieldChoiceSetsCreateDefault) Error() string {

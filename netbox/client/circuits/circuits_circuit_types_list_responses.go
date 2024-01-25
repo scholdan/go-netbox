@@ -100,6 +100,11 @@ func (o *CircuitsCircuitTypesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the circuits circuit types list o k response
+func (o *CircuitsCircuitTypesListOK) Code() int {
+	return 200
+}
+
 func (o *CircuitsCircuitTypesListOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-types/][%d] circuitsCircuitTypesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type CircuitsCircuitTypesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the circuits circuit types list default response
-func (o *CircuitsCircuitTypesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this circuits circuit types list default response has a 2xx status code
 func (o *CircuitsCircuitTypesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *CircuitsCircuitTypesListDefault) IsServerError() bool {
 // IsCode returns true when this circuits circuit types list default response a status code equal to that given
 func (o *CircuitsCircuitTypesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the circuits circuit types list default response
+func (o *CircuitsCircuitTypesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *CircuitsCircuitTypesListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *CircuitsCircuitTypesListOKBody) contextValidateResults(ctx context.Cont
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("circuitsCircuitTypesListOK" + "." + "results" + "." + strconv.Itoa(i))

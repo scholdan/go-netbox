@@ -100,6 +100,11 @@ func (o *IpamRouteTargetsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam route targets list o k response
+func (o *IpamRouteTargetsListOK) Code() int {
+	return 200
+}
+
 func (o *IpamRouteTargetsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipamRouteTargetsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamRouteTargetsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam route targets list default response
-func (o *IpamRouteTargetsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam route targets list default response has a 2xx status code
 func (o *IpamRouteTargetsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamRouteTargetsListDefault) IsServerError() bool {
 // IsCode returns true when this ipam route targets list default response a status code equal to that given
 func (o *IpamRouteTargetsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam route targets list default response
+func (o *IpamRouteTargetsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamRouteTargetsListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *IpamRouteTargetsListOKBody) contextValidateResults(ctx context.Context,
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamRouteTargetsListOK" + "." + "results" + "." + strconv.Itoa(i))

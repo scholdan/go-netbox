@@ -168,6 +168,11 @@ func (m *RackUnit) ContextValidate(ctx context.Context, formats strfmt.Registry)
 func (m *RackUnit) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
+
+		if swag.IsZero(m.Device) { // not required
+			return nil
+		}
+
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -193,6 +198,11 @@ func (m *RackUnit) contextValidateDisplay(ctx context.Context, formats strfmt.Re
 func (m *RackUnit) contextValidateFace(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Face != nil {
+
+		if swag.IsZero(m.Face) { // not required
+			return nil
+		}
+
 		if err := m.Face.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("face")

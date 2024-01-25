@@ -100,6 +100,11 @@ func (o *ExtrasImageAttachmentsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras image attachments list o k response
+func (o *ExtrasImageAttachmentsListOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasImageAttachmentsListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extrasImageAttachmentsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type ExtrasImageAttachmentsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras image attachments list default response
-func (o *ExtrasImageAttachmentsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras image attachments list default response has a 2xx status code
 func (o *ExtrasImageAttachmentsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *ExtrasImageAttachmentsListDefault) IsServerError() bool {
 // IsCode returns true when this extras image attachments list default response a status code equal to that given
 func (o *ExtrasImageAttachmentsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras image attachments list default response
+func (o *ExtrasImageAttachmentsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasImageAttachmentsListDefault) Error() string {
@@ -322,6 +327,11 @@ func (o *ExtrasImageAttachmentsListOKBody) contextValidateResults(ctx context.Co
 	for i := 0; i < len(o.Results); i++ {
 
 		if o.Results[i] != nil {
+
+			if swag.IsZero(o.Results[i]) { // not required
+				return nil
+			}
+
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasImageAttachmentsListOK" + "." + "results" + "." + strconv.Itoa(i))

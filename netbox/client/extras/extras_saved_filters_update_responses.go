@@ -95,6 +95,11 @@ func (o *ExtrasSavedFiltersUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras saved filters update o k response
+func (o *ExtrasSavedFiltersUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasSavedFiltersUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/saved-filters/{id}/][%d] extrasSavedFiltersUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasSavedFiltersUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras saved filters update default response
-func (o *ExtrasSavedFiltersUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras saved filters update default response has a 2xx status code
 func (o *ExtrasSavedFiltersUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasSavedFiltersUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras saved filters update default response a status code equal to that given
 func (o *ExtrasSavedFiltersUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras saved filters update default response
+func (o *ExtrasSavedFiltersUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasSavedFiltersUpdateDefault) Error() string {

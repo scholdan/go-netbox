@@ -95,6 +95,11 @@ func (o *CircuitsProvidersReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the circuits providers read o k response
+func (o *CircuitsProvidersReadOK) Code() int {
+	return 200
+}
+
 func (o *CircuitsProvidersReadOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuitsProvidersReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type CircuitsProvidersReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the circuits providers read default response
-func (o *CircuitsProvidersReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this circuits providers read default response has a 2xx status code
 func (o *CircuitsProvidersReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *CircuitsProvidersReadDefault) IsServerError() bool {
 // IsCode returns true when this circuits providers read default response a status code equal to that given
 func (o *CircuitsProvidersReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the circuits providers read default response
+func (o *CircuitsProvidersReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *CircuitsProvidersReadDefault) Error() string {

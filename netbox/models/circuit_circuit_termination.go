@@ -273,6 +273,7 @@ func (m *CircuitCircuitTermination) contextValidateID(ctx context.Context, forma
 func (m *CircuitCircuitTermination) contextValidateProviderNetwork(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ProviderNetwork != nil {
+
 		if err := m.ProviderNetwork.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider_network")
@@ -289,6 +290,7 @@ func (m *CircuitCircuitTermination) contextValidateProviderNetwork(ctx context.C
 func (m *CircuitCircuitTermination) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Site != nil {
+
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")

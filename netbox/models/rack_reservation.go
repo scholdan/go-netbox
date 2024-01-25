@@ -382,6 +382,7 @@ func (m *RackReservation) contextValidateLastUpdated(ctx context.Context, format
 func (m *RackReservation) contextValidateRack(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Rack != nil {
+
 		if err := m.Rack.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
@@ -400,6 +401,11 @@ func (m *RackReservation) contextValidateTags(ctx context.Context, formats strfm
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -418,6 +424,11 @@ func (m *RackReservation) contextValidateTags(ctx context.Context, formats strfm
 func (m *RackReservation) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
@@ -443,6 +454,7 @@ func (m *RackReservation) contextValidateURL(ctx context.Context, formats strfmt
 func (m *RackReservation) contextValidateUser(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.User != nil {
+
 		if err := m.User.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")

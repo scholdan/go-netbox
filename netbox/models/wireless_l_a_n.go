@@ -441,6 +441,11 @@ func (m *WirelessLAN) ContextValidate(ctx context.Context, formats strfmt.Regist
 func (m *WirelessLAN) contextValidateAuthCipher(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.AuthCipher != nil {
+
+		if swag.IsZero(m.AuthCipher) { // not required
+			return nil
+		}
+
 		if err := m.AuthCipher.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_cipher")
@@ -457,6 +462,11 @@ func (m *WirelessLAN) contextValidateAuthCipher(ctx context.Context, formats str
 func (m *WirelessLAN) contextValidateAuthType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.AuthType != nil {
+
+		if swag.IsZero(m.AuthType) { // not required
+			return nil
+		}
+
 		if err := m.AuthType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_type")
@@ -491,6 +501,11 @@ func (m *WirelessLAN) contextValidateDisplay(ctx context.Context, formats strfmt
 func (m *WirelessLAN) contextValidateGroup(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Group != nil {
+
+		if swag.IsZero(m.Group) { // not required
+			return nil
+		}
+
 		if err := m.Group.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
@@ -525,6 +540,11 @@ func (m *WirelessLAN) contextValidateLastUpdated(ctx context.Context, formats st
 func (m *WirelessLAN) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -543,6 +563,11 @@ func (m *WirelessLAN) contextValidateTags(ctx context.Context, formats strfmt.Re
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -561,6 +586,11 @@ func (m *WirelessLAN) contextValidateTags(ctx context.Context, formats strfmt.Re
 func (m *WirelessLAN) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
@@ -586,6 +616,11 @@ func (m *WirelessLAN) contextValidateURL(ctx context.Context, formats strfmt.Reg
 func (m *WirelessLAN) contextValidateVlan(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Vlan != nil {
+
+		if swag.IsZero(m.Vlan) { // not required
+			return nil
+		}
+
 		if err := m.Vlan.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vlan")

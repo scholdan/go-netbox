@@ -438,6 +438,11 @@ func (m *WirelessLink) ContextValidate(ctx context.Context, formats strfmt.Regis
 func (m *WirelessLink) contextValidateAuthCipher(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.AuthCipher != nil {
+
+		if swag.IsZero(m.AuthCipher) { // not required
+			return nil
+		}
+
 		if err := m.AuthCipher.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_cipher")
@@ -454,6 +459,11 @@ func (m *WirelessLink) contextValidateAuthCipher(ctx context.Context, formats st
 func (m *WirelessLink) contextValidateAuthType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.AuthType != nil {
+
+		if swag.IsZero(m.AuthType) { // not required
+			return nil
+		}
+
 		if err := m.AuthType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_type")
@@ -497,6 +507,7 @@ func (m *WirelessLink) contextValidateID(ctx context.Context, formats strfmt.Reg
 func (m *WirelessLink) contextValidateInterfacea(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Interfacea != nil {
+
 		if err := m.Interfacea.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("interface_a")
@@ -513,6 +524,7 @@ func (m *WirelessLink) contextValidateInterfacea(ctx context.Context, formats st
 func (m *WirelessLink) contextValidateInterfaceb(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Interfaceb != nil {
+
 		if err := m.Interfaceb.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("interface_b")
@@ -538,6 +550,11 @@ func (m *WirelessLink) contextValidateLastUpdated(ctx context.Context, formats s
 func (m *WirelessLink) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -556,6 +573,11 @@ func (m *WirelessLink) contextValidateTags(ctx context.Context, formats strfmt.R
 	for i := 0; i < len(m.Tags); i++ {
 
 		if m.Tags[i] != nil {
+
+			if swag.IsZero(m.Tags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
@@ -574,6 +596,11 @@ func (m *WirelessLink) contextValidateTags(ctx context.Context, formats strfmt.R
 func (m *WirelessLink) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Tenant != nil {
+
+		if swag.IsZero(m.Tenant) { // not required
+			return nil
+		}
+
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")

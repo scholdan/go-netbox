@@ -368,6 +368,11 @@ func (m *JobResult) contextValidateObjType(ctx context.Context, formats strfmt.R
 func (m *JobResult) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Status != nil {
+
+		if swag.IsZero(m.Status) { // not required
+			return nil
+		}
+
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -393,6 +398,11 @@ func (m *JobResult) contextValidateURL(ctx context.Context, formats strfmt.Regis
 func (m *JobResult) contextValidateUser(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.User != nil {
+
+		if swag.IsZero(m.User) { // not required
+			return nil
+		}
+
 		if err := m.User.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")
