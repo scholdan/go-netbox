@@ -101,6 +101,18 @@ type ClientService interface {
 
 	ExtrasCustomLinksUpdate(params *ExtrasCustomLinksUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksUpdateOK, error)
 
+	ExtrasEventRulesCreate(params *ExtrasEventRulesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesCreateCreated, error)
+
+	ExtrasEventRulesDelete(params *ExtrasEventRulesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesDeleteNoContent, error)
+
+	ExtrasEventRulesList(params *ExtrasEventRulesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesListOK, error)
+
+	ExtrasEventRulesPartialUpdate(params *ExtrasEventRulesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesPartialUpdateOK, error)
+
+	ExtrasEventRulesRead(params *ExtrasEventRulesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesReadOK, error)
+
+	ExtrasEventRulesUpdate(params *ExtrasEventRulesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesUpdateOK, error)
+
 	ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesCreateCreated, error)
 
 	ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesDeleteNoContent, error)
@@ -1293,6 +1305,234 @@ func (a *Client) ExtrasCustomLinksUpdate(params *ExtrasCustomLinksUpdateParams, 
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*ExtrasCustomLinksUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasEventRulesCreate Post a list of event rule objects.
+*/
+func (a *Client) ExtrasEventRulesCreate(params *ExtrasEventRulesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasEventRulesCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_event_rules_create",
+		Method:             "POST",
+		PathPattern:        "/extras/event-rules/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasEventRulesCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasEventRulesCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasEventRulesCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasEventRulesDelete extras event rules delete API
+*/
+func (a *Client) ExtrasEventRulesDelete(params *ExtrasEventRulesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasEventRulesDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_event_rules_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/event-rules/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasEventRulesDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasEventRulesDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasEventRulesDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasEventRulesList Get a list of event rule objects.
+*/
+func (a *Client) ExtrasEventRulesList(params *ExtrasEventRulesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasEventRulesListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_event_rules_list",
+		Method:             "GET",
+		PathPattern:        "/extras/event-rules/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasEventRulesListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasEventRulesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasEventRulesListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasEventRulesPartialUpdate extras event rules partial update API
+*/
+func (a *Client) ExtrasEventRulesPartialUpdate(params *ExtrasEventRulesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasEventRulesPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_event_rules_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/event-rules/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasEventRulesPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasEventRulesPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasEventRulesPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasEventRulesRead extras event rules read API
+*/
+func (a *Client) ExtrasEventRulesRead(params *ExtrasEventRulesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasEventRulesReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_event_rules_read",
+		Method:             "GET",
+		PathPattern:        "/extras/event-rules/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasEventRulesReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasEventRulesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasEventRulesReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasEventRulesUpdate extras event rules update API
+*/
+func (a *Client) ExtrasEventRulesUpdate(params *ExtrasEventRulesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasEventRulesUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasEventRulesUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_event_rules_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/event-rules/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasEventRulesUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasEventRulesUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasEventRulesUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

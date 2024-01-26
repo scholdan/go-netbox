@@ -64874,6 +64874,565 @@
         }
       ]
     },
+    "/extras/event-rules/": {
+      "get": {
+        "operationId": "extras_event_rules_list",
+        "description": "Get a list of event rule objects.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "action_object_id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "action_object_id__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "action_object_id__gt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "action_object_id__gte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "action_object_id__lt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "action_object_id__lte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "action_object_id__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "action_object_type",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_type_id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_type_id__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_type_id__gt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_type_id__gte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_type_id__lt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_type_id__lte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_type_id__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types__ic",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types__ie",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types__iew",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types__isw",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types__nic",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types__nie",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types__niew",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "content_types__nisw",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__gt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__gte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__lt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__lte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created_by_request",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__ic",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__ie",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__iew",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__isw",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "enabled",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__empty",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "id__gt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__gte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__lt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__lte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__gt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__gte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__lt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__lte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "modified_by_request",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__empty",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "name__ic",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__ie",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "tags": [
+          "extras"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "required": [
+                "count",
+                "results"
+              ],
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "next": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "previous": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/EventRule"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "extras_event_rules_create",
+        "description": "Post a list of event rule objects.",
+        "tags": [
+          "extras"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableEventRule"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EventRule"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/extras/event-rules/{id}/": {
+      "get": {
+        "operationId": "extras_event_rules_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EventRule"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "put": {
+        "operationId": "extras_event_rules_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableEventRule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EventRule"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "patch": {
+        "operationId": "extras_event_rules_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EventRule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EventRule"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "delete": {
+        "operationId": "extras_event_rules_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this event_rule.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
     "/extras/custom-field-choice-sets/": {
       "get": {
         "operationId": "extras_custom-field-choice-sets_list",
@@ -89487,6 +90046,243 @@
           "format": "date-time",
           "readOnly": true,
           "x-nullable": true
+        }
+      }
+    },
+    "EventRule": {
+      "required": [
+        "action_object_type",
+        "action_type",
+        "content_types",
+        "name"
+      ],
+      "type": "object",
+      "description": "Adds support for custom fields and tags.",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "type": "string",
+          "readOnly": true
+        },
+        "content_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 150,
+          "minLength": 1
+        },
+        "type_create": {
+          "title": "Type create",
+          "description": "Call this webhook when a matching object is created.",
+          "type": "boolean"
+        },
+        "type_update": {
+          "title": "Type update",
+          "description": "Call this webhook when a matching object is updated.",
+          "type": "boolean"
+        },
+        "type_delete": {
+          "title": "Type delete",
+          "description": "Call this webhook when a matching object is deleted.",
+          "type": "boolean"
+        },
+        "type_job_start": {
+          "title": "Type job_start",
+          "description": "Call this webhook when a matching job is started.",
+          "type": "boolean"
+        },
+        "type_job_end": {
+          "title": "Type job_end",
+          "description": "Call this webhook when a matching job ends.",
+          "type": "boolean"
+        },
+        "enabled": {
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "conditions": {
+          "title": "Conditions",
+          "description": "A set of conditions which determine whether the webhook will be generated.",
+          "type": "object",
+          "x-nullable": true
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
+        },
+        "comments": {
+          "title": "Comments",
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NestedTag"
+          }
+        },
+        "custom_fields": {
+          "title": "Custom fields",
+          "type": "object",
+          "default": {}
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true,
+          "x-nullable": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true,
+          "x-nullable": true
+        },
+        "action_type": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "enum": [
+                "webhook",
+                "script"
+              ],
+              "type": "string",
+              "description": "* `webhook` - Webhook\n* `script` - Script"
+            },
+            "label": {
+              "type": "string",
+              "enum": [
+                "Webhook",
+                "Script"
+              ]
+            }
+          }
+        },
+        "action_object_type": {
+          "type": "string"
+        },
+        "tenant": {
+          "title": "Tenant",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "action_object_id": {
+          "type": "integer",
+          "x-nullable": "true"
+        },
+        "action_object": {
+          "type": "object",
+          "readOnly": true
+        }
+      }
+    },
+    "WritableEventRule": {
+      "type": "object",
+      "description": "Adds support for custom fields and tags.",
+      "required": [
+        "action_object_type",
+        "content_types",
+        "name"
+      ],
+      "properties": {
+        "content_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "type_create": {
+          "type": "boolean",
+          "title": "On create",
+          "description": "Triggers when a matching object is created.",
+          "x-omitempty": false
+        },
+        "type_update": {
+          "type": "boolean",
+          "title": "On update",
+          "description": "Triggers when a matching object is updated.",
+          "x-omitempty": false
+        },
+        "type_delete": {
+          "type": "boolean",
+          "title": "On delete",
+          "description": "Triggers when a matching object is deleted.",
+          "x-omitempty": false
+        },
+        "type_job_start": {
+          "type": "boolean",
+          "title": "On job start",
+          "description": "Triggers when a job for a matching object is started.",
+          "x-omitempty": false
+        },
+        "type_job_end": {
+          "type": "boolean",
+          "title": "On job end",
+          "description": "Triggers when a job for a matching object terminates.",
+          "x-omitempty": false
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "conditions": {
+          "title": "Conditions",
+          "x-nullable": true,
+          "description": "A set of conditions which determine whether the event will be generated.",
+          "type": "object"
+        },
+        "action_type": {
+          "enum": [
+            "webhook",
+            "script"
+          ],
+          "type": "string",
+          "description": "* `webhook` - Webhook\n* `script` - Script"
+        },
+        "action_object_type": {
+          "type": "string"
+        },
+        "action_object_id": {
+          "type": "integer",
+          "minimum": 0,
+          "format": "int64",
+          "x-nullable": true,
+          "x-omitempty": false
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "custom_fields": {
+          "type": "object",
+          "additionalProperties": {}
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NestedTag"
+          },
+          "x-omitempty": false
         }
       }
     },

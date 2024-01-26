@@ -365,6 +365,7 @@ for model in [
     "WritableCable",
     "InventoryItemRole",
     "WritableInventoryItem",
+    "WritableEventRule",
 ]:
     for prop, prop_spec in data["definitions"][model]["properties"].items():
         if (
@@ -390,6 +391,17 @@ for model in [
         ]:
             prop_spec["x-omitempty"] = False
             logging.info(f"set x-omitempty = false on {model}.{prop}")
+
+for event_rule_type in [
+    "type_create",
+    "type_update",
+    "type_delete",
+    "type_job_start",
+    "type_job_end",
+]:
+    data["definitions"]["WritableEventRule"]["properties"][event_rule_type][
+        "x-omitempty"
+    ] = False
 
 # fix generic objects that are incorrectly listed as strings
 for model in data["definitions"]:
@@ -574,4 +586,3 @@ with open("swagger.processed.json", "w") as writefile:
 
 
 print("Swaggerfile preprocession complete")
-
