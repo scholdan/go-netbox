@@ -65433,6 +65433,1255 @@
         }
       ]
     },
+    "/vpn/tunnels/": {
+      "get": {
+        "operationId": "vpn_tunnels_list",
+        "description": "Get a list of tunnel objects.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "created",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__gt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__gte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__lt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__lte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "created_by_request",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__ic",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__ie",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__iew",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__isw",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__nic",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__nie",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__niew",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "description__nisw",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "encapsulation",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "encapsulation__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "group",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "group__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "group_id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "group_id__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__gt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__gte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__lt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__lte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "ipsec_profile",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "ipsec_profile_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ipsec_profile_id__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__gt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__gte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__lt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__lte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "last_updated__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "modified_by_request",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__ic",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__ie",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__iew",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__isw",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__nic",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__nie",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__niew",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name__nisw",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "offset",
+            "required": false,
+            "in": "query",
+            "description": "The initial index from which to return the results.",
+            "type": "integer"
+          },
+          {
+            "name": "ordering",
+            "required": false,
+            "in": "query",
+            "description": "Which field to use when ordering the results.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "type": "string",
+            "description": "Search"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "status__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "tag__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tenant",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tenant__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tenant_group",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tenant_group__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tenant_group_id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tenant_group_id__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tenant_id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tenant_id__n",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tunnel_id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tunnel_id__empty",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tunnel_id__gt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tunnel_id__gte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tunnel_id__lt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tunnel_id__lte",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "updated_by_request",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "tags": [
+          "vpn"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "required": [
+                "count",
+                "results"
+              ],
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "next": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "previous": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Tunnel"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "vpn_tunnels_create",
+        "description": "Post a tunnel object.",
+        "tags": [
+          "vpn"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableTunnel"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Tunnel"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/vpn/tunnels/{id}/": {
+      "get": {
+        "operationId": "vpn_tunnels_read",
+        "description": "Get a tunnel object.",
+        "parameters": [],
+        "tags": [
+          "vpn"
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Tunnel"
+            },
+            "description": ""
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "vpn_tunnels_update",
+        "description": "Put a tunnel object.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableTunnel"
+            }
+          }
+        ],
+        "tags": [
+          "vpn"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Tunnel"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "vpn_tunnels_delete",
+        "description": "Delete a tunnel object.",
+        "parameters": [],
+        "tags": [
+          "vpn"
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this tunnel.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/vpn/tunnel-groups/": {
+      "get": {
+        "operationId": "vpn_tunnel-groups_list",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "contact",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_role",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__lt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__gt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__empty",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug__empty",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description__empty",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ordering",
+            "in": "query",
+            "description": "Which field to use when ordering the results.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial index from which to return the results.",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "required": [
+                "count",
+                "results"
+              ],
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "next": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "previous": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/TunnelGroup"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "vpn"
+        ]
+      },
+      "post": {
+        "operationId": "vpn_tunnel-groups_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TunnelGroup"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/TunnelGroup"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "vpn"
+        ]
+      },
+      "parameters": []
+    },
+    "/vpn/tunnel-groups/{id}/": {
+      "get": {
+        "operationId": "vpn_tunnel-groups_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/TunnelGroup"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "vpn"
+        ]
+      },
+      "put": {
+        "operationId": "vpn_tunnel-groups_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TunnelGroup"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/TunnelGroup"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "vpn"
+        ]
+      },
+      "delete": {
+        "operationId": "vpn_tunnel-groups_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "vpn"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this tunnel group.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
     "/extras/custom-field-choice-sets/": {
       "get": {
         "operationId": "extras_custom-field-choice-sets_list",
@@ -90189,8 +91438,9 @@
           "maxLength": 200
         },
         "custom_fields": {
+          "title": "Custom fields",
           "type": "object",
-          "additionalProperties": {}
+          "default": {}
         },
         "tags": {
           "type": "array",
@@ -90198,6 +91448,311 @@
             "$ref": "#/definitions/NestedTag"
           },
           "x-omitempty": false
+        }
+      }
+    },
+    "WritableTunnel": {
+      "type": "object",
+      "description": "Adds support for custom fields and tags.",
+      "required": [
+        "encapsulation",
+        "group",
+        "name",
+        "status"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "active",
+            "disabled"
+          ],
+          "type": "string",
+          "description": "* `planned` - Planned\n* `active` - Active\n* `disabled` - Disabled"
+        },
+        "group": {
+          "type": "integer",
+          "x-nullable": true
+        },
+        "encapsulation": {
+          "enum": [
+            "ipsec-transport",
+            "ipsec-tunnel",
+            "ip-ip",
+            "gre"
+          ],
+          "type": "string",
+          "description": "* `ipsec-transport` - IPsec - Transport\n* `ipsec-tunnel` - IPsec - Tunnel\n* `ip-ip` - IP-in-IP\n* `gre` - GRE"
+        },
+        "ipsec_profile": {
+          "type": "integer",
+          "x-nullable": true
+        },
+        "tenant": {
+          "type": "integer",
+          "x-nullable": true
+        },
+        "tunnel_id": {
+          "type": "integer",
+          "minimum": 0,
+          "format": "int64",
+          "x-nullable": true
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "comments": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NestedTag"
+          }
+        },
+        "custom_fields": {
+          "title": "Custom fields",
+          "type": "object",
+          "default": {}
+        }
+      }
+    },
+    "Tunnel": {
+      "type": "object",
+      "description": "Adds support for custom fields and tags.",
+      "required": [
+        "encapsulation",
+        "name",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "enum": [
+                "planned",
+                "active",
+                "disabled"
+              ],
+              "type": "string",
+              "description": "* `planned` - Planned\n* `active` - Active\n* `disabled` - Disabled"
+            },
+            "label": {
+              "type": "string",
+              "enum": [
+                "Planned",
+                "Active",
+                "Disabled"
+              ]
+            }
+          }
+        },
+        "group": {
+          "$ref": "#/definitions/NestedTunnelGroup"
+        },
+        "encapsulation": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "enum": [
+                "ipsec-transport",
+                "ipsec-tunnel",
+                "ip-ip",
+                "gre"
+              ],
+              "type": "string",
+              "description": "* `ipsec-transport` - IPsec - Transport\n* `ipsec-tunnel` - IPsec - Tunnel\n* `ip-ip` - IP-in-IP\n* `gre` - GRE"
+            },
+            "label": {
+              "type": "string",
+              "enum": [
+                "IPsec - Transport",
+                "IPsec - Tunnel",
+                "IP-in-IP",
+                "GRE"
+              ]
+            }
+          }
+        },
+        "tenant": {
+          "$ref": "#/definitions/NestedTenant"
+        },
+        "tunnel_id": {
+          "type": "integer",
+          "minimum": 0,
+          "format": "int64",
+          "x-nullable": true
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "comments": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NestedTag"
+          }
+        },
+        "custom_fields": {
+          "type": "object",
+          "additionalProperties": {}
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true,
+          "x-nullable": true
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true,
+          "x-nullable": true
+        }
+      }
+    },
+    "TunnelGroup": {
+      "required": [
+        "name",
+        "slug"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 1
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string",
+          "format": "slug",
+          "pattern": "^[-a-zA-Z0-9_]+$",
+          "maxLength": 100,
+          "minLength": 1
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NestedTag"
+          }
+        },
+        "custom_fields": {
+          "title": "Custom fields",
+          "type": "object",
+          "default": {}
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true,
+          "x-nullable": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true,
+          "x-nullable": true
+        },
+        "tunnel_count": {
+          "title": "Tunnel count",
+          "type": "integer",
+          "readOnly": true
+        }
+      }
+    },
+    "NestedTunnelGroup": {
+      "required": [
+        "name",
+        "slug"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 1
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string",
+          "format": "slug",
+          "pattern": "^[-a-zA-Z0-9_]+$",
+          "maxLength": 100,
+          "minLength": 1
+        },
+        "tunnel_count": {
+          "title": "Tunnel count",
+          "type": "integer",
+          "readOnly": true
         }
       }
     },

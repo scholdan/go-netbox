@@ -33,6 +33,7 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/client/tenancy"
 	"github.com/fbreckle/go-netbox/netbox/client/users"
 	"github.com/fbreckle/go-netbox/netbox/client/virtualization"
+	"github.com/fbreckle/go-netbox/netbox/client/vpn"
 	"github.com/fbreckle/go-netbox/netbox/client/wireless"
 )
 
@@ -86,6 +87,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *NetBoxAPI 
 	cli.Tenancy = tenancy.New(transport, formats)
 	cli.Users = users.New(transport, formats)
 	cli.Virtualization = virtualization.New(transport, formats)
+	cli.Vpn = vpn.New(transport, formats)
 	cli.Wireless = wireless.New(transport, formats)
 	return cli
 }
@@ -147,6 +149,8 @@ type NetBoxAPI struct {
 
 	Virtualization virtualization.ClientService
 
+	Vpn vpn.ClientService
+
 	Wireless wireless.ClientService
 
 	Transport runtime.ClientTransport
@@ -163,5 +167,6 @@ func (c *NetBoxAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Tenancy.SetTransport(transport)
 	c.Users.SetTransport(transport)
 	c.Virtualization.SetTransport(transport)
+	c.Vpn.SetTransport(transport)
 	c.Wireless.SetTransport(transport)
 }

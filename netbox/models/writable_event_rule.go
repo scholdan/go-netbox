@@ -58,7 +58,7 @@ type WritableEventRule struct {
 	// Required: true
 	ContentTypes []string `json:"content_types"`
 
-	// custom fields
+	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// description
