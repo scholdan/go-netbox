@@ -175,53 +175,7 @@ data["paths"]["/extras/custom-field-choice-sets/"] = {
             }
         },
         "tags": ["extras"],
-    },
-    "put": {
-        "operationId": "extras_custom-field-choice-sets_bulk_update",
-        "description": "Put a list of custom field choice set objects.",
-        "parameters": [
-            {
-                "name": "data",
-                "in": "body",
-                "required": True,
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        ],
-        "responses": {
-            "200": {
-                "description": "",
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        },
-        "tags": ["extras"],
-    },
-    "patch": {
-        "operationId": "extras_custom-field-choice-sets_bulk_partial_update",
-        "description": "Patch a list of custom field choice set objects.",
-        "parameters": [
-            {
-                "name": "data",
-                "in": "body",
-                "required": True,
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        ],
-        "responses": {
-            "200": {
-                "description": "",
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        },
-        "tags": ["extras"],
-    },
-    "delete": {
-        "operationId": "extras_custom-field-choice-sets_bulk_delete",
-        "description": "Delete a list of custom field choice set objects.",
-        "parameters": [],
-        "responses": {"204": {"description": ""}},
-        "tags": ["extras"],
-    },
-    "parameters": [],
+    }
 }
 
 data["paths"]["/extras/custom-field-choice-sets/{id}/"] = {
