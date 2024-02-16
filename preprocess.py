@@ -376,6 +376,10 @@ data["definitions"]["WritableLocation"]["properties"]["parent"][
     "x-omitempty"
 ] = False
 
+data["definitions"]["WritableDeviceType"]["properties"]["is_full_depth"][
+    "x-omitempty"
+] = False
+
 # This implements https://github.com/fbreckle/go-netbox/commit/1363e14cfc7bce4bd3d5ee93c09ca70543c51279
 for prop, prop_spec in data["definitions"]["WritableVirtualMachineWithConfigContext"][
     "properties"

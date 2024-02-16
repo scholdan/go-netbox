@@ -75,7 +75,7 @@ type WritableDeviceType struct {
 	// Is full depth
 	//
 	// Device consumes both front and rear rack faces
-	IsFullDepth bool `json:"is_full_depth,omitempty"`
+	IsFullDepth bool `json:"is_full_depth"`
 
 	// Last updated
 	// Read Only: true

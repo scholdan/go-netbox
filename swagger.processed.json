@@ -71137,7 +71137,8 @@
         "is_full_depth": {
           "title": "Is full depth",
           "description": "Device consumes both front and rear rack faces",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "subdevice_role": {
           "title": "Parent/child status",
