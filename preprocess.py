@@ -175,7 +175,7 @@ data["paths"]["/extras/custom-field-choice-sets/"] = {
             }
         },
         "tags": ["extras"],
-    }
+    },
 }
 
 data["paths"]["/extras/custom-field-choice-sets/{id}/"] = {
@@ -372,9 +372,7 @@ data["definitions"]["WritableObjectPermission"]["properties"]["constraints"][
     "x-omitempty"
 ] = False
 
-data["definitions"]["WritableLocation"]["properties"]["parent"][
-    "x-omitempty"
-] = False
+data["definitions"]["WritableLocation"]["properties"]["parent"]["x-omitempty"] = False
 
 data["definitions"]["WritableDeviceType"]["properties"]["is_full_depth"][
     "x-omitempty"

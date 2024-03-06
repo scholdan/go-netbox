@@ -53,6 +53,16 @@ type ClientService interface {
 
 	VpnTunnelGroupsUpdate(params *VpnTunnelGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelGroupsUpdateOK, error)
 
+	VpnTunnelTerminationsCreate(params *VpnTunnelTerminationsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsCreateCreated, error)
+
+	VpnTunnelTerminationsDelete(params *VpnTunnelTerminationsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsDeleteNoContent, error)
+
+	VpnTunnelTerminationsList(params *VpnTunnelTerminationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsListOK, error)
+
+	VpnTunnelTerminationsRead(params *VpnTunnelTerminationsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsReadOK, error)
+
+	VpnTunnelTerminationsUpdate(params *VpnTunnelTerminationsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsUpdateOK, error)
+
 	VpnTunnelsCreate(params *VpnTunnelsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelsCreateCreated, error)
 
 	VpnTunnelsDelete(params *VpnTunnelsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelsDeleteNoContent, error)
@@ -253,6 +263,196 @@ func (a *Client) VpnTunnelGroupsUpdate(params *VpnTunnelGroupsUpdateParams, auth
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*VpnTunnelGroupsUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+VpnTunnelTerminationsCreate Post a tunnel termination object.
+*/
+func (a *Client) VpnTunnelTerminationsCreate(params *VpnTunnelTerminationsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewVpnTunnelTerminationsCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "vpn_tunnel-terminations_create",
+		Method:             "POST",
+		PathPattern:        "/vpn/tunnel-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &VpnTunnelTerminationsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*VpnTunnelTerminationsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*VpnTunnelTerminationsCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+VpnTunnelTerminationsDelete vpn tunnel terminations delete API
+*/
+func (a *Client) VpnTunnelTerminationsDelete(params *VpnTunnelTerminationsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewVpnTunnelTerminationsDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "vpn_tunnel-terminations_delete",
+		Method:             "DELETE",
+		PathPattern:        "/vpn/tunnel-terminations/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &VpnTunnelTerminationsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*VpnTunnelTerminationsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*VpnTunnelTerminationsDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+VpnTunnelTerminationsList vpn tunnel terminations list API
+*/
+func (a *Client) VpnTunnelTerminationsList(params *VpnTunnelTerminationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewVpnTunnelTerminationsListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "vpn_tunnel-terminations_list",
+		Method:             "GET",
+		PathPattern:        "/vpn/tunnel-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &VpnTunnelTerminationsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*VpnTunnelTerminationsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*VpnTunnelTerminationsListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+VpnTunnelTerminationsRead vpn tunnel terminations read API
+*/
+func (a *Client) VpnTunnelTerminationsRead(params *VpnTunnelTerminationsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewVpnTunnelTerminationsReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "vpn_tunnel-terminations_read",
+		Method:             "GET",
+		PathPattern:        "/vpn/tunnel-terminations/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &VpnTunnelTerminationsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*VpnTunnelTerminationsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*VpnTunnelTerminationsReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+VpnTunnelTerminationsUpdate vpn tunnel terminations update API
+*/
+func (a *Client) VpnTunnelTerminationsUpdate(params *VpnTunnelTerminationsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VpnTunnelTerminationsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewVpnTunnelTerminationsUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "vpn_tunnel-terminations_update",
+		Method:             "PUT",
+		PathPattern:        "/vpn/tunnel-terminations/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &VpnTunnelTerminationsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*VpnTunnelTerminationsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*VpnTunnelTerminationsUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
