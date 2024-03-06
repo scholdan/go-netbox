@@ -230,6 +230,21 @@ type WirelessWirelessLanGroupsListParams struct {
 	// Q.
 	Q *string
 
+	// SizeGt.
+	SizeGt *string
+
+	// SizeGte.
+	SizeGte *string
+
+	// SizeLt.
+	SizeLt *string
+
+	// SizeLte.
+	SizeLte *string
+
+	// Sizen.
+	Sizen *string
+
 	// Slug.
 	Slug *string
 
@@ -848,6 +863,61 @@ func (o *WirelessWirelessLanGroupsListParams) WithQ(q *string) *WirelessWireless
 // SetQ adds the q to the wireless wireless lan groups list params
 func (o *WirelessWirelessLanGroupsListParams) SetQ(q *string) {
 	o.Q = q
+}
+
+// WithSizeGt adds the sizeGt to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) WithSizeGt(sizeGt *string) *WirelessWirelessLanGroupsListParams {
+	o.SetSizeGt(sizeGt)
+	return o
+}
+
+// SetSizeGt adds the sizeGt to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) SetSizeGt(sizeGt *string) {
+	o.SizeGt = sizeGt
+}
+
+// WithSizeGte adds the sizeGte to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) WithSizeGte(sizeGte *string) *WirelessWirelessLanGroupsListParams {
+	o.SetSizeGte(sizeGte)
+	return o
+}
+
+// SetSizeGte adds the sizeGte to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) SetSizeGte(sizeGte *string) {
+	o.SizeGte = sizeGte
+}
+
+// WithSizeLt adds the sizeLt to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) WithSizeLt(sizeLt *string) *WirelessWirelessLanGroupsListParams {
+	o.SetSizeLt(sizeLt)
+	return o
+}
+
+// SetSizeLt adds the sizeLt to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) SetSizeLt(sizeLt *string) {
+	o.SizeLt = sizeLt
+}
+
+// WithSizeLte adds the sizeLte to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) WithSizeLte(sizeLte *string) *WirelessWirelessLanGroupsListParams {
+	o.SetSizeLte(sizeLte)
+	return o
+}
+
+// SetSizeLte adds the sizeLte to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) SetSizeLte(sizeLte *string) {
+	o.SizeLte = sizeLte
+}
+
+// WithSizen adds the sizen to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) WithSizen(sizen *string) *WirelessWirelessLanGroupsListParams {
+	o.SetSizen(sizen)
+	return o
+}
+
+// SetSizen adds the sizeN to the wireless wireless lan groups list params
+func (o *WirelessWirelessLanGroupsListParams) SetSizen(sizen *string) {
+	o.Sizen = sizen
 }
 
 // WithSlug adds the slug to the wireless wireless lan groups list params
@@ -1812,6 +1882,91 @@ func (o *WirelessWirelessLanGroupsListParams) WriteToRequest(r runtime.ClientReq
 		if qQ != "" {
 
 			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SizeGt != nil {
+
+		// query param size__gt
+		var qrSizeGt string
+
+		if o.SizeGt != nil {
+			qrSizeGt = *o.SizeGt
+		}
+		qSizeGt := qrSizeGt
+		if qSizeGt != "" {
+
+			if err := r.SetQueryParam("size__gt", qSizeGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SizeGte != nil {
+
+		// query param size__gte
+		var qrSizeGte string
+
+		if o.SizeGte != nil {
+			qrSizeGte = *o.SizeGte
+		}
+		qSizeGte := qrSizeGte
+		if qSizeGte != "" {
+
+			if err := r.SetQueryParam("size__gte", qSizeGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SizeLt != nil {
+
+		// query param size__lt
+		var qrSizeLt string
+
+		if o.SizeLt != nil {
+			qrSizeLt = *o.SizeLt
+		}
+		qSizeLt := qrSizeLt
+		if qSizeLt != "" {
+
+			if err := r.SetQueryParam("size__lt", qSizeLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SizeLte != nil {
+
+		// query param size__lte
+		var qrSizeLte string
+
+		if o.SizeLte != nil {
+			qrSizeLte = *o.SizeLte
+		}
+		qSizeLte := qrSizeLte
+		if qSizeLte != "" {
+
+			if err := r.SetQueryParam("size__lte", qSizeLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Sizen != nil {
+
+		// query param size__n
+		var qrSizen string
+
+		if o.Sizen != nil {
+			qrSizen = *o.Sizen
+		}
+		qSizen := qrSizen
+		if qSizen != "" {
+
+			if err := r.SetQueryParam("size__n", qSizen); err != nil {
 				return err
 			}
 		}
