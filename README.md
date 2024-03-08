@@ -19,13 +19,13 @@ About the state of this fork
 ============================
 
 For a long time, the approach of taking the original netbox-provided swaggerfile, processing it and then generating a client from the processed swagger file was the only acceptable way for me to manage changes in this client.
-The main advantages of this was that changes in the netbox api in newer versions could mostly be implemented fast, while the fixes that were necessary to make the terraform provider work were always present in the code.
+The main advantage of this was that changes in the netbox api in newer versions could mostly be implemented fast, while simultaneously ensuring that the fixes that are necessary to make the terraform provider work were always present in the code.
 
 With NetBox 3.5, the NetBox authors decided to change the api documentation from openapi2 to openapi3. This means that the code generator that is being used in this project can no longer be used.
 
-Switching the code generator will also induce the need to change every single api call in the terraform provider. Furthermore, I am no expert whatsoever on openapi (or even Go), so evaluating the different available openapi generators and then choosing one to use is not an endeavour I can to pursue right now. This means we cannot re-generate the client with newer api specs right now or in the immediate future.
+Switching the code generator will also induce the need to change every single api call in the terraform provider. Furthermore, I am no expert whatsoever on openapi (or even Go), so evaluating the different available openapi generators and then choosing one to use is not an endeavour I can pursue right now. This means we cannot re-generate the client with newer api specs right now or in the immediate future.
 
-In conclusion, at the time of writing this, NetBox 3.5 is out quite some time already with NetBox 3.6 around the corner, so I decided that the show must go on and manual adjustments to this client are now the fastest way to allow the terraform provider to support newer NetBox versions.
+In conclusion, at the time of writing this, NetBox 3.5 is out quite some time already with NetBox 3.6 around the corner, so I decided that the show must go on and manual adjustments to this client are now the fastest way to allow the terraform provider to support newer NetBox versions. Changes to the swagger file or preprocessor still are the preferred way to implement things, however.
 
 This will be re-evaluated if the list of to-dos in the netbox provider gets smaller (e.g. all newish versions are supported, custom fields are solved globally).
 
