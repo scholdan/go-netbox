@@ -88127,7 +88127,8 @@
         "is_private": {
           "title": "Private",
           "description": "IP space managed by this RIR is considered private",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
@@ -89396,7 +89397,8 @@
           "description": "Unique route distinguisher (as defined in RFC 4364)",
           "type": "string",
           "maxLength": 21,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "tenant": {
           "title": "Tenant",
@@ -89406,7 +89408,8 @@
         "enforce_unique": {
           "title": "Enforce unique space",
           "description": "Prevent duplicate prefixes/IP addresses within this VRF",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",

@@ -459,6 +459,18 @@ for prop, prop_spec in data["definitions"]["WritableSite"]["properties"].items()
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableSite.{prop}")
 
+# Add omitempty = false for rir is_private
+for prop, prop_spec in data["definitions"]["RIR"]["properties"].items():
+    if prop in ["is_private"]:
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on RIR.{prop}")
+
+# Add omitempty = false for vrf rd and enforce_unique
+for prop, prop_spec in data["definitions"]["WritableVRF"]["properties"].items():
+    if prop in ["rd", "enforce_unique"]:
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on WritableVRF.{prop}")
+
 # Delete problematic maximums (might have to be replaced with a proper value)
 for definition, definition_spec in data["definitions"].items():
     for prop, prop_spec in definition_spec["properties"].items():

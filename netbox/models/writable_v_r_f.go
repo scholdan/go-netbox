@@ -57,7 +57,7 @@ type WritableVRF struct {
 	// Enforce unique space
 	//
 	// Prevent duplicate prefixes/IP addresses within this VRF
-	EnforceUnique bool `json:"enforce_unique,omitempty"`
+	EnforceUnique bool `json:"enforce_unique"`
 
 	// export targets
 	// Unique: true
@@ -94,7 +94,7 @@ type WritableVRF struct {
 	//
 	// Unique route distinguisher (as defined in RFC 4364)
 	// Max Length: 21
-	Rd *string `json:"rd,omitempty"`
+	Rd *string `json:"rd"`
 
 	// tags
 	Tags []*NestedTag `json:"tags"`
