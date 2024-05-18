@@ -22,6 +22,7 @@ package virtualization
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *VirtualizationVirtualDisksListOK) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksListOK) Error() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-disks/][%d] virtualizationVirtualDisksListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-disks/][%d] virtualizationVirtualDisksListOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualDisksListOK) String() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-disks/][%d] virtualizationVirtualDisksListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-disks/][%d] virtualizationVirtualDisksListOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualDisksListOK) GetPayload() *VirtualizationVirtualDisksListOKBody {
@@ -178,11 +181,13 @@ func (o *VirtualizationVirtualDisksListDefault) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksListDefault) Error() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-disks/][%d] virtualization_virtual-disks_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-disks/][%d] virtualization_virtual-disks_list default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksListDefault) String() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-disks/][%d] virtualization_virtual-disks_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-disks/][%d] virtualization_virtual-disks_list default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksListDefault) GetPayload() interface{} {

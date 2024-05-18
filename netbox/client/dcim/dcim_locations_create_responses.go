@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimLocationsCreateCreated) Code() int {
 }
 
 func (o *DcimLocationsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/locations/][%d] dcimLocationsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/locations/][%d] dcimLocationsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimLocationsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/locations/][%d] dcimLocationsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/locations/][%d] dcimLocationsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimLocationsCreateCreated) GetPayload() *models.Location {
@@ -173,11 +176,13 @@ func (o *DcimLocationsCreateDefault) Code() int {
 }
 
 func (o *DcimLocationsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/locations/][%d] dcim_locations_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/locations/][%d] dcim_locations_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimLocationsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/locations/][%d] dcim_locations_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/locations/][%d] dcim_locations_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimLocationsCreateDefault) GetPayload() interface{} {

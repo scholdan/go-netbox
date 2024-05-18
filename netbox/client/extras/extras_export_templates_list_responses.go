@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasExportTemplatesListOK) Code() int {
 }
 
 func (o *ExtrasExportTemplatesListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/export-templates/][%d] extrasExportTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/export-templates/][%d] extrasExportTemplatesListOK %s", 200, payload)
 }
 
 func (o *ExtrasExportTemplatesListOK) String() string {
-	return fmt.Sprintf("[GET /extras/export-templates/][%d] extrasExportTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/export-templates/][%d] extrasExportTemplatesListOK %s", 200, payload)
 }
 
 func (o *ExtrasExportTemplatesListOK) GetPayload() *ExtrasExportTemplatesListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasExportTemplatesListDefault) Code() int {
 }
 
 func (o *ExtrasExportTemplatesListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/export-templates/][%d] extras_export-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/export-templates/][%d] extras_export-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasExportTemplatesListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/export-templates/][%d] extras_export-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/export-templates/][%d] extras_export-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasExportTemplatesListDefault) GetPayload() interface{} {

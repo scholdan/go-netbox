@@ -43,7 +43,7 @@ type WritableTunnelTermination struct {
 	OutsideIP *int64 `json:"outside_ip,omitempty"`
 
 	// Role
-	// Enum: [peer hub spoke]
+	// Enum: ["peer","hub","spoke"]
 	Role string `json:"role,omitempty"`
 
 	// tags

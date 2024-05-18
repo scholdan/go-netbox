@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamIPRangesReadOK) Code() int {
 }
 
 func (o *IpamIPRangesReadOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/][%d] ipamIpRangesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/][%d] ipamIpRangesReadOK %s", 200, payload)
 }
 
 func (o *IpamIPRangesReadOK) String() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/][%d] ipamIpRangesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/][%d] ipamIpRangesReadOK %s", 200, payload)
 }
 
 func (o *IpamIPRangesReadOK) GetPayload() *models.IPRange {
@@ -173,11 +176,13 @@ func (o *IpamIPRangesReadDefault) Code() int {
 }
 
 func (o *IpamIPRangesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/][%d] ipam_ip-ranges_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/][%d] ipam_ip-ranges_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPRangesReadDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/][%d] ipam_ip-ranges_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/][%d] ipam_ip-ranges_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPRangesReadDefault) GetPayload() interface{} {

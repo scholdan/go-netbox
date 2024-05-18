@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasTagsUpdateOK) Code() int {
 }
 
 func (o *ExtrasTagsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extrasTagsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extrasTagsUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasTagsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extrasTagsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extrasTagsUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasTagsUpdateOK) GetPayload() *models.Tag {
@@ -173,11 +176,13 @@ func (o *ExtrasTagsUpdateDefault) Code() int {
 }
 
 func (o *ExtrasTagsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extras_tags_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extras_tags_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extras_tags_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extras_tags_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsUpdateDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *VirtualizationVirtualMachinesDeleteNoContent) Code() int {
 }
 
 func (o *VirtualizationVirtualMachinesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesDeleteNoContent", 204)
 }
 
 func (o *VirtualizationVirtualMachinesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesDeleteNoContent", 204)
 }
 
 func (o *VirtualizationVirtualMachinesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *VirtualizationVirtualMachinesDeleteDefault) Code() int {
 }
 
 func (o *VirtualizationVirtualMachinesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_delete default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualMachinesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_delete default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualMachinesDeleteDefault) GetPayload() interface{} {

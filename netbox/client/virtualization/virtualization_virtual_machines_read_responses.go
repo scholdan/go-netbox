@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationVirtualMachinesReadOK) Code() int {
 }
 
 func (o *VirtualizationVirtualMachinesReadOK) Error() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesReadOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualMachinesReadOK) String() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesReadOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualMachinesReadOK) GetPayload() *models.VirtualMachineWithConfigContext {
@@ -173,11 +176,13 @@ func (o *VirtualizationVirtualMachinesReadDefault) Code() int {
 }
 
 func (o *VirtualizationVirtualMachinesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_read default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualMachinesReadDefault) String() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_read default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualMachinesReadDefault) GetPayload() interface{} {

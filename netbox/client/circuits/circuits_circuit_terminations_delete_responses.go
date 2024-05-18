@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *CircuitsCircuitTerminationsDeleteNoContent) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsDeleteNoContent", 204)
 }
 
 func (o *CircuitsCircuitTerminationsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsDeleteNoContent", 204)
 }
 
 func (o *CircuitsCircuitTerminationsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *CircuitsCircuitTerminationsDeleteDefault) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_delete default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_delete default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsDeleteDefault) GetPayload() interface{} {

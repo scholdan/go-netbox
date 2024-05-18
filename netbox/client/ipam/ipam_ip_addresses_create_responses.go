@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamIPAddressesCreateCreated) Code() int {
 }
 
 func (o *IpamIPAddressesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipamIpAddressesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipamIpAddressesCreateCreated %s", 201, payload)
 }
 
 func (o *IpamIPAddressesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipamIpAddressesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipamIpAddressesCreateCreated %s", 201, payload)
 }
 
 func (o *IpamIPAddressesCreateCreated) GetPayload() *models.IPAddress {
@@ -173,11 +176,13 @@ func (o *IpamIPAddressesCreateDefault) Code() int {
 }
 
 func (o *IpamIPAddressesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipam_ip-addresses_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipam_ip-addresses_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPAddressesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipam_ip-addresses_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipam_ip-addresses_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPAddressesCreateDefault) GetPayload() interface{} {

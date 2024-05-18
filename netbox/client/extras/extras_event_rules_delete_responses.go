@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasEventRulesDeleteNoContent) Code() int {
 }
 
 func (o *ExtrasEventRulesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /extras/event-rules/{id}/][%d] extrasEventRulesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/event-rules/{id}/][%d] extrasEventRulesDeleteNoContent", 204)
 }
 
 func (o *ExtrasEventRulesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /extras/event-rules/{id}/][%d] extrasEventRulesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/event-rules/{id}/][%d] extrasEventRulesDeleteNoContent", 204)
 }
 
 func (o *ExtrasEventRulesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasEventRulesDeleteDefault) Code() int {
 }
 
 func (o *ExtrasEventRulesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /extras/event-rules/{id}/][%d] extras_event_rules_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/event-rules/{id}/][%d] extras_event_rules_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasEventRulesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /extras/event-rules/{id}/][%d] extras_event_rules_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/event-rules/{id}/][%d] extras_event_rules_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasEventRulesDeleteDefault) GetPayload() interface{} {

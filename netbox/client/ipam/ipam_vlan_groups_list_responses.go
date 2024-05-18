@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamVlanGroupsListOK) Code() int {
 }
 
 func (o *IpamVlanGroupsListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipamVlanGroupsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipamVlanGroupsListOK %s", 200, payload)
 }
 
 func (o *IpamVlanGroupsListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipamVlanGroupsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipamVlanGroupsListOK %s", 200, payload)
 }
 
 func (o *IpamVlanGroupsListOK) GetPayload() *IpamVlanGroupsListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamVlanGroupsListDefault) Code() int {
 }
 
 func (o *IpamVlanGroupsListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipam_vlan-groups_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipam_vlan-groups_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlanGroupsListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipam_vlan-groups_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipam_vlan-groups_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlanGroupsListDefault) GetPayload() interface{} {

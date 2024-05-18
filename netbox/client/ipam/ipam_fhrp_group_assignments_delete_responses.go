@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *IpamFhrpGroupAssignmentsDeleteNoContent) Code() int {
 }
 
 func (o *IpamFhrpGroupAssignmentsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsDeleteNoContent", 204)
 }
 
 func (o *IpamFhrpGroupAssignmentsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsDeleteNoContent", 204)
 }
 
 func (o *IpamFhrpGroupAssignmentsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *IpamFhrpGroupAssignmentsDeleteDefault) Code() int {
 }
 
 func (o *IpamFhrpGroupAssignmentsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsDeleteDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimPlatformsUpdateOK) Code() int {
 }
 
 func (o *DcimPlatformsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcimPlatformsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcimPlatformsUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPlatformsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcimPlatformsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcimPlatformsUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPlatformsUpdateOK) GetPayload() *models.Platform {
@@ -173,11 +176,13 @@ func (o *DcimPlatformsUpdateDefault) Code() int {
 }
 
 func (o *DcimPlatformsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcim_platforms_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcim_platforms_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPlatformsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcim_platforms_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcim_platforms_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPlatformsUpdateDefault) GetPayload() interface{} {

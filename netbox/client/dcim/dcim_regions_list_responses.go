@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimRegionsListOK) Code() int {
 }
 
 func (o *DcimRegionsListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/regions/][%d] dcimRegionsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/regions/][%d] dcimRegionsListOK %s", 200, payload)
 }
 
 func (o *DcimRegionsListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/regions/][%d] dcimRegionsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/regions/][%d] dcimRegionsListOK %s", 200, payload)
 }
 
 func (o *DcimRegionsListOK) GetPayload() *DcimRegionsListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimRegionsListDefault) Code() int {
 }
 
 func (o *DcimRegionsListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/regions/][%d] dcim_regions_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/regions/][%d] dcim_regions_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimRegionsListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/regions/][%d] dcim_regions_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/regions/][%d] dcim_regions_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimRegionsListDefault) GetPayload() interface{} {

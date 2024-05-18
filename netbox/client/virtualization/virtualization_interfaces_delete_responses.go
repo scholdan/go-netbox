@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *VirtualizationInterfacesDeleteNoContent) Code() int {
 }
 
 func (o *VirtualizationInterfacesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualizationInterfacesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualizationInterfacesDeleteNoContent", 204)
 }
 
 func (o *VirtualizationInterfacesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualizationInterfacesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualizationInterfacesDeleteNoContent", 204)
 }
 
 func (o *VirtualizationInterfacesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *VirtualizationInterfacesDeleteDefault) Code() int {
 }
 
 func (o *VirtualizationInterfacesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualization_interfaces_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualization_interfaces_delete default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualization_interfaces_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualization_interfaces_delete default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesDeleteDefault) GetPayload() interface{} {

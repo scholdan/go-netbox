@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationInterfacesUpdateOK) Code() int {
 }
 
 func (o *VirtualizationInterfacesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualizationInterfacesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualizationInterfacesUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationInterfacesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualizationInterfacesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualizationInterfacesUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationInterfacesUpdateOK) GetPayload() *models.VMInterface {
@@ -173,11 +176,13 @@ func (o *VirtualizationInterfacesUpdateDefault) Code() int {
 }
 
 func (o *VirtualizationInterfacesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualization_interfaces_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualization_interfaces_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualization_interfaces_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualization_interfaces_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesUpdateDefault) GetPayload() interface{} {

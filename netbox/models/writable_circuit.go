@@ -84,7 +84,7 @@ type WritableCircuit struct {
 	Provider *int64 `json:"provider"`
 
 	// Status
-	// Enum: [planned provisioning active offline deprovisioning decommissioned]
+	// Enum: ["planned","provisioning","active","offline","deprovisioning","decommissioned"]
 	Status string `json:"status,omitempty"`
 
 	// tags

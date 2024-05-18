@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimDeviceRolesReadOK) Code() int {
 }
 
 func (o *DcimDeviceRolesReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcimDeviceRolesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcimDeviceRolesReadOK %s", 200, payload)
 }
 
 func (o *DcimDeviceRolesReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcimDeviceRolesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcimDeviceRolesReadOK %s", 200, payload)
 }
 
 func (o *DcimDeviceRolesReadOK) GetPayload() *models.DeviceRole {
@@ -173,11 +176,13 @@ func (o *DcimDeviceRolesReadDefault) Code() int {
 }
 
 func (o *DcimDeviceRolesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcim_device-roles_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcim_device-roles_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceRolesReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcim_device-roles_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcim_device-roles_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceRolesReadDefault) GetPayload() interface{} {

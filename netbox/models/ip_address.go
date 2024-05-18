@@ -752,12 +752,12 @@ type IPAddressFamily struct {
 
 	// label
 	// Required: true
-	// Enum: [IPv4 IPv6]
+	// Enum: ["IPv4","IPv6"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [4 6]
+	// Enum: [4,6]
 	Value *int64 `json:"value"`
 }
 
@@ -891,12 +891,12 @@ type IPAddressRole struct {
 
 	// label
 	// Required: true
-	// Enum: [Loopback Secondary Anycast VIP VRRP HSRP GLBP CARP]
+	// Enum: ["Loopback","Secondary","Anycast","VIP","VRRP","HSRP","GLBP","CARP"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp]
+	// Enum: ["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp"]
 	Value *string `json:"value"`
 }
 
@@ -1070,12 +1070,12 @@ type IPAddressStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Active Reserved Deprecated DHCP SLAAC]
+	// Enum: ["Active","Reserved","Deprecated","DHCP","SLAAC"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [active reserved deprecated dhcp slaac]
+	// Enum: ["active","reserved","deprecated","dhcp","slaac"]
 	Value *string `json:"value"`
 }
 

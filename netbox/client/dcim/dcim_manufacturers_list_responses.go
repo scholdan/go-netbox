@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimManufacturersListOK) Code() int {
 }
 
 func (o *DcimManufacturersListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcimManufacturersListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcimManufacturersListOK %s", 200, payload)
 }
 
 func (o *DcimManufacturersListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcimManufacturersListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcimManufacturersListOK %s", 200, payload)
 }
 
 func (o *DcimManufacturersListOK) GetPayload() *DcimManufacturersListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimManufacturersListDefault) Code() int {
 }
 
 func (o *DcimManufacturersListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcim_manufacturers_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcim_manufacturers_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimManufacturersListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcim_manufacturers_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcim_manufacturers_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimManufacturersListDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimConsolePortTemplatesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimConsolePortTemplatesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimConsolePortTemplatesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimConsolePortTemplatesPartialUpdateOK) GetPayload() *models.ConsolePortTemplate {
@@ -173,11 +176,13 @@ func (o *DcimConsolePortTemplatesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimConsolePortTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsolePortTemplatesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsolePortTemplatesPartialUpdateDefault) GetPayload() interface{} {

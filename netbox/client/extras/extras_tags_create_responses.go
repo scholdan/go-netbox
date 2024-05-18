@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasTagsCreateCreated) Code() int {
 }
 
 func (o *ExtrasTagsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /extras/tags/][%d] extrasTagsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/tags/][%d] extrasTagsCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasTagsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /extras/tags/][%d] extrasTagsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/tags/][%d] extrasTagsCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasTagsCreateCreated) GetPayload() *models.Tag {
@@ -173,11 +176,13 @@ func (o *ExtrasTagsCreateDefault) Code() int {
 }
 
 func (o *ExtrasTagsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /extras/tags/][%d] extras_tags_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/tags/][%d] extras_tags_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /extras/tags/][%d] extras_tags_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/tags/][%d] extras_tags_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsCreateDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimPowerFeedsUpdateOK) Code() int {
 }
 
 func (o *DcimPowerFeedsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcimPowerFeedsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcimPowerFeedsUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPowerFeedsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcimPowerFeedsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcimPowerFeedsUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPowerFeedsUpdateOK) GetPayload() *models.PowerFeed {
@@ -173,11 +176,13 @@ func (o *DcimPowerFeedsUpdateDefault) Code() int {
 }
 
 func (o *DcimPowerFeedsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcim_power-feeds_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcim_power-feeds_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerFeedsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcim_power-feeds_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcim_power-feeds_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerFeedsUpdateDefault) GetPayload() interface{} {

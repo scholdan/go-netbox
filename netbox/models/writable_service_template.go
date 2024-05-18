@@ -76,7 +76,7 @@ type WritableServiceTemplate struct {
 
 	// Protocol
 	// Required: true
-	// Enum: [tcp udp sctp]
+	// Enum: ["tcp","udp","sctp"]
 	Protocol *string `json:"protocol"`
 
 	// tags

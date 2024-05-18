@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamPrefixesAvailablePrefixesListOK) Code() int {
 }
 
 func (o *IpamPrefixesAvailablePrefixesListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesListOK %s", 200, payload)
 }
 
 func (o *IpamPrefixesAvailablePrefixesListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesListOK %s", 200, payload)
 }
 
 func (o *IpamPrefixesAvailablePrefixesListOK) GetPayload() []*models.AvailablePrefix {
@@ -171,11 +174,13 @@ func (o *IpamPrefixesAvailablePrefixesListDefault) Code() int {
 }
 
 func (o *IpamPrefixesAvailablePrefixesListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesAvailablePrefixesListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesAvailablePrefixesListDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimConsoleServerPortTemplatesCreateCreated) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesCreateCreated) GetPayload() *models.ConsoleServerPortTemplate {
@@ -173,11 +176,13 @@ func (o *DcimConsoleServerPortTemplatesCreateDefault) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesCreateDefault) GetPayload() interface{} {

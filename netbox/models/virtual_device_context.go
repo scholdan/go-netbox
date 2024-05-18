@@ -96,7 +96,7 @@ type VirtualDeviceContext struct {
 
 	// Status
 	// Required: true
-	// Enum: [active planned offline]
+	// Enum: ["active","planned","offline"]
 	Status *string `json:"status"`
 
 	// tags

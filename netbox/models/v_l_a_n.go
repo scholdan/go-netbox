@@ -683,12 +683,12 @@ type VLANStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Active Reserved Deprecated]
+	// Enum: ["Active","Reserved","Deprecated"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [active reserved deprecated]
+	// Enum: ["active","reserved","deprecated"]
 	Value *string `json:"value"`
 }
 

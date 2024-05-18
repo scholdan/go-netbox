@@ -21,6 +21,7 @@ package wireless
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *WirelessWirelessLanGroupsPartialUpdateOK) Code() int {
 }
 
 func (o *WirelessWirelessLanGroupsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *WirelessWirelessLanGroupsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *WirelessWirelessLanGroupsPartialUpdateOK) GetPayload() *models.WirelessLANGroup {
@@ -173,11 +176,13 @@ func (o *WirelessWirelessLanGroupsPartialUpdateDefault) Code() int {
 }
 
 func (o *WirelessWirelessLanGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLanGroupsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLanGroupsPartialUpdateDefault) GetPayload() interface{} {

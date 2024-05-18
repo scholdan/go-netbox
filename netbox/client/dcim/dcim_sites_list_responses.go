@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimSitesListOK) Code() int {
 }
 
 func (o *DcimSitesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/sites/][%d] dcimSitesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/sites/][%d] dcimSitesListOK %s", 200, payload)
 }
 
 func (o *DcimSitesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/sites/][%d] dcimSitesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/sites/][%d] dcimSitesListOK %s", 200, payload)
 }
 
 func (o *DcimSitesListOK) GetPayload() *DcimSitesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimSitesListDefault) Code() int {
 }
 
 func (o *DcimSitesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/sites/][%d] dcim_sites_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/sites/][%d] dcim_sites_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimSitesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/sites/][%d] dcim_sites_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/sites/][%d] dcim_sites_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimSitesListDefault) GetPayload() interface{} {

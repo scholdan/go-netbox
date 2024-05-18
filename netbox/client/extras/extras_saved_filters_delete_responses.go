@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasSavedFiltersDeleteNoContent) Code() int {
 }
 
 func (o *ExtrasSavedFiltersDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /extras/saved-filters/{id}/][%d] extrasSavedFiltersDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/saved-filters/{id}/][%d] extrasSavedFiltersDeleteNoContent", 204)
 }
 
 func (o *ExtrasSavedFiltersDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /extras/saved-filters/{id}/][%d] extrasSavedFiltersDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/saved-filters/{id}/][%d] extrasSavedFiltersDeleteNoContent", 204)
 }
 
 func (o *ExtrasSavedFiltersDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasSavedFiltersDeleteDefault) Code() int {
 }
 
 func (o *ExtrasSavedFiltersDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /extras/saved-filters/{id}/][%d] extras_saved-filters_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/saved-filters/{id}/][%d] extras_saved-filters_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasSavedFiltersDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /extras/saved-filters/{id}/][%d] extras_saved-filters_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/saved-filters/{id}/][%d] extras_saved-filters_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasSavedFiltersDeleteDefault) GetPayload() interface{} {

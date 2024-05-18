@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *IpamAsnsDeleteNoContent) Code() int {
 }
 
 func (o *IpamAsnsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/asns/{id}/][%d] ipamAsnsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/asns/{id}/][%d] ipamAsnsDeleteNoContent", 204)
 }
 
 func (o *IpamAsnsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /ipam/asns/{id}/][%d] ipamAsnsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/asns/{id}/][%d] ipamAsnsDeleteNoContent", 204)
 }
 
 func (o *IpamAsnsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *IpamAsnsDeleteDefault) Code() int {
 }
 
 func (o *IpamAsnsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/asns/{id}/][%d] ipam_asns_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/asns/{id}/][%d] ipam_asns_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamAsnsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /ipam/asns/{id}/][%d] ipam_asns_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/asns/{id}/][%d] ipam_asns_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamAsnsDeleteDefault) GetPayload() interface{} {

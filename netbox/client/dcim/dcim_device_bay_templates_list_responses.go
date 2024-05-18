@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimDeviceBayTemplatesListOK) Code() int {
 }
 
 func (o *DcimDeviceBayTemplatesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimDeviceBayTemplatesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimDeviceBayTemplatesListOK) GetPayload() *DcimDeviceBayTemplatesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimDeviceBayTemplatesListDefault) Code() int {
 }
 
 func (o *DcimDeviceBayTemplatesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/device-bay-templates/][%d] dcim_device-bay-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-bay-templates/][%d] dcim_device-bay-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceBayTemplatesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/device-bay-templates/][%d] dcim_device-bay-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-bay-templates/][%d] dcim_device-bay-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceBayTemplatesListDefault) GetPayload() interface{} {

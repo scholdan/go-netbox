@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInventoryItemRolesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimInventoryItemRolesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemRolesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemRolesPartialUpdateOK) GetPayload() *models.InventoryItemRole {
@@ -173,11 +176,13 @@ func (o *DcimInventoryItemRolesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimInventoryItemRolesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemRolesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemRolesPartialUpdateDefault) GetPayload() interface{} {

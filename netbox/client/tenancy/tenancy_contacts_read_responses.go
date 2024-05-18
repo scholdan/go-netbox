@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyContactsReadOK) Code() int {
 }
 
 func (o *TenancyContactsReadOK) Error() string {
-	return fmt.Sprintf("[GET /tenancy/contacts/{id}/][%d] tenancyContactsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/contacts/{id}/][%d] tenancyContactsReadOK %s", 200, payload)
 }
 
 func (o *TenancyContactsReadOK) String() string {
-	return fmt.Sprintf("[GET /tenancy/contacts/{id}/][%d] tenancyContactsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/contacts/{id}/][%d] tenancyContactsReadOK %s", 200, payload)
 }
 
 func (o *TenancyContactsReadOK) GetPayload() *models.Contact {
@@ -173,11 +176,13 @@ func (o *TenancyContactsReadDefault) Code() int {
 }
 
 func (o *TenancyContactsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /tenancy/contacts/{id}/][%d] tenancy_contacts_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/contacts/{id}/][%d] tenancy_contacts_read default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactsReadDefault) String() string {
-	return fmt.Sprintf("[GET /tenancy/contacts/{id}/][%d] tenancy_contacts_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/contacts/{id}/][%d] tenancy_contacts_read default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactsReadDefault) GetPayload() interface{} {

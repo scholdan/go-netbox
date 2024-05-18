@@ -128,7 +128,7 @@ type WritableSite struct {
 	Slug *string `json:"slug"`
 
 	// Status
-	// Enum: [planned staging active decommissioning retired]
+	// Enum: ["planned","staging","active","decommissioning","retired"]
 	Status string `json:"status,omitempty"`
 
 	// tags

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInterfacesUpdateOK) Code() int {
 }
 
 func (o *DcimInterfacesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcimInterfacesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcimInterfacesUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInterfacesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcimInterfacesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcimInterfacesUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInterfacesUpdateOK) GetPayload() *models.Interface {
@@ -173,11 +176,13 @@ func (o *DcimInterfacesUpdateDefault) Code() int {
 }
 
 func (o *DcimInterfacesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcim_interfaces_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcim_interfaces_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfacesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcim_interfaces_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcim_interfaces_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfacesUpdateDefault) GetPayload() interface{} {

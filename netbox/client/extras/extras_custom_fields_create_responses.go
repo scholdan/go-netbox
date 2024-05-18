@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasCustomFieldsCreateCreated) Code() int {
 }
 
 func (o *ExtrasCustomFieldsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extrasCustomFieldsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extrasCustomFieldsCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasCustomFieldsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extrasCustomFieldsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extrasCustomFieldsCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasCustomFieldsCreateCreated) GetPayload() *models.CustomField {
@@ -173,11 +176,13 @@ func (o *ExtrasCustomFieldsCreateDefault) Code() int {
 }
 
 func (o *ExtrasCustomFieldsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extras_custom-fields_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extras_custom-fields_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extras_custom-fields_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extras_custom-fields_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldsCreateDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimSitesReadOK) Code() int {
 }
 
 func (o *DcimSitesReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcimSitesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcimSitesReadOK %s", 200, payload)
 }
 
 func (o *DcimSitesReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcimSitesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcimSitesReadOK %s", 200, payload)
 }
 
 func (o *DcimSitesReadOK) GetPayload() *models.Site {
@@ -173,11 +176,13 @@ func (o *DcimSitesReadDefault) Code() int {
 }
 
 func (o *DcimSitesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcim_sites_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcim_sites_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimSitesReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcim_sites_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcim_sites_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimSitesReadDefault) GetPayload() interface{} {

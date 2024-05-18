@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasImageAttachmentsListOK) Code() int {
 }
 
 func (o *ExtrasImageAttachmentsListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extrasImageAttachmentsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extrasImageAttachmentsListOK %s", 200, payload)
 }
 
 func (o *ExtrasImageAttachmentsListOK) String() string {
-	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extrasImageAttachmentsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extrasImageAttachmentsListOK %s", 200, payload)
 }
 
 func (o *ExtrasImageAttachmentsListOK) GetPayload() *ExtrasImageAttachmentsListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasImageAttachmentsListDefault) Code() int {
 }
 
 func (o *ExtrasImageAttachmentsListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extras_image-attachments_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extras_image-attachments_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasImageAttachmentsListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extras_image-attachments_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extras_image-attachments_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasImageAttachmentsListDefault) GetPayload() interface{} {

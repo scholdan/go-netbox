@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationVirtualDisksUpdateOK) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualDisksUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualDisksUpdateOK) GetPayload() *models.VirtualDisk {
@@ -173,11 +176,13 @@ func (o *VirtualizationVirtualDisksUpdateDefault) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksUpdateDefault) GetPayload() interface{} {

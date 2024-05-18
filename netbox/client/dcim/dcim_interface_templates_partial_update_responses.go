@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInterfaceTemplatesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimInterfaceTemplatesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInterfaceTemplatesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInterfaceTemplatesPartialUpdateOK) GetPayload() *models.InterfaceTemplate {
@@ -173,11 +176,13 @@ func (o *DcimInterfaceTemplatesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimInterfaceTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcim_interface-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcim_interface-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfaceTemplatesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcim_interface-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcim_interface-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfaceTemplatesPartialUpdateDefault) GetPayload() interface{} {

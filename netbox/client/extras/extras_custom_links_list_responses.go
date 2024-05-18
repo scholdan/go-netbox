@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasCustomLinksListOK) Code() int {
 }
 
 func (o *ExtrasCustomLinksListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/custom-links/][%d] extrasCustomLinksListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/custom-links/][%d] extrasCustomLinksListOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomLinksListOK) String() string {
-	return fmt.Sprintf("[GET /extras/custom-links/][%d] extrasCustomLinksListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/custom-links/][%d] extrasCustomLinksListOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomLinksListOK) GetPayload() *ExtrasCustomLinksListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasCustomLinksListDefault) Code() int {
 }
 
 func (o *ExtrasCustomLinksListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/custom-links/][%d] extras_custom-links_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/custom-links/][%d] extras_custom-links_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomLinksListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/custom-links/][%d] extras_custom-links_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/custom-links/][%d] extras_custom-links_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomLinksListDefault) GetPayload() interface{} {

@@ -61,7 +61,7 @@ type NestedL2VPN struct {
 
 	// Type
 	// Required: true
-	// Enum: [vpws vpls vxlan vxlan-evpn mpls-evpn pbb-evpn epl evpl ep-lan evp-lan ep-tree evp-tree]
+	// Enum: ["vpws","vpls","vxlan","vxlan-evpn","mpls-evpn","pbb-evpn","epl","evpl","ep-lan","evp-lan","ep-tree","evp-tree"]
 	Type *string `json:"type"`
 
 	// Url

@@ -87,7 +87,7 @@ type WritableModule struct {
 	Serial string `json:"serial,omitempty"`
 
 	// Status
-	// Enum: [offline active planned staged failed decommissioning]
+	// Enum: ["offline","active","planned","staged","failed","decommissioning"]
 	Status string `json:"status,omitempty"`
 
 	// tags

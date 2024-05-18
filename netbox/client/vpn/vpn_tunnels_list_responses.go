@@ -22,6 +22,7 @@ package vpn
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *VpnTunnelsListOK) Code() int {
 }
 
 func (o *VpnTunnelsListOK) Error() string {
-	return fmt.Sprintf("[GET /vpn/tunnels/][%d] vpnTunnelsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnels/][%d] vpnTunnelsListOK %s", 200, payload)
 }
 
 func (o *VpnTunnelsListOK) String() string {
-	return fmt.Sprintf("[GET /vpn/tunnels/][%d] vpnTunnelsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnels/][%d] vpnTunnelsListOK %s", 200, payload)
 }
 
 func (o *VpnTunnelsListOK) GetPayload() *VpnTunnelsListOKBody {
@@ -178,11 +181,13 @@ func (o *VpnTunnelsListDefault) Code() int {
 }
 
 func (o *VpnTunnelsListDefault) Error() string {
-	return fmt.Sprintf("[GET /vpn/tunnels/][%d] vpn_tunnels_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnels/][%d] vpn_tunnels_list default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelsListDefault) String() string {
-	return fmt.Sprintf("[GET /vpn/tunnels/][%d] vpn_tunnels_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnels/][%d] vpn_tunnels_list default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelsListDefault) GetPayload() interface{} {

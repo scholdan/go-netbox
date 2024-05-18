@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasSavedFiltersListOK) Code() int {
 }
 
 func (o *ExtrasSavedFiltersListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/saved-filters/][%d] extrasSavedFiltersListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/saved-filters/][%d] extrasSavedFiltersListOK %s", 200, payload)
 }
 
 func (o *ExtrasSavedFiltersListOK) String() string {
-	return fmt.Sprintf("[GET /extras/saved-filters/][%d] extrasSavedFiltersListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/saved-filters/][%d] extrasSavedFiltersListOK %s", 200, payload)
 }
 
 func (o *ExtrasSavedFiltersListOK) GetPayload() *ExtrasSavedFiltersListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasSavedFiltersListDefault) Code() int {
 }
 
 func (o *ExtrasSavedFiltersListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/saved-filters/][%d] extras_saved-filters_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/saved-filters/][%d] extras_saved-filters_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasSavedFiltersListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/saved-filters/][%d] extras_saved-filters_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/saved-filters/][%d] extras_saved-filters_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasSavedFiltersListDefault) GetPayload() interface{} {

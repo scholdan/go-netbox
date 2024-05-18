@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimPowerPortsDeleteNoContent) Code() int {
 }
 
 func (o *DcimPowerPortsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/power-ports/{id}/][%d] dcimPowerPortsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/power-ports/{id}/][%d] dcimPowerPortsDeleteNoContent", 204)
 }
 
 func (o *DcimPowerPortsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/power-ports/{id}/][%d] dcimPowerPortsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/power-ports/{id}/][%d] dcimPowerPortsDeleteNoContent", 204)
 }
 
 func (o *DcimPowerPortsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimPowerPortsDeleteDefault) Code() int {
 }
 
 func (o *DcimPowerPortsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/power-ports/{id}/][%d] dcim_power-ports_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/power-ports/{id}/][%d] dcim_power-ports_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPortsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/power-ports/{id}/][%d] dcim_power-ports_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/power-ports/{id}/][%d] dcim_power-ports_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPortsDeleteDefault) GetPayload() interface{} {

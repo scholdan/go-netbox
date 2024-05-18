@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasCustomLinksPartialUpdateOK) Code() int {
 }
 
 func (o *ExtrasCustomLinksPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /extras/custom-links/{id}/][%d] extrasCustomLinksPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-links/{id}/][%d] extrasCustomLinksPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomLinksPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /extras/custom-links/{id}/][%d] extrasCustomLinksPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-links/{id}/][%d] extrasCustomLinksPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomLinksPartialUpdateOK) GetPayload() *models.CustomLink {
@@ -173,11 +176,13 @@ func (o *ExtrasCustomLinksPartialUpdateDefault) Code() int {
 }
 
 func (o *ExtrasCustomLinksPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/custom-links/{id}/][%d] extras_custom-links_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-links/{id}/][%d] extras_custom-links_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomLinksPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /extras/custom-links/{id}/][%d] extras_custom-links_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-links/{id}/][%d] extras_custom-links_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomLinksPartialUpdateDefault) GetPayload() interface{} {

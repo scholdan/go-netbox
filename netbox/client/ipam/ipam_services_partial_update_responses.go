@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamServicesPartialUpdateOK) Code() int {
 }
 
 func (o *IpamServicesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/services/{id}/][%d] ipamServicesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/services/{id}/][%d] ipamServicesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamServicesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /ipam/services/{id}/][%d] ipamServicesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/services/{id}/][%d] ipamServicesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamServicesPartialUpdateOK) GetPayload() *models.Service {
@@ -173,11 +176,13 @@ func (o *IpamServicesPartialUpdateDefault) Code() int {
 }
 
 func (o *IpamServicesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/services/{id}/][%d] ipam_services_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/services/{id}/][%d] ipam_services_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamServicesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /ipam/services/{id}/][%d] ipam_services_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/services/{id}/][%d] ipam_services_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamServicesPartialUpdateDefault) GetPayload() interface{} {

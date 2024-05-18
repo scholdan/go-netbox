@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimVirtualDeviceContextsDeleteNoContent) Code() int {
 }
 
 func (o *DcimVirtualDeviceContextsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/virtual-device-contexts/{id}/][%d] dcimVirtualDeviceContextsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/virtual-device-contexts/{id}/][%d] dcimVirtualDeviceContextsDeleteNoContent", 204)
 }
 
 func (o *DcimVirtualDeviceContextsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/virtual-device-contexts/{id}/][%d] dcimVirtualDeviceContextsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/virtual-device-contexts/{id}/][%d] dcimVirtualDeviceContextsDeleteNoContent", 204)
 }
 
 func (o *DcimVirtualDeviceContextsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimVirtualDeviceContextsDeleteDefault) Code() int {
 }
 
 func (o *DcimVirtualDeviceContextsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/virtual-device-contexts/{id}/][%d] dcim_virtual-device-contexts_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/virtual-device-contexts/{id}/][%d] dcim_virtual-device-contexts_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualDeviceContextsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/virtual-device-contexts/{id}/][%d] dcim_virtual-device-contexts_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/virtual-device-contexts/{id}/][%d] dcim_virtual-device-contexts_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualDeviceContextsDeleteDefault) GetPayload() interface{} {

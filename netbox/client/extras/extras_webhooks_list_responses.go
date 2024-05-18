@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasWebhooksListOK) Code() int {
 }
 
 func (o *ExtrasWebhooksListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/webhooks/][%d] extrasWebhooksListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/webhooks/][%d] extrasWebhooksListOK %s", 200, payload)
 }
 
 func (o *ExtrasWebhooksListOK) String() string {
-	return fmt.Sprintf("[GET /extras/webhooks/][%d] extrasWebhooksListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/webhooks/][%d] extrasWebhooksListOK %s", 200, payload)
 }
 
 func (o *ExtrasWebhooksListOK) GetPayload() *ExtrasWebhooksListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasWebhooksListDefault) Code() int {
 }
 
 func (o *ExtrasWebhooksListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/webhooks/][%d] extras_webhooks_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/webhooks/][%d] extras_webhooks_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasWebhooksListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/webhooks/][%d] extras_webhooks_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/webhooks/][%d] extras_webhooks_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasWebhooksListDefault) GetPayload() interface{} {

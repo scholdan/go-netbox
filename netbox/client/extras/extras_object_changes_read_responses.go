@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasObjectChangesReadOK) Code() int {
 }
 
 func (o *ExtrasObjectChangesReadOK) Error() string {
-	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extrasObjectChangesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extrasObjectChangesReadOK %s", 200, payload)
 }
 
 func (o *ExtrasObjectChangesReadOK) String() string {
-	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extrasObjectChangesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extrasObjectChangesReadOK %s", 200, payload)
 }
 
 func (o *ExtrasObjectChangesReadOK) GetPayload() *models.ObjectChange {
@@ -173,11 +176,13 @@ func (o *ExtrasObjectChangesReadDefault) Code() int {
 }
 
 func (o *ExtrasObjectChangesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extras_object-changes_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extras_object-changes_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasObjectChangesReadDefault) String() string {
-	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extras_object-changes_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extras_object-changes_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasObjectChangesReadDefault) GetPayload() interface{} {

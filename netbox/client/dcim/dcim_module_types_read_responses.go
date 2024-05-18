@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimModuleTypesReadOK) Code() int {
 }
 
 func (o *DcimModuleTypesReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/module-types/{id}/][%d] dcimModuleTypesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-types/{id}/][%d] dcimModuleTypesReadOK %s", 200, payload)
 }
 
 func (o *DcimModuleTypesReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/module-types/{id}/][%d] dcimModuleTypesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-types/{id}/][%d] dcimModuleTypesReadOK %s", 200, payload)
 }
 
 func (o *DcimModuleTypesReadOK) GetPayload() *models.ModuleType {
@@ -173,11 +176,13 @@ func (o *DcimModuleTypesReadDefault) Code() int {
 }
 
 func (o *DcimModuleTypesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/module-types/{id}/][%d] dcim_module-types_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-types/{id}/][%d] dcim_module-types_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleTypesReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/module-types/{id}/][%d] dcim_module-types_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-types/{id}/][%d] dcim_module-types_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleTypesReadDefault) GetPayload() interface{} {

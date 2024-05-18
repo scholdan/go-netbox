@@ -582,12 +582,12 @@ type ServiceProtocol struct {
 
 	// label
 	// Required: true
-	// Enum: [TCP UDP SCTP]
+	// Enum: ["TCP","UDP","SCTP"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [tcp udp sctp]
+	// Enum: ["tcp","udp","sctp"]
 	Value *string `json:"value"`
 }
 

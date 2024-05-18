@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimConsoleServerPortTemplatesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesPartialUpdateOK) GetPayload() *models.ConsoleServerPortTemplate {
@@ -173,11 +176,13 @@ func (o *DcimConsoleServerPortTemplatesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesPartialUpdateDefault) GetPayload() interface{} {

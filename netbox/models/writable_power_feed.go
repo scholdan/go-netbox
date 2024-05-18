@@ -124,7 +124,7 @@ type WritablePowerFeed struct {
 	Name *string `json:"name"`
 
 	// Phase
-	// Enum: [single-phase three-phase]
+	// Enum: ["single-phase","three-phase"]
 	Phase string `json:"phase,omitempty"`
 
 	// Power panel
@@ -135,18 +135,18 @@ type WritablePowerFeed struct {
 	Rack *int64 `json:"rack"`
 
 	// Status
-	// Enum: [offline active planned failed]
+	// Enum: ["offline","active","planned","failed"]
 	Status string `json:"status,omitempty"`
 
 	// Supply
-	// Enum: [ac dc]
+	// Enum: ["ac","dc"]
 	Supply string `json:"supply,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags"`
 
 	// Type
-	// Enum: [primary redundant]
+	// Enum: ["primary","redundant"]
 	Type string `json:"type"`
 
 	// Url

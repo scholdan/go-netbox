@@ -92,7 +92,7 @@ type WritableModuleType struct {
 	Weight *float64 `json:"weight"`
 
 	// Weight unit
-	// Enum: [kg g lb oz]
+	// Enum: ["kg","g","lb","oz"]
 	WeightUnit string `json:"weight_unit"`
 }
 

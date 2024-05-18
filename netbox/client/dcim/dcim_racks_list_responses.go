@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimRacksListOK) Code() int {
 }
 
 func (o *DcimRacksListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/racks/][%d] dcimRacksListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/racks/][%d] dcimRacksListOK %s", 200, payload)
 }
 
 func (o *DcimRacksListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/racks/][%d] dcimRacksListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/racks/][%d] dcimRacksListOK %s", 200, payload)
 }
 
 func (o *DcimRacksListOK) GetPayload() *DcimRacksListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimRacksListDefault) Code() int {
 }
 
 func (o *DcimRacksListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/racks/][%d] dcim_racks_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/racks/][%d] dcim_racks_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimRacksListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/racks/][%d] dcim_racks_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/racks/][%d] dcim_racks_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimRacksListDefault) GetPayload() interface{} {

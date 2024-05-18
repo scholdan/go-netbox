@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasWebhooksUpdateOK) Code() int {
 }
 
 func (o *ExtrasWebhooksUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /extras/webhooks/{id}/][%d] extrasWebhooksUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/webhooks/{id}/][%d] extrasWebhooksUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasWebhooksUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /extras/webhooks/{id}/][%d] extrasWebhooksUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/webhooks/{id}/][%d] extrasWebhooksUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasWebhooksUpdateOK) GetPayload() *models.Webhook {
@@ -173,11 +176,13 @@ func (o *ExtrasWebhooksUpdateDefault) Code() int {
 }
 
 func (o *ExtrasWebhooksUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /extras/webhooks/{id}/][%d] extras_webhooks_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/webhooks/{id}/][%d] extras_webhooks_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasWebhooksUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /extras/webhooks/{id}/][%d] extras_webhooks_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/webhooks/{id}/][%d] extras_webhooks_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasWebhooksUpdateDefault) GetPayload() interface{} {

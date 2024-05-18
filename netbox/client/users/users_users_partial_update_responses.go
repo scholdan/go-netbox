@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *UsersUsersPartialUpdateOK) Code() int {
 }
 
 func (o *UsersUsersPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /users/users/{id}/][%d] usersUsersPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /users/users/{id}/][%d] usersUsersPartialUpdateOK %s", 200, payload)
 }
 
 func (o *UsersUsersPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /users/users/{id}/][%d] usersUsersPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /users/users/{id}/][%d] usersUsersPartialUpdateOK %s", 200, payload)
 }
 
 func (o *UsersUsersPartialUpdateOK) GetPayload() *models.User {
@@ -173,11 +176,13 @@ func (o *UsersUsersPartialUpdateDefault) Code() int {
 }
 
 func (o *UsersUsersPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /users/users/{id}/][%d] users_users_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /users/users/{id}/][%d] users_users_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *UsersUsersPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /users/users/{id}/][%d] users_users_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /users/users/{id}/][%d] users_users_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *UsersUsersPartialUpdateDefault) GetPayload() interface{} {

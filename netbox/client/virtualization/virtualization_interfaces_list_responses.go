@@ -22,6 +22,7 @@ package virtualization
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *VirtualizationInterfacesListOK) Code() int {
 }
 
 func (o *VirtualizationInterfacesListOK) Error() string {
-	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualizationInterfacesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualizationInterfacesListOK %s", 200, payload)
 }
 
 func (o *VirtualizationInterfacesListOK) String() string {
-	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualizationInterfacesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualizationInterfacesListOK %s", 200, payload)
 }
 
 func (o *VirtualizationInterfacesListOK) GetPayload() *VirtualizationInterfacesListOKBody {
@@ -178,11 +181,13 @@ func (o *VirtualizationInterfacesListDefault) Code() int {
 }
 
 func (o *VirtualizationInterfacesListDefault) Error() string {
-	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualization_interfaces_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualization_interfaces_list default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesListDefault) String() string {
-	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualization_interfaces_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualization_interfaces_list default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesListDefault) GetPayload() interface{} {

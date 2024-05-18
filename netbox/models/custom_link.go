@@ -38,7 +38,7 @@ type CustomLink struct {
 	// Button class
 	//
 	// The class of the first link in a group will be used for the dropdown button
-	// Enum: [outline-dark blue indigo purple pink red orange yellow green teal cyan gray black white ghost-dark]
+	// Enum: ["outline-dark","blue","indigo","purple","pink","red","orange","yellow","green","teal","cyan","gray","black","white","ghost-dark"]
 	ButtonClass string `json:"button_class,omitempty"`
 
 	// content types

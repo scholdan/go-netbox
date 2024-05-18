@@ -22,6 +22,7 @@ package tenancy
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *TenancyTenantsListOK) Code() int {
 }
 
 func (o *TenancyTenantsListOK) Error() string {
-	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancyTenantsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancyTenantsListOK %s", 200, payload)
 }
 
 func (o *TenancyTenantsListOK) String() string {
-	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancyTenantsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancyTenantsListOK %s", 200, payload)
 }
 
 func (o *TenancyTenantsListOK) GetPayload() *TenancyTenantsListOKBody {
@@ -178,11 +181,13 @@ func (o *TenancyTenantsListDefault) Code() int {
 }
 
 func (o *TenancyTenantsListDefault) Error() string {
-	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancy_tenants_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancy_tenants_list default %s", o._statusCode, payload)
 }
 
 func (o *TenancyTenantsListDefault) String() string {
-	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancy_tenants_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancy_tenants_list default %s", o._statusCode, payload)
 }
 
 func (o *TenancyTenantsListDefault) GetPayload() interface{} {

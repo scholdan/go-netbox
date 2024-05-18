@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimModuleBaysUpdateOK) Code() int {
 }
 
 func (o *DcimModuleBaysUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcimModuleBaysUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcimModuleBaysUpdateOK %s", 200, payload)
 }
 
 func (o *DcimModuleBaysUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcimModuleBaysUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcimModuleBaysUpdateOK %s", 200, payload)
 }
 
 func (o *DcimModuleBaysUpdateOK) GetPayload() *models.ModuleBay {
@@ -173,11 +176,13 @@ func (o *DcimModuleBaysUpdateDefault) Code() int {
 }
 
 func (o *DcimModuleBaysUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcim_module-bays_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcim_module-bays_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBaysUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcim_module-bays_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcim_module-bays_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBaysUpdateDefault) GetPayload() interface{} {

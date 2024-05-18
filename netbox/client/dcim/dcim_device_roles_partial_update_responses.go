@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimDeviceRolesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimDeviceRolesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcimDeviceRolesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcimDeviceRolesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimDeviceRolesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcimDeviceRolesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcimDeviceRolesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimDeviceRolesPartialUpdateOK) GetPayload() *models.DeviceRole {
@@ -173,11 +176,13 @@ func (o *DcimDeviceRolesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimDeviceRolesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcim_device-roles_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcim_device-roles_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceRolesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcim_device-roles_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcim_device-roles_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceRolesPartialUpdateDefault) GetPayload() interface{} {

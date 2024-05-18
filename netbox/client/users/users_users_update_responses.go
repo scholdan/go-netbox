@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *UsersUsersUpdateOK) Code() int {
 }
 
 func (o *UsersUsersUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /users/users/{id}/][%d] usersUsersUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /users/users/{id}/][%d] usersUsersUpdateOK %s", 200, payload)
 }
 
 func (o *UsersUsersUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /users/users/{id}/][%d] usersUsersUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /users/users/{id}/][%d] usersUsersUpdateOK %s", 200, payload)
 }
 
 func (o *UsersUsersUpdateOK) GetPayload() *models.User {
@@ -173,11 +176,13 @@ func (o *UsersUsersUpdateDefault) Code() int {
 }
 
 func (o *UsersUsersUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /users/users/{id}/][%d] users_users_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /users/users/{id}/][%d] users_users_update default %s", o._statusCode, payload)
 }
 
 func (o *UsersUsersUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /users/users/{id}/][%d] users_users_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /users/users/{id}/][%d] users_users_update default %s", o._statusCode, payload)
 }
 
 func (o *UsersUsersUpdateDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimSiteGroupsUpdateOK) Code() int {
 }
 
 func (o *DcimSiteGroupsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /dcim/site-groups/{id}/][%d] dcimSiteGroupsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/site-groups/{id}/][%d] dcimSiteGroupsUpdateOK %s", 200, payload)
 }
 
 func (o *DcimSiteGroupsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /dcim/site-groups/{id}/][%d] dcimSiteGroupsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/site-groups/{id}/][%d] dcimSiteGroupsUpdateOK %s", 200, payload)
 }
 
 func (o *DcimSiteGroupsUpdateOK) GetPayload() *models.SiteGroup {
@@ -173,11 +176,13 @@ func (o *DcimSiteGroupsUpdateDefault) Code() int {
 }
 
 func (o *DcimSiteGroupsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/site-groups/{id}/][%d] dcim_site-groups_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/site-groups/{id}/][%d] dcim_site-groups_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimSiteGroupsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /dcim/site-groups/{id}/][%d] dcim_site-groups_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/site-groups/{id}/][%d] dcim_site-groups_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimSiteGroupsUpdateDefault) GetPayload() interface{} {

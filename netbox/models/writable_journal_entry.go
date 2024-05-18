@@ -74,7 +74,7 @@ type WritableJournalEntry struct {
 	ID int64 `json:"id,omitempty"`
 
 	// Kind
-	// Enum: [info success warning danger]
+	// Enum: ["info","success","warning","danger"]
 	Kind string `json:"kind,omitempty"`
 
 	// Last updated

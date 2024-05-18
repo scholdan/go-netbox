@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamAggregatesListOK) Code() int {
 }
 
 func (o *IpamAggregatesListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipamAggregatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipamAggregatesListOK %s", 200, payload)
 }
 
 func (o *IpamAggregatesListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipamAggregatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipamAggregatesListOK %s", 200, payload)
 }
 
 func (o *IpamAggregatesListOK) GetPayload() *IpamAggregatesListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamAggregatesListDefault) Code() int {
 }
 
 func (o *IpamAggregatesListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipam_aggregates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipam_aggregates_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamAggregatesListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipam_aggregates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipam_aggregates_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamAggregatesListDefault) GetPayload() interface{} {

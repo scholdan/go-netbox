@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasEventRulesListOK) Code() int {
 }
 
 func (o *ExtrasEventRulesListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/event-rules/][%d] extrasEventRulesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/event-rules/][%d] extrasEventRulesListOK %s", 200, payload)
 }
 
 func (o *ExtrasEventRulesListOK) String() string {
-	return fmt.Sprintf("[GET /extras/event-rules/][%d] extrasEventRulesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/event-rules/][%d] extrasEventRulesListOK %s", 200, payload)
 }
 
 func (o *ExtrasEventRulesListOK) GetPayload() *ExtrasEventRulesListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasEventRulesListDefault) Code() int {
 }
 
 func (o *ExtrasEventRulesListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/event-rules/][%d] extras_event_rules_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/event-rules/][%d] extras_event_rules_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasEventRulesListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/event-rules/][%d] extras_event_rules_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/event-rules/][%d] extras_event_rules_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasEventRulesListDefault) GetPayload() interface{} {

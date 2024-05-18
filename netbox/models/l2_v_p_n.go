@@ -604,12 +604,12 @@ type L2VPNType struct {
 
 	// label
 	// Required: true
-	// Enum: [VPWS VPLS VXLAN VXLAN-EVPN MPLS EVPN PBB EVPN EPL EVPL Ethernet Private LAN Ethernet Virtual Private LAN Ethernet Private Tree Ethernet Virtual Private Tree]
+	// Enum: ["VPWS","VPLS","VXLAN","VXLAN-EVPN","MPLS EVPN","PBB EVPN","EPL","EVPL","Ethernet Private LAN","Ethernet Virtual Private LAN","Ethernet Private Tree","Ethernet Virtual Private Tree"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [vpws vpls vxlan vxlan-evpn mpls-evpn pbb-evpn epl evpl ep-lan evp-lan ep-tree evp-tree]
+	// Enum: ["vpws","vpls","vxlan","vxlan-evpn","mpls-evpn","pbb-evpn","epl","evpl","ep-lan","evp-lan","ep-tree","evp-tree"]
 	Value *string `json:"value"`
 }
 

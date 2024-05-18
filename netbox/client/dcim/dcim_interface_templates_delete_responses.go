@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimInterfaceTemplatesDeleteNoContent) Code() int {
 }
 
 func (o *DcimInterfaceTemplatesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimInterfaceTemplatesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimInterfaceTemplatesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimInterfaceTemplatesDeleteDefault) Code() int {
 }
 
 func (o *DcimInterfaceTemplatesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/interface-templates/{id}/][%d] dcim_interface-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/interface-templates/{id}/][%d] dcim_interface-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfaceTemplatesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/interface-templates/{id}/][%d] dcim_interface-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/interface-templates/{id}/][%d] dcim_interface-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfaceTemplatesDeleteDefault) GetPayload() interface{} {

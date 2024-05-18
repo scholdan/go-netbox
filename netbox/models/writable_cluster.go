@@ -81,7 +81,7 @@ type WritableCluster struct {
 	Site *int64 `json:"site"`
 
 	// Status
-	// Enum: [planned staging active decommissioning offline]
+	// Enum: ["planned","staging","active","decommissioning","offline"]
 	Status string `json:"status,omitempty"`
 
 	// tags

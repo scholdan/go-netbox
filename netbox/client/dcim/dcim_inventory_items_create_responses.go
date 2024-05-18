@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInventoryItemsCreateCreated) Code() int {
 }
 
 func (o *DcimInventoryItemsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcimInventoryItemsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcimInventoryItemsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimInventoryItemsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcimInventoryItemsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcimInventoryItemsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimInventoryItemsCreateCreated) GetPayload() *models.InventoryItem {
@@ -173,11 +176,13 @@ func (o *DcimInventoryItemsCreateDefault) Code() int {
 }
 
 func (o *DcimInventoryItemsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcim_inventory-items_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcim_inventory-items_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcim_inventory-items_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcim_inventory-items_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemsCreateDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationClusterTypesPartialUpdateOK) Code() int {
 }
 
 func (o *VirtualizationClusterTypesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationClusterTypesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationClusterTypesPartialUpdateOK) GetPayload() *models.ClusterType {
@@ -173,11 +176,13 @@ func (o *VirtualizationClusterTypesPartialUpdateDefault) Code() int {
 }
 
 func (o *VirtualizationClusterTypesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterTypesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterTypesPartialUpdateDefault) GetPayload() interface{} {

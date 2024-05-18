@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyContactGroupsPartialUpdateOK) Code() int {
 }
 
 func (o *TenancyContactGroupsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyContactGroupsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyContactGroupsPartialUpdateOK) GetPayload() *models.ContactGroup {
@@ -173,11 +176,13 @@ func (o *TenancyContactGroupsPartialUpdateDefault) Code() int {
 }
 
 func (o *TenancyContactGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactGroupsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactGroupsPartialUpdateDefault) GetPayload() interface{} {

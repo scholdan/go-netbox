@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimRegionsReadOK) Code() int {
 }
 
 func (o *DcimRegionsReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcimRegionsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcimRegionsReadOK %s", 200, payload)
 }
 
 func (o *DcimRegionsReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcimRegionsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcimRegionsReadOK %s", 200, payload)
 }
 
 func (o *DcimRegionsReadOK) GetPayload() *models.Region {
@@ -173,11 +176,13 @@ func (o *DcimRegionsReadDefault) Code() int {
 }
 
 func (o *DcimRegionsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcim_regions_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcim_regions_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimRegionsReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcim_regions_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcim_regions_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimRegionsReadDefault) GetPayload() interface{} {

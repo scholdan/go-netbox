@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimCableTerminationsReadOK) Code() int {
 }
 
 func (o *DcimCableTerminationsReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsReadOK %s", 200, payload)
 }
 
 func (o *DcimCableTerminationsReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsReadOK %s", 200, payload)
 }
 
 func (o *DcimCableTerminationsReadOK) GetPayload() *models.CableTermination {
@@ -173,11 +176,13 @@ func (o *DcimCableTerminationsReadDefault) Code() int {
 }
 
 func (o *DcimCableTerminationsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimCableTerminationsReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimCableTerminationsReadDefault) GetPayload() interface{} {

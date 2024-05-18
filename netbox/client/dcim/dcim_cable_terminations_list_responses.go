@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimCableTerminationsListOK) Code() int {
 }
 
 func (o *DcimCableTerminationsListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcimCableTerminationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcimCableTerminationsListOK %s", 200, payload)
 }
 
 func (o *DcimCableTerminationsListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcimCableTerminationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcimCableTerminationsListOK %s", 200, payload)
 }
 
 func (o *DcimCableTerminationsListOK) GetPayload() *DcimCableTerminationsListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimCableTerminationsListDefault) Code() int {
 }
 
 func (o *DcimCableTerminationsListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcim_cable-terminations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcim_cable-terminations_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimCableTerminationsListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcim_cable-terminations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcim_cable-terminations_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimCableTerminationsListDefault) GetPayload() interface{} {

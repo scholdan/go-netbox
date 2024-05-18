@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasObjectChangesListOK) Code() int {
 }
 
 func (o *ExtrasObjectChangesListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/object-changes/][%d] extrasObjectChangesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/object-changes/][%d] extrasObjectChangesListOK %s", 200, payload)
 }
 
 func (o *ExtrasObjectChangesListOK) String() string {
-	return fmt.Sprintf("[GET /extras/object-changes/][%d] extrasObjectChangesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/object-changes/][%d] extrasObjectChangesListOK %s", 200, payload)
 }
 
 func (o *ExtrasObjectChangesListOK) GetPayload() *ExtrasObjectChangesListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasObjectChangesListDefault) Code() int {
 }
 
 func (o *ExtrasObjectChangesListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/object-changes/][%d] extras_object-changes_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/object-changes/][%d] extras_object-changes_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasObjectChangesListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/object-changes/][%d] extras_object-changes_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/object-changes/][%d] extras_object-changes_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasObjectChangesListDefault) GetPayload() interface{} {

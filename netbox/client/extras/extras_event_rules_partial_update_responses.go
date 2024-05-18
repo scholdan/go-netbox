@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasEventRulesPartialUpdateOK) Code() int {
 }
 
 func (o *ExtrasEventRulesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /extras/event-rules/{id}/][%d] extrasEventRulesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/event-rules/{id}/][%d] extrasEventRulesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasEventRulesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /extras/event-rules/{id}/][%d] extrasEventRulesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/event-rules/{id}/][%d] extrasEventRulesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasEventRulesPartialUpdateOK) GetPayload() *models.EventRule {
@@ -173,11 +176,13 @@ func (o *ExtrasEventRulesPartialUpdateDefault) Code() int {
 }
 
 func (o *ExtrasEventRulesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/event-rules/{id}/][%d] extras_event_rules_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/event-rules/{id}/][%d] extras_event_rules_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasEventRulesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /extras/event-rules/{id}/][%d] extras_event_rules_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/event-rules/{id}/][%d] extras_event_rules_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasEventRulesPartialUpdateDefault) GetPayload() interface{} {

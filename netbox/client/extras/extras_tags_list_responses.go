@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasTagsListOK) Code() int {
 }
 
 func (o *ExtrasTagsListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/tags/][%d] extrasTagsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/tags/][%d] extrasTagsListOK %s", 200, payload)
 }
 
 func (o *ExtrasTagsListOK) String() string {
-	return fmt.Sprintf("[GET /extras/tags/][%d] extrasTagsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/tags/][%d] extrasTagsListOK %s", 200, payload)
 }
 
 func (o *ExtrasTagsListOK) GetPayload() *ExtrasTagsListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasTagsListDefault) Code() int {
 }
 
 func (o *ExtrasTagsListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/tags/][%d] extras_tags_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/tags/][%d] extras_tags_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/tags/][%d] extras_tags_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/tags/][%d] extras_tags_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsListDefault) GetPayload() interface{} {

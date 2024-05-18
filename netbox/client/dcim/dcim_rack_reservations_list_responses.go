@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimRackReservationsListOK) Code() int {
 }
 
 func (o *DcimRackReservationsListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcimRackReservationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcimRackReservationsListOK %s", 200, payload)
 }
 
 func (o *DcimRackReservationsListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcimRackReservationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcimRackReservationsListOK %s", 200, payload)
 }
 
 func (o *DcimRackReservationsListOK) GetPayload() *DcimRackReservationsListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimRackReservationsListDefault) Code() int {
 }
 
 func (o *DcimRackReservationsListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcim_rack-reservations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcim_rack-reservations_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackReservationsListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcim_rack-reservations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcim_rack-reservations_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackReservationsListDefault) GetPayload() interface{} {

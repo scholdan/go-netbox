@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamRirsCreateCreated) Code() int {
 }
 
 func (o *IpamRirsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipamRirsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipamRirsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamRirsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipamRirsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipamRirsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamRirsCreateCreated) GetPayload() *models.RIR {
@@ -173,11 +176,13 @@ func (o *IpamRirsCreateDefault) Code() int {
 }
 
 func (o *IpamRirsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipam_rirs_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipam_rirs_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamRirsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipam_rirs_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipam_rirs_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamRirsCreateDefault) GetPayload() interface{} {

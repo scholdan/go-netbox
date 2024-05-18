@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasReportsReadOK) Code() int {
 }
 
 func (o *ExtrasReportsReadOK) Error() string {
-	return fmt.Sprintf("[GET /extras/reports/{id}/][%d] extrasReportsReadOK ", 200)
+	return fmt.Sprintf("[GET /extras/reports/{id}/][%d] extrasReportsReadOK", 200)
 }
 
 func (o *ExtrasReportsReadOK) String() string {
-	return fmt.Sprintf("[GET /extras/reports/{id}/][%d] extrasReportsReadOK ", 200)
+	return fmt.Sprintf("[GET /extras/reports/{id}/][%d] extrasReportsReadOK", 200)
 }
 
 func (o *ExtrasReportsReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasReportsReadDefault) Code() int {
 }
 
 func (o *ExtrasReportsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/reports/{id}/][%d] extras_reports_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/reports/{id}/][%d] extras_reports_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasReportsReadDefault) String() string {
-	return fmt.Sprintf("[GET /extras/reports/{id}/][%d] extras_reports_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/reports/{id}/][%d] extras_reports_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasReportsReadDefault) GetPayload() interface{} {

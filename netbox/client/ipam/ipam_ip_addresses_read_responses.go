@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamIPAddressesReadOK) Code() int {
 }
 
 func (o *IpamIPAddressesReadOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/ip-addresses/{id}/][%d] ipamIpAddressesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-addresses/{id}/][%d] ipamIpAddressesReadOK %s", 200, payload)
 }
 
 func (o *IpamIPAddressesReadOK) String() string {
-	return fmt.Sprintf("[GET /ipam/ip-addresses/{id}/][%d] ipamIpAddressesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-addresses/{id}/][%d] ipamIpAddressesReadOK %s", 200, payload)
 }
 
 func (o *IpamIPAddressesReadOK) GetPayload() *models.IPAddress {
@@ -173,11 +176,13 @@ func (o *IpamIPAddressesReadDefault) Code() int {
 }
 
 func (o *IpamIPAddressesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPAddressesReadDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPAddressesReadDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimFrontPortsCreateCreated) Code() int {
 }
 
 func (o *DcimFrontPortsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcimFrontPortsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcimFrontPortsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimFrontPortsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcimFrontPortsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcimFrontPortsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimFrontPortsCreateCreated) GetPayload() *models.FrontPort {
@@ -173,11 +176,13 @@ func (o *DcimFrontPortsCreateDefault) Code() int {
 }
 
 func (o *DcimFrontPortsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcim_front-ports_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcim_front-ports_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimFrontPortsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcim_front-ports_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcim_front-ports_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimFrontPortsCreateDefault) GetPayload() interface{} {

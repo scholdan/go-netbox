@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasCustomLinksDeleteNoContent) Code() int {
 }
 
 func (o *ExtrasCustomLinksDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /extras/custom-links/{id}/][%d] extrasCustomLinksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/custom-links/{id}/][%d] extrasCustomLinksDeleteNoContent", 204)
 }
 
 func (o *ExtrasCustomLinksDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /extras/custom-links/{id}/][%d] extrasCustomLinksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/custom-links/{id}/][%d] extrasCustomLinksDeleteNoContent", 204)
 }
 
 func (o *ExtrasCustomLinksDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasCustomLinksDeleteDefault) Code() int {
 }
 
 func (o *ExtrasCustomLinksDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /extras/custom-links/{id}/][%d] extras_custom-links_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/custom-links/{id}/][%d] extras_custom-links_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomLinksDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /extras/custom-links/{id}/][%d] extras_custom-links_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/custom-links/{id}/][%d] extras_custom-links_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomLinksDeleteDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasCustomLinksUpdateOK) Code() int {
 }
 
 func (o *ExtrasCustomLinksUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extrasCustomLinksUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extrasCustomLinksUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomLinksUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extrasCustomLinksUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extrasCustomLinksUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomLinksUpdateOK) GetPayload() *models.CustomLink {
@@ -173,11 +176,13 @@ func (o *ExtrasCustomLinksUpdateDefault) Code() int {
 }
 
 func (o *ExtrasCustomLinksUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extras_custom-links_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extras_custom-links_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomLinksUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extras_custom-links_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extras_custom-links_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomLinksUpdateDefault) GetPayload() interface{} {

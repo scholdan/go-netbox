@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimPowerOutletTemplatesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimPowerOutletTemplatesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPowerOutletTemplatesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPowerOutletTemplatesPartialUpdateOK) GetPayload() *models.PowerOutletTemplate {
@@ -173,11 +176,13 @@ func (o *DcimPowerOutletTemplatesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimPowerOutletTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerOutletTemplatesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerOutletTemplatesPartialUpdateDefault) GetPayload() interface{} {

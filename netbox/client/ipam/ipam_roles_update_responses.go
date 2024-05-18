@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamRolesUpdateOK) Code() int {
 }
 
 func (o *IpamRolesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /ipam/roles/{id}/][%d] ipamRolesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/roles/{id}/][%d] ipamRolesUpdateOK %s", 200, payload)
 }
 
 func (o *IpamRolesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /ipam/roles/{id}/][%d] ipamRolesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/roles/{id}/][%d] ipamRolesUpdateOK %s", 200, payload)
 }
 
 func (o *IpamRolesUpdateOK) GetPayload() *models.Role {
@@ -173,11 +176,13 @@ func (o *IpamRolesUpdateDefault) Code() int {
 }
 
 func (o *IpamRolesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /ipam/roles/{id}/][%d] ipam_roles_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/roles/{id}/][%d] ipam_roles_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamRolesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /ipam/roles/{id}/][%d] ipam_roles_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/roles/{id}/][%d] ipam_roles_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamRolesUpdateDefault) GetPayload() interface{} {

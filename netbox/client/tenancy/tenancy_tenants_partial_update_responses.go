@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyTenantsPartialUpdateOK) Code() int {
 }
 
 func (o *TenancyTenantsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /tenancy/tenants/{id}/][%d] tenancyTenantsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/tenants/{id}/][%d] tenancyTenantsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyTenantsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /tenancy/tenants/{id}/][%d] tenancyTenantsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/tenants/{id}/][%d] tenancyTenantsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyTenantsPartialUpdateOK) GetPayload() *models.Tenant {
@@ -173,11 +176,13 @@ func (o *TenancyTenantsPartialUpdateDefault) Code() int {
 }
 
 func (o *TenancyTenantsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /tenancy/tenants/{id}/][%d] tenancy_tenants_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/tenants/{id}/][%d] tenancy_tenants_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyTenantsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /tenancy/tenants/{id}/][%d] tenancy_tenants_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/tenants/{id}/][%d] tenancy_tenants_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyTenantsPartialUpdateDefault) GetPayload() interface{} {

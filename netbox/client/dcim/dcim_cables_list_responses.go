@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimCablesListOK) Code() int {
 }
 
 func (o *DcimCablesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/cables/][%d] dcimCablesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cables/][%d] dcimCablesListOK %s", 200, payload)
 }
 
 func (o *DcimCablesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/cables/][%d] dcimCablesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cables/][%d] dcimCablesListOK %s", 200, payload)
 }
 
 func (o *DcimCablesListOK) GetPayload() *DcimCablesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimCablesListDefault) Code() int {
 }
 
 func (o *DcimCablesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/cables/][%d] dcim_cables_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cables/][%d] dcim_cables_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimCablesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/cables/][%d] dcim_cables_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/cables/][%d] dcim_cables_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimCablesListDefault) GetPayload() interface{} {

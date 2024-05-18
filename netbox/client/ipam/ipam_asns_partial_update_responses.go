@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamAsnsPartialUpdateOK) Code() int {
 }
 
 func (o *IpamAsnsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/asns/{id}/][%d] ipamAsnsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/asns/{id}/][%d] ipamAsnsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamAsnsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /ipam/asns/{id}/][%d] ipamAsnsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/asns/{id}/][%d] ipamAsnsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamAsnsPartialUpdateOK) GetPayload() *models.ASN {
@@ -173,11 +176,13 @@ func (o *IpamAsnsPartialUpdateDefault) Code() int {
 }
 
 func (o *IpamAsnsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/asns/{id}/][%d] ipam_asns_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/asns/{id}/][%d] ipam_asns_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamAsnsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /ipam/asns/{id}/][%d] ipam_asns_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/asns/{id}/][%d] ipam_asns_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamAsnsPartialUpdateDefault) GetPayload() interface{} {

@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimPowerOutletTemplatesListOK) Code() int {
 }
 
 func (o *DcimPowerOutletTemplatesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcimPowerOutletTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcimPowerOutletTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimPowerOutletTemplatesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcimPowerOutletTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcimPowerOutletTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimPowerOutletTemplatesListOK) GetPayload() *DcimPowerOutletTemplatesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimPowerOutletTemplatesListDefault) Code() int {
 }
 
 func (o *DcimPowerOutletTemplatesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerOutletTemplatesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerOutletTemplatesListDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimRegionsDeleteNoContent) Code() int {
 }
 
 func (o *DcimRegionsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcimRegionsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcimRegionsDeleteNoContent", 204)
 }
 
 func (o *DcimRegionsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcimRegionsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcimRegionsDeleteNoContent", 204)
 }
 
 func (o *DcimRegionsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimRegionsDeleteDefault) Code() int {
 }
 
 func (o *DcimRegionsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcim_regions_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcim_regions_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimRegionsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcim_regions_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcim_regions_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimRegionsDeleteDefault) GetPayload() interface{} {

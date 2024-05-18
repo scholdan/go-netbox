@@ -37,7 +37,7 @@ import (
 type WritableDeviceType struct {
 
 	// Airflow
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
+	// Enum: ["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]
 	Airflow string `json:"airflow,omitempty"`
 
 	// Comments
@@ -113,7 +113,7 @@ type WritableDeviceType struct {
 	// Parent/child status
 	//
 	// Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child.
-	// Enum: [parent child]
+	// Enum: ["parent","child"]
 	SubdeviceRole string `json:"subdevice_role,omitempty"`
 
 	// tags
@@ -132,7 +132,7 @@ type WritableDeviceType struct {
 	Weight *float64 `json:"weight,omitempty"`
 
 	// Weight unit
-	// Enum: [kg g lb oz]
+	// Enum: ["kg","g","lb","oz"]
 	WeightUnit string `json:"weight_unit,omitempty"`
 }
 

@@ -21,6 +21,7 @@ package vpn
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VpnTunnelsUpdateOK) Code() int {
 }
 
 func (o *VpnTunnelsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /vpn/tunnels/{id}/][%d] vpnTunnelsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /vpn/tunnels/{id}/][%d] vpnTunnelsUpdateOK %s", 200, payload)
 }
 
 func (o *VpnTunnelsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /vpn/tunnels/{id}/][%d] vpnTunnelsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /vpn/tunnels/{id}/][%d] vpnTunnelsUpdateOK %s", 200, payload)
 }
 
 func (o *VpnTunnelsUpdateOK) GetPayload() *models.Tunnel {
@@ -173,11 +176,13 @@ func (o *VpnTunnelsUpdateDefault) Code() int {
 }
 
 func (o *VpnTunnelsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /vpn/tunnels/{id}/][%d] vpn_tunnels_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /vpn/tunnels/{id}/][%d] vpn_tunnels_update default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /vpn/tunnels/{id}/][%d] vpn_tunnels_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /vpn/tunnels/{id}/][%d] vpn_tunnels_update default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelsUpdateDefault) GetPayload() interface{} {

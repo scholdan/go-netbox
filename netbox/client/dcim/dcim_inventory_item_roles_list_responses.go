@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimInventoryItemRolesListOK) Code() int {
 }
 
 func (o *DcimInventoryItemRolesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesListOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemRolesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesListOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemRolesListOK) GetPayload() *DcimInventoryItemRolesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimInventoryItemRolesListDefault) Code() int {
 }
 
 func (o *DcimInventoryItemRolesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemRolesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemRolesListDefault) GetPayload() interface{} {

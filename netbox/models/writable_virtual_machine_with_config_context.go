@@ -113,7 +113,7 @@ type WritableVirtualMachineWithConfigContext struct {
 	Site *int64 `json:"site"`
 
 	// Status
-	// Enum: [offline active planned staged failed decommissioning]
+	// Enum: ["offline","active","planned","staged","failed","decommissioning"]
 	Status string `json:"status,omitempty"`
 
 	// tags

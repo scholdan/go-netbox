@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasConfigContextsPartialUpdateOK) Code() int {
 }
 
 func (o *ExtrasConfigContextsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extrasConfigContextsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extrasConfigContextsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasConfigContextsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extrasConfigContextsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extrasConfigContextsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasConfigContextsPartialUpdateOK) GetPayload() *models.ConfigContext {
@@ -173,11 +176,13 @@ func (o *ExtrasConfigContextsPartialUpdateDefault) Code() int {
 }
 
 func (o *ExtrasConfigContextsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extras_config-contexts_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extras_config-contexts_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigContextsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extras_config-contexts_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extras_config-contexts_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigContextsPartialUpdateDefault) GetPayload() interface{} {

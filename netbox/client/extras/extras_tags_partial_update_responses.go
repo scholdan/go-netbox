@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasTagsPartialUpdateOK) Code() int {
 }
 
 func (o *ExtrasTagsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /extras/tags/{id}/][%d] extrasTagsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/tags/{id}/][%d] extrasTagsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasTagsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /extras/tags/{id}/][%d] extrasTagsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/tags/{id}/][%d] extrasTagsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasTagsPartialUpdateOK) GetPayload() *models.Tag {
@@ -173,11 +176,13 @@ func (o *ExtrasTagsPartialUpdateDefault) Code() int {
 }
 
 func (o *ExtrasTagsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/tags/{id}/][%d] extras_tags_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/tags/{id}/][%d] extras_tags_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /extras/tags/{id}/][%d] extras_tags_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/tags/{id}/][%d] extras_tags_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsPartialUpdateDefault) GetPayload() interface{} {

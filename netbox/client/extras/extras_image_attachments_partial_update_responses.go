@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasImageAttachmentsPartialUpdateOK) Code() int {
 }
 
 func (o *ExtrasImageAttachmentsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extrasImageAttachmentsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extrasImageAttachmentsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasImageAttachmentsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extrasImageAttachmentsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extrasImageAttachmentsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasImageAttachmentsPartialUpdateOK) GetPayload() *models.ImageAttachment {
@@ -173,11 +176,13 @@ func (o *ExtrasImageAttachmentsPartialUpdateDefault) Code() int {
 }
 
 func (o *ExtrasImageAttachmentsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extras_image-attachments_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extras_image-attachments_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasImageAttachmentsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extras_image-attachments_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extras_image-attachments_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasImageAttachmentsPartialUpdateDefault) GetPayload() interface{} {

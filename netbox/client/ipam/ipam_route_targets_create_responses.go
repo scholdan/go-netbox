@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamRouteTargetsCreateCreated) Code() int {
 }
 
 func (o *IpamRouteTargetsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipamRouteTargetsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipamRouteTargetsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamRouteTargetsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipamRouteTargetsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipamRouteTargetsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamRouteTargetsCreateCreated) GetPayload() *models.RouteTarget {
@@ -173,11 +176,13 @@ func (o *IpamRouteTargetsCreateDefault) Code() int {
 }
 
 func (o *IpamRouteTargetsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipam_route-targets_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipam_route-targets_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamRouteTargetsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipam_route-targets_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipam_route-targets_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamRouteTargetsCreateDefault) GetPayload() interface{} {

@@ -114,7 +114,7 @@ type WritableRack struct {
 	OuterDepth *int64 `json:"outer_depth"`
 
 	// Outer unit
-	// Enum: [mm in]
+	// Enum: ["mm","in"]
 	OuterUnit string `json:"outer_unit"`
 
 	// Outer width
@@ -142,7 +142,7 @@ type WritableRack struct {
 	Site *int64 `json:"site"`
 
 	// Status
-	// Enum: [reserved available planned active deprecated]
+	// Enum: ["reserved","available","planned","active","deprecated"]
 	Status string `json:"status,omitempty"`
 
 	// tags
@@ -152,7 +152,7 @@ type WritableRack struct {
 	Tenant *int64 `json:"tenant"`
 
 	// Type
-	// Enum: [2-post-frame 4-post-frame 4-post-cabinet wall-frame wall-frame-vertical wall-cabinet wall-cabinet-vertical]
+	// Enum: ["2-post-frame","4-post-frame","4-post-cabinet","wall-frame","wall-frame-vertical","wall-cabinet","wall-cabinet-vertical"]
 	Type string `json:"type"`
 
 	// Height (U)
@@ -171,13 +171,13 @@ type WritableRack struct {
 	Weight *float64 `json:"weight"`
 
 	// Weight unit
-	// Enum: [kg g lb oz]
+	// Enum: ["kg","g","lb","oz"]
 	WeightUnit string `json:"weight_unit"`
 
 	// Width
 	//
 	// Rail-to-rail width
-	// Enum: [10 19 21 23]
+	// Enum: [10,19,21,23]
 	Width int64 `json:"width,omitempty"`
 }
 

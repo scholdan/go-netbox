@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *UsersConfigListOK) Code() int {
 }
 
 func (o *UsersConfigListOK) Error() string {
-	return fmt.Sprintf("[GET /users/config/][%d] usersConfigListOK ", 200)
+	return fmt.Sprintf("[GET /users/config/][%d] usersConfigListOK", 200)
 }
 
 func (o *UsersConfigListOK) String() string {
-	return fmt.Sprintf("[GET /users/config/][%d] usersConfigListOK ", 200)
+	return fmt.Sprintf("[GET /users/config/][%d] usersConfigListOK", 200)
 }
 
 func (o *UsersConfigListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *UsersConfigListDefault) Code() int {
 }
 
 func (o *UsersConfigListDefault) Error() string {
-	return fmt.Sprintf("[GET /users/config/][%d] users_config_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/config/][%d] users_config_list default %s", o._statusCode, payload)
 }
 
 func (o *UsersConfigListDefault) String() string {
-	return fmt.Sprintf("[GET /users/config/][%d] users_config_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/config/][%d] users_config_list default %s", o._statusCode, payload)
 }
 
 func (o *UsersConfigListDefault) GetPayload() interface{} {

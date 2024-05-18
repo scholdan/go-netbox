@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *CircuitsCircuitTerminationsCreateCreated) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsCreateCreated %s", 201, payload)
 }
 
 func (o *CircuitsCircuitTerminationsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsCreateCreated %s", 201, payload)
 }
 
 func (o *CircuitsCircuitTerminationsCreateCreated) GetPayload() *models.CircuitTermination {
@@ -173,11 +176,13 @@ func (o *CircuitsCircuitTerminationsCreateDefault) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuits_circuit-terminations_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuits_circuit-terminations_create default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuits_circuit-terminations_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuits_circuit-terminations_create default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsCreateDefault) GetPayload() interface{} {

@@ -22,6 +22,7 @@ package wireless
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *WirelessWirelessLanGroupsListOK) Code() int {
 }
 
 func (o *WirelessWirelessLanGroupsListOK) Error() string {
-	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/][%d] wirelessWirelessLanGroupsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/][%d] wirelessWirelessLanGroupsListOK %s", 200, payload)
 }
 
 func (o *WirelessWirelessLanGroupsListOK) String() string {
-	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/][%d] wirelessWirelessLanGroupsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/][%d] wirelessWirelessLanGroupsListOK %s", 200, payload)
 }
 
 func (o *WirelessWirelessLanGroupsListOK) GetPayload() *WirelessWirelessLanGroupsListOKBody {
@@ -178,11 +181,13 @@ func (o *WirelessWirelessLanGroupsListDefault) Code() int {
 }
 
 func (o *WirelessWirelessLanGroupsListDefault) Error() string {
-	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/][%d] wireless_wireless-lan-groups_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/][%d] wireless_wireless-lan-groups_list default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLanGroupsListDefault) String() string {
-	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/][%d] wireless_wireless-lan-groups_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/][%d] wireless_wireless-lan-groups_list default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLanGroupsListDefault) GetPayload() interface{} {

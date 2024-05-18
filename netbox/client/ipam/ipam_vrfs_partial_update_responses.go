@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamVrfsPartialUpdateOK) Code() int {
 }
 
 func (o *IpamVrfsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipamVrfsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipamVrfsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamVrfsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipamVrfsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipamVrfsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamVrfsPartialUpdateOK) GetPayload() *models.VRF {
@@ -173,11 +176,13 @@ func (o *IpamVrfsPartialUpdateDefault) Code() int {
 }
 
 func (o *IpamVrfsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipam_vrfs_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipam_vrfs_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamVrfsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipam_vrfs_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipam_vrfs_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamVrfsPartialUpdateDefault) GetPayload() interface{} {

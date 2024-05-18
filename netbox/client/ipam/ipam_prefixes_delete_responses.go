@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *IpamPrefixesDeleteNoContent) Code() int {
 }
 
 func (o *IpamPrefixesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/prefixes/{id}/][%d] ipamPrefixesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/prefixes/{id}/][%d] ipamPrefixesDeleteNoContent", 204)
 }
 
 func (o *IpamPrefixesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /ipam/prefixes/{id}/][%d] ipamPrefixesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/prefixes/{id}/][%d] ipamPrefixesDeleteNoContent", 204)
 }
 
 func (o *IpamPrefixesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *IpamPrefixesDeleteDefault) Code() int {
 }
 
 func (o *IpamPrefixesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/prefixes/{id}/][%d] ipam_prefixes_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/prefixes/{id}/][%d] ipam_prefixes_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /ipam/prefixes/{id}/][%d] ipam_prefixes_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/prefixes/{id}/][%d] ipam_prefixes_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesDeleteDefault) GetPayload() interface{} {

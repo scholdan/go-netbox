@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimVirtualChassisReadOK) Code() int {
 }
 
 func (o *DcimVirtualChassisReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisReadOK %s", 200, payload)
 }
 
 func (o *DcimVirtualChassisReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisReadOK %s", 200, payload)
 }
 
 func (o *DcimVirtualChassisReadOK) GetPayload() *models.VirtualChassis {
@@ -173,11 +176,13 @@ func (o *DcimVirtualChassisReadDefault) Code() int {
 }
 
 func (o *DcimVirtualChassisReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualChassisReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualChassisReadDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasConfigTemplatesUpdateOK) Code() int {
 }
 
 func (o *ExtrasConfigTemplatesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /extras/config-templates/{id}/][%d] extrasConfigTemplatesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/config-templates/{id}/][%d] extrasConfigTemplatesUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasConfigTemplatesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /extras/config-templates/{id}/][%d] extrasConfigTemplatesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/config-templates/{id}/][%d] extrasConfigTemplatesUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasConfigTemplatesUpdateOK) GetPayload() *models.ConfigTemplate {
@@ -173,11 +176,13 @@ func (o *ExtrasConfigTemplatesUpdateDefault) Code() int {
 }
 
 func (o *ExtrasConfigTemplatesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /extras/config-templates/{id}/][%d] extras_config-templates_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/config-templates/{id}/][%d] extras_config-templates_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigTemplatesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /extras/config-templates/{id}/][%d] extras_config-templates_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/config-templates/{id}/][%d] extras_config-templates_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigTemplatesUpdateDefault) GetPayload() interface{} {

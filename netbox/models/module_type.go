@@ -458,12 +458,12 @@ type ModuleTypeWeightUnit struct {
 
 	// label
 	// Required: true
-	// Enum: [Kilograms Grams Pounds Ounces]
+	// Enum: ["Kilograms","Grams","Pounds","Ounces"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [kg g lb oz]
+	// Enum: ["kg","g","lb","oz"]
 	Value *string `json:"value"`
 }
 

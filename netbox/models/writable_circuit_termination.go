@@ -112,7 +112,7 @@ type WritableCircuitTermination struct {
 
 	// Termination
 	// Required: true
-	// Enum: [A Z]
+	// Enum: ["A","Z"]
 	TermSide *string `json:"term_side"`
 
 	// Upstream speed (Kbps)

@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasConfigContextsDeleteNoContent) Code() int {
 }
 
 func (o *ExtrasConfigContextsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extrasConfigContextsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extrasConfigContextsDeleteNoContent", 204)
 }
 
 func (o *ExtrasConfigContextsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extrasConfigContextsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extrasConfigContextsDeleteNoContent", 204)
 }
 
 func (o *ExtrasConfigContextsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasConfigContextsDeleteDefault) Code() int {
 }
 
 func (o *ExtrasConfigContextsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extras_config-contexts_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extras_config-contexts_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigContextsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extras_config-contexts_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extras_config-contexts_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigContextsDeleteDefault) GetPayload() interface{} {

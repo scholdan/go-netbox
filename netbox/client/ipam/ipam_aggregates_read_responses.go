@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamAggregatesReadOK) Code() int {
 }
 
 func (o *IpamAggregatesReadOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipamAggregatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipamAggregatesReadOK %s", 200, payload)
 }
 
 func (o *IpamAggregatesReadOK) String() string {
-	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipamAggregatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipamAggregatesReadOK %s", 200, payload)
 }
 
 func (o *IpamAggregatesReadOK) GetPayload() *models.Aggregate {
@@ -173,11 +176,13 @@ func (o *IpamAggregatesReadDefault) Code() int {
 }
 
 func (o *IpamAggregatesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipam_aggregates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipam_aggregates_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamAggregatesReadDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipam_aggregates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipam_aggregates_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamAggregatesReadDefault) GetPayload() interface{} {

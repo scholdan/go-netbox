@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamFhrpGroupsListOK) Code() int {
 }
 
 func (o *IpamFhrpGroupsListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipamFhrpGroupsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipamFhrpGroupsListOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupsListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipamFhrpGroupsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipamFhrpGroupsListOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupsListOK) GetPayload() *IpamFhrpGroupsListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamFhrpGroupsListDefault) Code() int {
 }
 
 func (o *IpamFhrpGroupsListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipam_fhrp-groups_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipam_fhrp-groups_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupsListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipam_fhrp-groups_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipam_fhrp-groups_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupsListDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimConsoleServerPortTemplatesReadOK) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesReadOK %s", 200, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesReadOK %s", 200, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesReadOK) GetPayload() *models.ConsoleServerPortTemplate {
@@ -173,11 +176,13 @@ func (o *DcimConsoleServerPortTemplatesReadDefault) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesReadDefault) GetPayload() interface{} {

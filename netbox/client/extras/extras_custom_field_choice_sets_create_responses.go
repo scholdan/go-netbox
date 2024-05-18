@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasCustomFieldChoiceSetsCreateCreated) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsCreateCreated) GetPayload() *models.CustomFieldChoiceSet {
@@ -173,11 +176,13 @@ func (o *ExtrasCustomFieldChoiceSetsCreateDefault) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /extras/custom-field-choice-sets/][%d] extras_custom-field-choice-sets_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/custom-field-choice-sets/][%d] extras_custom-field-choice-sets_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /extras/custom-field-choice-sets/][%d] extras_custom-field-choice-sets_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/custom-field-choice-sets/][%d] extras_custom-field-choice-sets_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsCreateDefault) GetPayload() interface{} {

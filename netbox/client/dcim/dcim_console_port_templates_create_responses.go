@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimConsolePortTemplatesCreateCreated) Code() int {
 }
 
 func (o *DcimConsolePortTemplatesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcimConsolePortTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcimConsolePortTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *DcimConsolePortTemplatesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcimConsolePortTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcimConsolePortTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *DcimConsolePortTemplatesCreateCreated) GetPayload() *models.ConsolePortTemplate {
@@ -173,11 +176,13 @@ func (o *DcimConsolePortTemplatesCreateDefault) Code() int {
 }
 
 func (o *DcimConsolePortTemplatesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcim_console-port-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcim_console-port-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsolePortTemplatesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcim_console-port-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcim_console-port-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsolePortTemplatesCreateDefault) GetPayload() interface{} {

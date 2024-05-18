@@ -408,12 +408,12 @@ type ObjectChangeAction struct {
 
 	// label
 	// Required: true
-	// Enum: [Created Updated Deleted]
+	// Enum: ["Created","Updated","Deleted"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [create update delete]
+	// Enum: ["create","update","delete"]
 	Value *string `json:"value"`
 }
 

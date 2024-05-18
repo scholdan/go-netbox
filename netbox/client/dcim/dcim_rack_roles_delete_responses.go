@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimRackRolesDeleteNoContent) Code() int {
 }
 
 func (o *DcimRackRolesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcimRackRolesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcimRackRolesDeleteNoContent", 204)
 }
 
 func (o *DcimRackRolesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcimRackRolesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcimRackRolesDeleteNoContent", 204)
 }
 
 func (o *DcimRackRolesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimRackRolesDeleteDefault) Code() int {
 }
 
 func (o *DcimRackRolesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcim_rack-roles_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcim_rack-roles_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackRolesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcim_rack-roles_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcim_rack-roles_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackRolesDeleteDefault) GetPayload() interface{} {

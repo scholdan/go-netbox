@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasCustomFieldChoiceSetsListOK) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsListOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsListOK) String() string {
-	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/][%d] extrasCustomFieldChoiceSetsListOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsListOK) GetPayload() *ExtrasCustomFieldChoiceSetsListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasCustomFieldChoiceSetsListDefault) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/][%d] extras_custom-field-choice-sets_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/][%d] extras_custom-field-choice-sets_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/][%d] extras_custom-field-choice-sets_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/custom-field-choice-sets/][%d] extras_custom-field-choice-sets_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsListDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyContactRolesCreateCreated) Code() int {
 }
 
 func (o *TenancyContactRolesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /tenancy/contact-roles/][%d] tenancyContactRolesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contact-roles/][%d] tenancyContactRolesCreateCreated %s", 201, payload)
 }
 
 func (o *TenancyContactRolesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /tenancy/contact-roles/][%d] tenancyContactRolesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contact-roles/][%d] tenancyContactRolesCreateCreated %s", 201, payload)
 }
 
 func (o *TenancyContactRolesCreateCreated) GetPayload() *models.ContactRole {
@@ -173,11 +176,13 @@ func (o *TenancyContactRolesCreateDefault) Code() int {
 }
 
 func (o *TenancyContactRolesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /tenancy/contact-roles/][%d] tenancy_contact-roles_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contact-roles/][%d] tenancy_contact-roles_create default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactRolesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /tenancy/contact-roles/][%d] tenancy_contact-roles_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contact-roles/][%d] tenancy_contact-roles_create default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactRolesCreateDefault) GetPayload() interface{} {

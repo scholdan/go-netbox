@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimPowerPanelsListOK) Code() int {
 }
 
 func (o *DcimPowerPanelsListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/power-panels/][%d] dcimPowerPanelsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-panels/][%d] dcimPowerPanelsListOK %s", 200, payload)
 }
 
 func (o *DcimPowerPanelsListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/power-panels/][%d] dcimPowerPanelsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-panels/][%d] dcimPowerPanelsListOK %s", 200, payload)
 }
 
 func (o *DcimPowerPanelsListOK) GetPayload() *DcimPowerPanelsListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimPowerPanelsListDefault) Code() int {
 }
 
 func (o *DcimPowerPanelsListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/power-panels/][%d] dcim_power-panels_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-panels/][%d] dcim_power-panels_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPanelsListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/power-panels/][%d] dcim_power-panels_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-panels/][%d] dcim_power-panels_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPanelsListDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationClusterGroupsCreateCreated) Code() int {
 }
 
 func (o *VirtualizationClusterGroupsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualizationClusterGroupsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualizationClusterGroupsCreateCreated %s", 201, payload)
 }
 
 func (o *VirtualizationClusterGroupsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualizationClusterGroupsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualizationClusterGroupsCreateCreated %s", 201, payload)
 }
 
 func (o *VirtualizationClusterGroupsCreateCreated) GetPayload() *models.ClusterGroup {
@@ -173,11 +176,13 @@ func (o *VirtualizationClusterGroupsCreateDefault) Code() int {
 }
 
 func (o *VirtualizationClusterGroupsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualization_cluster-groups_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualization_cluster-groups_create default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterGroupsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualization_cluster-groups_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualization_cluster-groups_create default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterGroupsCreateDefault) GetPayload() interface{} {

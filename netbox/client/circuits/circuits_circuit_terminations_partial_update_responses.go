@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *CircuitsCircuitTerminationsPartialUpdateOK) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *CircuitsCircuitTerminationsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *CircuitsCircuitTerminationsPartialUpdateOK) GetPayload() *models.CircuitTermination {
@@ -173,11 +176,13 @@ func (o *CircuitsCircuitTerminationsPartialUpdateDefault) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsPartialUpdateDefault) GetPayload() interface{} {

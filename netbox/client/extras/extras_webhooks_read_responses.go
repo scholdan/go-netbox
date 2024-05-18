@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasWebhooksReadOK) Code() int {
 }
 
 func (o *ExtrasWebhooksReadOK) Error() string {
-	return fmt.Sprintf("[GET /extras/webhooks/{id}/][%d] extrasWebhooksReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/webhooks/{id}/][%d] extrasWebhooksReadOK %s", 200, payload)
 }
 
 func (o *ExtrasWebhooksReadOK) String() string {
-	return fmt.Sprintf("[GET /extras/webhooks/{id}/][%d] extrasWebhooksReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/webhooks/{id}/][%d] extrasWebhooksReadOK %s", 200, payload)
 }
 
 func (o *ExtrasWebhooksReadOK) GetPayload() *models.Webhook {
@@ -173,11 +176,13 @@ func (o *ExtrasWebhooksReadDefault) Code() int {
 }
 
 func (o *ExtrasWebhooksReadDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/webhooks/{id}/][%d] extras_webhooks_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/webhooks/{id}/][%d] extras_webhooks_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasWebhooksReadDefault) String() string {
-	return fmt.Sprintf("[GET /extras/webhooks/{id}/][%d] extras_webhooks_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/webhooks/{id}/][%d] extras_webhooks_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasWebhooksReadDefault) GetPayload() interface{} {

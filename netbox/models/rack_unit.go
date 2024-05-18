@@ -268,12 +268,12 @@ type RackUnitFace struct {
 
 	// label
 	// Required: true
-	// Enum: [Front Rear]
+	// Enum: ["Front","Rear"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [front rear]
+	// Enum: ["front","rear"]
 	Value *string `json:"value"`
 }
 

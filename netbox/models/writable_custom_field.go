@@ -68,7 +68,7 @@ type WritableCustomField struct {
 	// Filter logic
 	//
 	// Loose matches any instance of a given string; exact matches the entire field.
-	// Enum: [disabled loose exact]
+	// Enum: ["disabled","loose","exact"]
 	FilterLogic string `json:"filter_logic,omitempty"`
 
 	// Group name
@@ -119,13 +119,13 @@ type WritableCustomField struct {
 	// Type
 	//
 	// The type of data this custom field holds
-	// Enum: [text longtext integer decimal boolean date url json select multiselect object multiobject]
+	// Enum: ["text","longtext","integer","decimal","boolean","date","url","json","select","multiselect","object","multiobject"]
 	Type string `json:"type,omitempty"`
 
 	// UI visibility
 	//
 	// Specifies the visibility of custom field in the UI
-	// Enum: [read-write read-only hidden]
+	// Enum: ["read-write","read-only","hidden"]
 	UIVisibility string `json:"ui_visibility,omitempty"`
 
 	// Url

@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasReportsRunCreated) Code() int {
 }
 
 func (o *ExtrasReportsRunCreated) Error() string {
-	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extrasReportsRunCreated ", 201)
+	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extrasReportsRunCreated", 201)
 }
 
 func (o *ExtrasReportsRunCreated) String() string {
-	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extrasReportsRunCreated ", 201)
+	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extrasReportsRunCreated", 201)
 }
 
 func (o *ExtrasReportsRunCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasReportsRunDefault) Code() int {
 }
 
 func (o *ExtrasReportsRunDefault) Error() string {
-	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extras_reports_run default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extras_reports_run default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasReportsRunDefault) String() string {
-	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extras_reports_run default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extras_reports_run default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasReportsRunDefault) GetPayload() interface{} {

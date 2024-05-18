@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasJobResultsListOK) Code() int {
 }
 
 func (o *ExtrasJobResultsListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/job-results/][%d] extrasJobResultsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/job-results/][%d] extrasJobResultsListOK %s", 200, payload)
 }
 
 func (o *ExtrasJobResultsListOK) String() string {
-	return fmt.Sprintf("[GET /extras/job-results/][%d] extrasJobResultsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/job-results/][%d] extrasJobResultsListOK %s", 200, payload)
 }
 
 func (o *ExtrasJobResultsListOK) GetPayload() *ExtrasJobResultsListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasJobResultsListDefault) Code() int {
 }
 
 func (o *ExtrasJobResultsListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/job-results/][%d] extras_job-results_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/job-results/][%d] extras_job-results_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJobResultsListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/job-results/][%d] extras_job-results_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/job-results/][%d] extras_job-results_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJobResultsListDefault) GetPayload() interface{} {

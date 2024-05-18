@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimSiteGroupsPartialUpdateOK) Code() int {
 }
 
 func (o *DcimSiteGroupsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/site-groups/{id}/][%d] dcimSiteGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/site-groups/{id}/][%d] dcimSiteGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimSiteGroupsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/site-groups/{id}/][%d] dcimSiteGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/site-groups/{id}/][%d] dcimSiteGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimSiteGroupsPartialUpdateOK) GetPayload() *models.SiteGroup {
@@ -173,11 +176,13 @@ func (o *DcimSiteGroupsPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimSiteGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/site-groups/{id}/][%d] dcim_site-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/site-groups/{id}/][%d] dcim_site-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimSiteGroupsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/site-groups/{id}/][%d] dcim_site-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/site-groups/{id}/][%d] dcim_site-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimSiteGroupsPartialUpdateDefault) GetPayload() interface{} {

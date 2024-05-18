@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimConsoleServerPortTemplatesDeleteNoContent) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimConsoleServerPortTemplatesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimConsoleServerPortTemplatesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimConsoleServerPortTemplatesDeleteDefault) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesDeleteDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationVirtualDisksReadOK) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksReadOK) Error() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksReadOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualDisksReadOK) String() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksReadOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualDisksReadOK) GetPayload() *models.VirtualDisk {
@@ -173,11 +176,13 @@ func (o *VirtualizationVirtualDisksReadDefault) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksReadDefault) Error() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_read default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksReadDefault) String() string {
-	return fmt.Sprintf("[GET /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_read default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksReadDefault) GetPayload() interface{} {

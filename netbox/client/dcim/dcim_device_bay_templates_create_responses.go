@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimDeviceBayTemplatesCreateCreated) Code() int {
 }
 
 func (o *DcimDeviceBayTemplatesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *DcimDeviceBayTemplatesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *DcimDeviceBayTemplatesCreateCreated) GetPayload() *models.DeviceBayTemplate {
@@ -173,11 +176,13 @@ func (o *DcimDeviceBayTemplatesCreateDefault) Code() int {
 }
 
 func (o *DcimDeviceBayTemplatesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcim_device-bay-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcim_device-bay-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceBayTemplatesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcim_device-bay-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcim_device-bay-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceBayTemplatesCreateDefault) GetPayload() interface{} {

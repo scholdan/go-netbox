@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *VirtualizationVirtualDisksDeleteNoContent) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksDeleteNoContent", 204)
 }
 
 func (o *VirtualizationVirtualDisksDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksDeleteNoContent", 204)
 }
 
 func (o *VirtualizationVirtualDisksDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *VirtualizationVirtualDisksDeleteDefault) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_delete default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_delete default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksDeleteDefault) GetPayload() interface{} {

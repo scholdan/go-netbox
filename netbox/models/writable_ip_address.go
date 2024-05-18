@@ -104,13 +104,13 @@ type WritableIPAddress struct {
 	// Role
 	//
 	// The functional role of this IP
-	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp]
+	// Enum: ["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp"]
 	Role string `json:"role"`
 
 	// Status
 	//
 	// The operational status of this IP
-	// Enum: [active reserved deprecated dhcp slaac]
+	// Enum: ["active","reserved","deprecated","dhcp","slaac"]
 	Status string `json:"status,omitempty"`
 
 	// tags

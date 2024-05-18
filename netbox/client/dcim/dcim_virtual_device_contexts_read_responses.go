@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimVirtualDeviceContextsReadOK) Code() int {
 }
 
 func (o *DcimVirtualDeviceContextsReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/{id}/][%d] dcimVirtualDeviceContextsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/{id}/][%d] dcimVirtualDeviceContextsReadOK %s", 200, payload)
 }
 
 func (o *DcimVirtualDeviceContextsReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/{id}/][%d] dcimVirtualDeviceContextsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/{id}/][%d] dcimVirtualDeviceContextsReadOK %s", 200, payload)
 }
 
 func (o *DcimVirtualDeviceContextsReadOK) GetPayload() *models.VirtualDeviceContext {
@@ -173,11 +176,13 @@ func (o *DcimVirtualDeviceContextsReadDefault) Code() int {
 }
 
 func (o *DcimVirtualDeviceContextsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/{id}/][%d] dcim_virtual-device-contexts_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/{id}/][%d] dcim_virtual-device-contexts_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualDeviceContextsReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/{id}/][%d] dcim_virtual-device-contexts_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/{id}/][%d] dcim_virtual-device-contexts_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualDeviceContextsReadDefault) GetPayload() interface{} {

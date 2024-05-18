@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimVirtualChassisListOK) Code() int {
 }
 
 func (o *DcimVirtualChassisListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcimVirtualChassisListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcimVirtualChassisListOK %s", 200, payload)
 }
 
 func (o *DcimVirtualChassisListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcimVirtualChassisListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcimVirtualChassisListOK %s", 200, payload)
 }
 
 func (o *DcimVirtualChassisListOK) GetPayload() *DcimVirtualChassisListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimVirtualChassisListDefault) Code() int {
 }
 
 func (o *DcimVirtualChassisListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcim_virtual-chassis_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcim_virtual-chassis_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualChassisListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcim_virtual-chassis_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcim_virtual-chassis_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualChassisListDefault) GetPayload() interface{} {

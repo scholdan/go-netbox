@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimSiteGroupsCreateCreated) Code() int {
 }
 
 func (o *DcimSiteGroupsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/site-groups/][%d] dcimSiteGroupsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/site-groups/][%d] dcimSiteGroupsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimSiteGroupsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/site-groups/][%d] dcimSiteGroupsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/site-groups/][%d] dcimSiteGroupsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimSiteGroupsCreateCreated) GetPayload() *models.SiteGroup {
@@ -173,11 +176,13 @@ func (o *DcimSiteGroupsCreateDefault) Code() int {
 }
 
 func (o *DcimSiteGroupsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/site-groups/][%d] dcim_site-groups_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/site-groups/][%d] dcim_site-groups_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimSiteGroupsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/site-groups/][%d] dcim_site-groups_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/site-groups/][%d] dcim_site-groups_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimSiteGroupsCreateDefault) GetPayload() interface{} {

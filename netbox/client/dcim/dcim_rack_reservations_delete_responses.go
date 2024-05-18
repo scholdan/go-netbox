@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimRackReservationsDeleteNoContent) Code() int {
 }
 
 func (o *DcimRackReservationsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/rack-reservations/{id}/][%d] dcimRackReservationsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/rack-reservations/{id}/][%d] dcimRackReservationsDeleteNoContent", 204)
 }
 
 func (o *DcimRackReservationsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/rack-reservations/{id}/][%d] dcimRackReservationsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/rack-reservations/{id}/][%d] dcimRackReservationsDeleteNoContent", 204)
 }
 
 func (o *DcimRackReservationsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimRackReservationsDeleteDefault) Code() int {
 }
 
 func (o *DcimRackReservationsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackReservationsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackReservationsDeleteDefault) GetPayload() interface{} {

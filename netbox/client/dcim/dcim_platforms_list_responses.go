@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimPlatformsListOK) Code() int {
 }
 
 func (o *DcimPlatformsListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcimPlatformsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcimPlatformsListOK %s", 200, payload)
 }
 
 func (o *DcimPlatformsListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcimPlatformsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcimPlatformsListOK %s", 200, payload)
 }
 
 func (o *DcimPlatformsListOK) GetPayload() *DcimPlatformsListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimPlatformsListDefault) Code() int {
 }
 
 func (o *DcimPlatformsListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcim_platforms_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcim_platforms_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimPlatformsListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcim_platforms_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcim_platforms_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimPlatformsListDefault) GetPayload() interface{} {

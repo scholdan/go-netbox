@@ -22,6 +22,7 @@ package users
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *UsersPermissionsListOK) Code() int {
 }
 
 func (o *UsersPermissionsListOK) Error() string {
-	return fmt.Sprintf("[GET /users/permissions/][%d] usersPermissionsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/permissions/][%d] usersPermissionsListOK %s", 200, payload)
 }
 
 func (o *UsersPermissionsListOK) String() string {
-	return fmt.Sprintf("[GET /users/permissions/][%d] usersPermissionsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/permissions/][%d] usersPermissionsListOK %s", 200, payload)
 }
 
 func (o *UsersPermissionsListOK) GetPayload() *UsersPermissionsListOKBody {
@@ -178,11 +181,13 @@ func (o *UsersPermissionsListDefault) Code() int {
 }
 
 func (o *UsersPermissionsListDefault) Error() string {
-	return fmt.Sprintf("[GET /users/permissions/][%d] users_permissions_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/permissions/][%d] users_permissions_list default %s", o._statusCode, payload)
 }
 
 func (o *UsersPermissionsListDefault) String() string {
-	return fmt.Sprintf("[GET /users/permissions/][%d] users_permissions_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/permissions/][%d] users_permissions_list default %s", o._statusCode, payload)
 }
 
 func (o *UsersPermissionsListDefault) GetPayload() interface{} {

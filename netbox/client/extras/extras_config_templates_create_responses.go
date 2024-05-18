@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasConfigTemplatesCreateCreated) Code() int {
 }
 
 func (o *ExtrasConfigTemplatesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /extras/config-templates/][%d] extrasConfigTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/config-templates/][%d] extrasConfigTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasConfigTemplatesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /extras/config-templates/][%d] extrasConfigTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/config-templates/][%d] extrasConfigTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasConfigTemplatesCreateCreated) GetPayload() *models.ConfigTemplate {
@@ -173,11 +176,13 @@ func (o *ExtrasConfigTemplatesCreateDefault) Code() int {
 }
 
 func (o *ExtrasConfigTemplatesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /extras/config-templates/][%d] extras_config-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/config-templates/][%d] extras_config-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigTemplatesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /extras/config-templates/][%d] extras_config-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/config-templates/][%d] extras_config-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigTemplatesCreateDefault) GetPayload() interface{} {

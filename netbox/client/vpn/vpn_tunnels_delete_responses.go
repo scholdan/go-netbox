@@ -21,6 +21,7 @@ package vpn
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *VpnTunnelsDeleteNoContent) Code() int {
 }
 
 func (o *VpnTunnelsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /vpn/tunnels/{id}/][%d] vpnTunnelsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /vpn/tunnels/{id}/][%d] vpnTunnelsDeleteNoContent", 204)
 }
 
 func (o *VpnTunnelsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /vpn/tunnels/{id}/][%d] vpnTunnelsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /vpn/tunnels/{id}/][%d] vpnTunnelsDeleteNoContent", 204)
 }
 
 func (o *VpnTunnelsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *VpnTunnelsDeleteDefault) Code() int {
 }
 
 func (o *VpnTunnelsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /vpn/tunnels/{id}/][%d] vpn_tunnels_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /vpn/tunnels/{id}/][%d] vpn_tunnels_delete default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /vpn/tunnels/{id}/][%d] vpn_tunnels_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /vpn/tunnels/{id}/][%d] vpn_tunnels_delete default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelsDeleteDefault) GetPayload() interface{} {

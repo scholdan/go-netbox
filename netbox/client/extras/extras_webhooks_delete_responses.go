@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasWebhooksDeleteNoContent) Code() int {
 }
 
 func (o *ExtrasWebhooksDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /extras/webhooks/{id}/][%d] extrasWebhooksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/webhooks/{id}/][%d] extrasWebhooksDeleteNoContent", 204)
 }
 
 func (o *ExtrasWebhooksDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /extras/webhooks/{id}/][%d] extrasWebhooksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/webhooks/{id}/][%d] extrasWebhooksDeleteNoContent", 204)
 }
 
 func (o *ExtrasWebhooksDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasWebhooksDeleteDefault) Code() int {
 }
 
 func (o *ExtrasWebhooksDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /extras/webhooks/{id}/][%d] extras_webhooks_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/webhooks/{id}/][%d] extras_webhooks_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasWebhooksDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /extras/webhooks/{id}/][%d] extras_webhooks_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/webhooks/{id}/][%d] extras_webhooks_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasWebhooksDeleteDefault) GetPayload() interface{} {

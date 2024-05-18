@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInventoryItemsPartialUpdateOK) Code() int {
 }
 
 func (o *DcimInventoryItemsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcimInventoryItemsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcimInventoryItemsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcimInventoryItemsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcimInventoryItemsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemsPartialUpdateOK) GetPayload() *models.InventoryItem {
@@ -173,11 +176,13 @@ func (o *DcimInventoryItemsPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimInventoryItemsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcim_inventory-items_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcim_inventory-items_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcim_inventory-items_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcim_inventory-items_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemsPartialUpdateDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamL2vpnsPartialUpdateOK) Code() int {
 }
 
 func (o *IpamL2vpnsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipamL2vpnsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipamL2vpnsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamL2vpnsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipamL2vpnsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipamL2vpnsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamL2vpnsPartialUpdateOK) GetPayload() *models.L2VPN {
@@ -173,11 +176,13 @@ func (o *IpamL2vpnsPartialUpdateDefault) Code() int {
 }
 
 func (o *IpamL2vpnsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipam_l2vpns_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipam_l2vpns_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamL2vpnsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipam_l2vpns_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipam_l2vpns_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamL2vpnsPartialUpdateDefault) GetPayload() interface{} {

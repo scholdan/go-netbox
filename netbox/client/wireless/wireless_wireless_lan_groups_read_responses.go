@@ -21,6 +21,7 @@ package wireless
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *WirelessWirelessLanGroupsReadOK) Code() int {
 }
 
 func (o *WirelessWirelessLanGroupsReadOK) Error() string {
-	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsReadOK %s", 200, payload)
 }
 
 func (o *WirelessWirelessLanGroupsReadOK) String() string {
-	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsReadOK %s", 200, payload)
 }
 
 func (o *WirelessWirelessLanGroupsReadOK) GetPayload() *models.WirelessLANGroup {
@@ -173,11 +176,13 @@ func (o *WirelessWirelessLanGroupsReadDefault) Code() int {
 }
 
 func (o *WirelessWirelessLanGroupsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_read default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLanGroupsReadDefault) String() string {
-	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_read default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLanGroupsReadDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimModuleBayTemplatesReadOK) Code() int {
 }
 
 func (o *DcimModuleBayTemplatesReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesReadOK %s", 200, payload)
 }
 
 func (o *DcimModuleBayTemplatesReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesReadOK %s", 200, payload)
 }
 
 func (o *DcimModuleBayTemplatesReadOK) GetPayload() *models.ModuleBayTemplate {
@@ -173,11 +176,13 @@ func (o *DcimModuleBayTemplatesReadDefault) Code() int {
 }
 
 func (o *DcimModuleBayTemplatesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBayTemplatesReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBayTemplatesReadDefault) GetPayload() interface{} {

@@ -71,7 +71,7 @@ type WritableContactAssignment struct {
 	ObjectID *int64 `json:"object_id"`
 
 	// Priority
-	// Enum: [primary secondary tertiary inactive]
+	// Enum: ["primary","secondary","tertiary","inactive"]
 	Priority string `json:"priority,omitempty"`
 
 	// Role

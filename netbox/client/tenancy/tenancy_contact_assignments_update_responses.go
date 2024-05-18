@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyContactAssignmentsUpdateOK) Code() int {
 }
 
 func (o *TenancyContactAssignmentsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyContactAssignmentsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyContactAssignmentsUpdateOK) GetPayload() *models.ContactAssignment {
@@ -173,11 +176,13 @@ func (o *TenancyContactAssignmentsUpdateDefault) Code() int {
 }
 
 func (o *TenancyContactAssignmentsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactAssignmentsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactAssignmentsUpdateDefault) GetPayload() interface{} {

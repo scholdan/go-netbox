@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *IpamRolesDeleteNoContent) Code() int {
 }
 
 func (o *IpamRolesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipamRolesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipamRolesDeleteNoContent", 204)
 }
 
 func (o *IpamRolesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipamRolesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipamRolesDeleteNoContent", 204)
 }
 
 func (o *IpamRolesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *IpamRolesDeleteDefault) Code() int {
 }
 
 func (o *IpamRolesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipam_roles_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipam_roles_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamRolesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipam_roles_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipam_roles_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamRolesDeleteDefault) GetPayload() interface{} {

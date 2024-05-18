@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInterfacesTraceOK) Code() int {
 }
 
 func (o *DcimInterfacesTraceOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcimInterfacesTraceOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcimInterfacesTraceOK %s", 200, payload)
 }
 
 func (o *DcimInterfacesTraceOK) String() string {
-	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcimInterfacesTraceOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcimInterfacesTraceOK %s", 200, payload)
 }
 
 func (o *DcimInterfacesTraceOK) GetPayload() *models.Interface {
@@ -173,11 +176,13 @@ func (o *DcimInterfacesTraceDefault) Code() int {
 }
 
 func (o *DcimInterfacesTraceDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcim_interfaces_trace default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcim_interfaces_trace default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfacesTraceDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcim_interfaces_trace default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcim_interfaces_trace default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfacesTraceDefault) GetPayload() interface{} {

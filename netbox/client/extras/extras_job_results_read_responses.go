@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasJobResultsReadOK) Code() int {
 }
 
 func (o *ExtrasJobResultsReadOK) Error() string {
-	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extrasJobResultsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extrasJobResultsReadOK %s", 200, payload)
 }
 
 func (o *ExtrasJobResultsReadOK) String() string {
-	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extrasJobResultsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extrasJobResultsReadOK %s", 200, payload)
 }
 
 func (o *ExtrasJobResultsReadOK) GetPayload() *models.JobResult {
@@ -173,11 +176,13 @@ func (o *ExtrasJobResultsReadDefault) Code() int {
 }
 
 func (o *ExtrasJobResultsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extras_job-results_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extras_job-results_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJobResultsReadDefault) String() string {
-	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extras_job-results_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extras_job-results_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJobResultsReadDefault) GetPayload() interface{} {

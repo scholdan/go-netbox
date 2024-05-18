@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimFrontPortTemplatesListOK) Code() int {
 }
 
 func (o *DcimFrontPortTemplatesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcimFrontPortTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcimFrontPortTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimFrontPortTemplatesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcimFrontPortTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcimFrontPortTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimFrontPortTemplatesListOK) GetPayload() *DcimFrontPortTemplatesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimFrontPortTemplatesListDefault) Code() int {
 }
 
 func (o *DcimFrontPortTemplatesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcim_front-port-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcim_front-port-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimFrontPortTemplatesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcim_front-port-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcim_front-port-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimFrontPortTemplatesListDefault) GetPayload() interface{} {

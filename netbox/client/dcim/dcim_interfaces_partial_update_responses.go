@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInterfacesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimInterfacesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcimInterfacesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcimInterfacesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInterfacesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcimInterfacesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcimInterfacesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInterfacesPartialUpdateOK) GetPayload() *models.Interface {
@@ -173,11 +176,13 @@ func (o *DcimInterfacesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimInterfacesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcim_interfaces_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcim_interfaces_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfacesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcim_interfaces_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcim_interfaces_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfacesPartialUpdateDefault) GetPayload() interface{} {

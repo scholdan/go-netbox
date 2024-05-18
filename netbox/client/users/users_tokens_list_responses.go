@@ -22,6 +22,7 @@ package users
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *UsersTokensListOK) Code() int {
 }
 
 func (o *UsersTokensListOK) Error() string {
-	return fmt.Sprintf("[GET /users/tokens/][%d] usersTokensListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/tokens/][%d] usersTokensListOK %s", 200, payload)
 }
 
 func (o *UsersTokensListOK) String() string {
-	return fmt.Sprintf("[GET /users/tokens/][%d] usersTokensListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/tokens/][%d] usersTokensListOK %s", 200, payload)
 }
 
 func (o *UsersTokensListOK) GetPayload() *UsersTokensListOKBody {
@@ -178,11 +181,13 @@ func (o *UsersTokensListDefault) Code() int {
 }
 
 func (o *UsersTokensListDefault) Error() string {
-	return fmt.Sprintf("[GET /users/tokens/][%d] users_tokens_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/tokens/][%d] users_tokens_list default %s", o._statusCode, payload)
 }
 
 func (o *UsersTokensListDefault) String() string {
-	return fmt.Sprintf("[GET /users/tokens/][%d] users_tokens_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/tokens/][%d] users_tokens_list default %s", o._statusCode, payload)
 }
 
 func (o *UsersTokensListDefault) GetPayload() interface{} {

@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimConsoleServerPortTemplatesListOK) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesListOK) GetPayload() *DcimConsoleServerPortTemplatesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimConsoleServerPortTemplatesListDefault) Code() int {
 }
 
 func (o *DcimConsoleServerPortTemplatesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsoleServerPortTemplatesListDefault) GetPayload() interface{} {

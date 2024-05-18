@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamFhrpGroupsPartialUpdateOK) Code() int {
 }
 
 func (o *IpamFhrpGroupsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/{id}/][%d] ipamFhrpGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/{id}/][%d] ipamFhrpGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/{id}/][%d] ipamFhrpGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/{id}/][%d] ipamFhrpGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupsPartialUpdateOK) GetPayload() *models.FHRPGroup {
@@ -173,11 +176,13 @@ func (o *IpamFhrpGroupsPartialUpdateDefault) Code() int {
 }
 
 func (o *IpamFhrpGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/{id}/][%d] ipam_fhrp-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/{id}/][%d] ipam_fhrp-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/{id}/][%d] ipam_fhrp-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/{id}/][%d] ipam_fhrp-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupsPartialUpdateDefault) GetPayload() interface{} {

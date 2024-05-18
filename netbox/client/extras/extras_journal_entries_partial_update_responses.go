@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasJournalEntriesPartialUpdateOK) Code() int {
 }
 
 func (o *ExtrasJournalEntriesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extrasJournalEntriesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extrasJournalEntriesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasJournalEntriesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extrasJournalEntriesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extrasJournalEntriesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasJournalEntriesPartialUpdateOK) GetPayload() *models.JournalEntry {
@@ -173,11 +176,13 @@ func (o *ExtrasJournalEntriesPartialUpdateDefault) Code() int {
 }
 
 func (o *ExtrasJournalEntriesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extras_journal-entries_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extras_journal-entries_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJournalEntriesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extras_journal-entries_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extras_journal-entries_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJournalEntriesPartialUpdateDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationInterfacesCreateCreated) Code() int {
 }
 
 func (o *VirtualizationInterfacesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualizationInterfacesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualizationInterfacesCreateCreated %s", 201, payload)
 }
 
 func (o *VirtualizationInterfacesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualizationInterfacesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualizationInterfacesCreateCreated %s", 201, payload)
 }
 
 func (o *VirtualizationInterfacesCreateCreated) GetPayload() *models.VMInterface {
@@ -173,11 +176,13 @@ func (o *VirtualizationInterfacesCreateDefault) Code() int {
 }
 
 func (o *VirtualizationInterfacesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualization_interfaces_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualization_interfaces_create default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualization_interfaces_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualization_interfaces_create default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesCreateDefault) GetPayload() interface{} {

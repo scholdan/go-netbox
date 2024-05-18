@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyTenantGroupsReadOK) Code() int {
 }
 
 func (o *TenancyTenantGroupsReadOK) Error() string {
-	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsReadOK %s", 200, payload)
 }
 
 func (o *TenancyTenantGroupsReadOK) String() string {
-	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsReadOK %s", 200, payload)
 }
 
 func (o *TenancyTenantGroupsReadOK) GetPayload() *models.TenantGroup {
@@ -173,11 +176,13 @@ func (o *TenancyTenantGroupsReadDefault) Code() int {
 }
 
 func (o *TenancyTenantGroupsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_read default %s", o._statusCode, payload)
 }
 
 func (o *TenancyTenantGroupsReadDefault) String() string {
-	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_read default %s", o._statusCode, payload)
 }
 
 func (o *TenancyTenantGroupsReadDefault) GetPayload() interface{} {

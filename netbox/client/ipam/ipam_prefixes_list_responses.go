@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamPrefixesListOK) Code() int {
 }
 
 func (o *IpamPrefixesListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipamPrefixesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipamPrefixesListOK %s", 200, payload)
 }
 
 func (o *IpamPrefixesListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipamPrefixesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipamPrefixesListOK %s", 200, payload)
 }
 
 func (o *IpamPrefixesListOK) GetPayload() *IpamPrefixesListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamPrefixesListDefault) Code() int {
 }
 
 func (o *IpamPrefixesListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipam_prefixes_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipam_prefixes_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipam_prefixes_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipam_prefixes_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesListDefault) GetPayload() interface{} {

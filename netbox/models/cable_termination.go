@@ -41,7 +41,7 @@ type CableTermination struct {
 
 	// End
 	// Required: true
-	// Enum: [A B]
+	// Enum: ["A","B"]
 	CableEnd *string `json:"cable_end"`
 
 	// Display

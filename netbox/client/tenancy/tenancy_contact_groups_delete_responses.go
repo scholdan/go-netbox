@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *TenancyContactGroupsDeleteNoContent) Code() int {
 }
 
 func (o *TenancyContactGroupsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsDeleteNoContent", 204)
 }
 
 func (o *TenancyContactGroupsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsDeleteNoContent", 204)
 }
 
 func (o *TenancyContactGroupsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *TenancyContactGroupsDeleteDefault) Code() int {
 }
 
 func (o *TenancyContactGroupsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_delete default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactGroupsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_delete default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactGroupsDeleteDefault) GetPayload() interface{} {

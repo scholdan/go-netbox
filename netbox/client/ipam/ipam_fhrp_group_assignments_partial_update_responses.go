@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) Code() int {
 }
 
 func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) GetPayload() *models.FHRPGroupAssignment {
@@ -173,11 +176,13 @@ func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) Code() int {
 }
 
 func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) GetPayload() interface{} {

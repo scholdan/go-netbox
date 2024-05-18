@@ -411,12 +411,12 @@ type ContactAssignmentPriority struct {
 
 	// label
 	// Required: true
-	// Enum: [Primary Secondary Tertiary Inactive]
+	// Enum: ["Primary","Secondary","Tertiary","Inactive"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [primary secondary tertiary inactive]
+	// Enum: ["primary","secondary","tertiary","inactive"]
 	Value *string `json:"value"`
 }
 

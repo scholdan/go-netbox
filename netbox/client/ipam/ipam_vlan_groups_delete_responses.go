@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *IpamVlanGroupsDeleteNoContent) Code() int {
 }
 
 func (o *IpamVlanGroupsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/vlan-groups/{id}/][%d] ipamVlanGroupsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/vlan-groups/{id}/][%d] ipamVlanGroupsDeleteNoContent", 204)
 }
 
 func (o *IpamVlanGroupsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /ipam/vlan-groups/{id}/][%d] ipamVlanGroupsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/vlan-groups/{id}/][%d] ipamVlanGroupsDeleteNoContent", 204)
 }
 
 func (o *IpamVlanGroupsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *IpamVlanGroupsDeleteDefault) Code() int {
 }
 
 func (o *IpamVlanGroupsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/vlan-groups/{id}/][%d] ipam_vlan-groups_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/vlan-groups/{id}/][%d] ipam_vlan-groups_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlanGroupsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /ipam/vlan-groups/{id}/][%d] ipam_vlan-groups_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/vlan-groups/{id}/][%d] ipam_vlan-groups_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlanGroupsDeleteDefault) GetPayload() interface{} {

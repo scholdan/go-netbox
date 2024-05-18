@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *UsersPermissionsReadOK) Code() int {
 }
 
 func (o *UsersPermissionsReadOK) Error() string {
-	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] usersPermissionsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] usersPermissionsReadOK %s", 200, payload)
 }
 
 func (o *UsersPermissionsReadOK) String() string {
-	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] usersPermissionsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] usersPermissionsReadOK %s", 200, payload)
 }
 
 func (o *UsersPermissionsReadOK) GetPayload() *models.ObjectPermission {
@@ -173,11 +176,13 @@ func (o *UsersPermissionsReadDefault) Code() int {
 }
 
 func (o *UsersPermissionsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] users_permissions_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] users_permissions_read default %s", o._statusCode, payload)
 }
 
 func (o *UsersPermissionsReadDefault) String() string {
-	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] users_permissions_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] users_permissions_read default %s", o._statusCode, payload)
 }
 
 func (o *UsersPermissionsReadDefault) GetPayload() interface{} {

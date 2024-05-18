@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimInventoryItemTemplatesDeleteNoContent) Code() int {
 }
 
 func (o *DcimInventoryItemTemplatesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/{id}/][%d] dcimInventoryItemTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/{id}/][%d] dcimInventoryItemTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimInventoryItemTemplatesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/{id}/][%d] dcimInventoryItemTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/{id}/][%d] dcimInventoryItemTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimInventoryItemTemplatesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimInventoryItemTemplatesDeleteDefault) Code() int {
 }
 
 func (o *DcimInventoryItemTemplatesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/{id}/][%d] dcim_inventory-item-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/{id}/][%d] dcim_inventory-item-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemTemplatesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/{id}/][%d] dcim_inventory-item-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/{id}/][%d] dcim_inventory-item-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemTemplatesDeleteDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationClusterGroupsPartialUpdateOK) Code() int {
 }
 
 func (o *VirtualizationClusterGroupsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationClusterGroupsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationClusterGroupsPartialUpdateOK) GetPayload() *models.ClusterGroup {
@@ -173,11 +176,13 @@ func (o *VirtualizationClusterGroupsPartialUpdateDefault) Code() int {
 }
 
 func (o *VirtualizationClusterGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterGroupsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterGroupsPartialUpdateDefault) GetPayload() interface{} {

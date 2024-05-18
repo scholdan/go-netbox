@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamServicesReadOK) Code() int {
 }
 
 func (o *IpamServicesReadOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipamServicesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipamServicesReadOK %s", 200, payload)
 }
 
 func (o *IpamServicesReadOK) String() string {
-	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipamServicesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipamServicesReadOK %s", 200, payload)
 }
 
 func (o *IpamServicesReadOK) GetPayload() *models.Service {
@@ -173,11 +176,13 @@ func (o *IpamServicesReadDefault) Code() int {
 }
 
 func (o *IpamServicesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipam_services_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipam_services_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamServicesReadDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipam_services_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipam_services_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamServicesReadDefault) GetPayload() interface{} {

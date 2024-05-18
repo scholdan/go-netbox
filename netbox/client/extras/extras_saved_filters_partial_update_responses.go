@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasSavedFiltersPartialUpdateOK) Code() int {
 }
 
 func (o *ExtrasSavedFiltersPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /extras/saved-filters/{id}/][%d] extrasSavedFiltersPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/saved-filters/{id}/][%d] extrasSavedFiltersPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasSavedFiltersPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /extras/saved-filters/{id}/][%d] extrasSavedFiltersPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/saved-filters/{id}/][%d] extrasSavedFiltersPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasSavedFiltersPartialUpdateOK) GetPayload() *models.SavedFilter {
@@ -173,11 +176,13 @@ func (o *ExtrasSavedFiltersPartialUpdateDefault) Code() int {
 }
 
 func (o *ExtrasSavedFiltersPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/saved-filters/{id}/][%d] extras_saved-filters_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/saved-filters/{id}/][%d] extras_saved-filters_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasSavedFiltersPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /extras/saved-filters/{id}/][%d] extras_saved-filters_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/saved-filters/{id}/][%d] extras_saved-filters_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasSavedFiltersPartialUpdateDefault) GetPayload() interface{} {

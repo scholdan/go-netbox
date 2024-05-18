@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasCustomFieldChoiceSetsPartialUpdateOK) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsPartialUpdateOK) GetPayload() *models.CustomFieldChoiceSet {
@@ -173,11 +176,13 @@ func (o *ExtrasCustomFieldChoiceSetsPartialUpdateDefault) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsPartialUpdateDefault) GetPayload() interface{} {

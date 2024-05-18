@@ -96,7 +96,7 @@ type WritableIPRange struct {
 	// Status
 	//
 	// Operational status of this range
-	// Enum: [active reserved deprecated]
+	// Enum: ["active","reserved","deprecated"]
 	Status string `json:"status,omitempty"`
 
 	// tags

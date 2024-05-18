@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasExportTemplatesReadOK) Code() int {
 }
 
 func (o *ExtrasExportTemplatesReadOK) Error() string {
-	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extrasExportTemplatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extrasExportTemplatesReadOK %s", 200, payload)
 }
 
 func (o *ExtrasExportTemplatesReadOK) String() string {
-	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extrasExportTemplatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extrasExportTemplatesReadOK %s", 200, payload)
 }
 
 func (o *ExtrasExportTemplatesReadOK) GetPayload() *models.ExportTemplate {
@@ -173,11 +176,13 @@ func (o *ExtrasExportTemplatesReadDefault) Code() int {
 }
 
 func (o *ExtrasExportTemplatesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extras_export-templates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extras_export-templates_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasExportTemplatesReadDefault) String() string {
-	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extras_export-templates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extras_export-templates_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasExportTemplatesReadDefault) GetPayload() interface{} {

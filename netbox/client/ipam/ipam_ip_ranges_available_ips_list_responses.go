@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamIPRangesAvailableIpsListOK) Code() int {
 }
 
 func (o *IpamIPRangesAvailableIpsListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipamIpRangesAvailableIpsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipamIpRangesAvailableIpsListOK %s", 200, payload)
 }
 
 func (o *IpamIPRangesAvailableIpsListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipamIpRangesAvailableIpsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipamIpRangesAvailableIpsListOK %s", 200, payload)
 }
 
 func (o *IpamIPRangesAvailableIpsListOK) GetPayload() []*models.AvailableIP {
@@ -171,11 +174,13 @@ func (o *IpamIPRangesAvailableIpsListDefault) Code() int {
 }
 
 func (o *IpamIPRangesAvailableIpsListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipam_ip-ranges_available-ips_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipam_ip-ranges_available-ips_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPRangesAvailableIpsListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipam_ip-ranges_available-ips_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipam_ip-ranges_available-ips_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPRangesAvailableIpsListDefault) GetPayload() interface{} {

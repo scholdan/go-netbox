@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationClustersPartialUpdateOK) Code() int {
 }
 
 func (o *VirtualizationClustersPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/clusters/{id}/][%d] virtualizationClustersPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/clusters/{id}/][%d] virtualizationClustersPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationClustersPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/clusters/{id}/][%d] virtualizationClustersPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/clusters/{id}/][%d] virtualizationClustersPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationClustersPartialUpdateOK) GetPayload() *models.Cluster {
@@ -173,11 +176,13 @@ func (o *VirtualizationClustersPartialUpdateDefault) Code() int {
 }
 
 func (o *VirtualizationClustersPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/clusters/{id}/][%d] virtualization_clusters_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/clusters/{id}/][%d] virtualization_clusters_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClustersPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/clusters/{id}/][%d] virtualization_clusters_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/clusters/{id}/][%d] virtualization_clusters_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClustersPartialUpdateDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimConnectedDeviceListOK) Code() int {
 }
 
 func (o *DcimConnectedDeviceListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcimConnectedDeviceListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcimConnectedDeviceListOK %s", 200, payload)
 }
 
 func (o *DcimConnectedDeviceListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcimConnectedDeviceListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcimConnectedDeviceListOK %s", 200, payload)
 }
 
 func (o *DcimConnectedDeviceListOK) GetPayload() *models.Device {
@@ -173,11 +176,13 @@ func (o *DcimConnectedDeviceListDefault) Code() int {
 }
 
 func (o *DcimConnectedDeviceListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcim_connected-device_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcim_connected-device_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimConnectedDeviceListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcim_connected-device_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcim_connected-device_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimConnectedDeviceListDefault) GetPayload() interface{} {

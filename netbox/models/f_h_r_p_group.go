@@ -41,7 +41,7 @@ type FHRPGroup struct {
 	AuthKey string `json:"auth_key,omitempty"`
 
 	// Authentication type
-	// Enum: [plaintext md5]
+	// Enum: ["plaintext","md5"]
 	AuthType string `json:"auth_type,omitempty"`
 
 	// Comments
@@ -88,7 +88,7 @@ type FHRPGroup struct {
 
 	// Protocol
 	// Required: true
-	// Enum: [vrrp2 vrrp3 carp clusterxl hsrp glbp other]
+	// Enum: ["vrrp2","vrrp3","carp","clusterxl","hsrp","glbp","other"]
 	Protocol *string `json:"protocol"`
 
 	// tags

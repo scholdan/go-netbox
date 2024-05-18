@@ -441,12 +441,12 @@ type JobResultStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Pending Scheduled Running Completed Errored Failed]
+	// Enum: ["Pending","Scheduled","Running","Completed","Errored","Failed"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [pending scheduled running completed errored failed]
+	// Enum: ["pending","scheduled","running","completed","errored","failed"]
 	Value *string `json:"value"`
 }
 

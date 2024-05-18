@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasConfigContextsListOK) Code() int {
 }
 
 func (o *ExtrasConfigContextsListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/config-contexts/][%d] extrasConfigContextsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/config-contexts/][%d] extrasConfigContextsListOK %s", 200, payload)
 }
 
 func (o *ExtrasConfigContextsListOK) String() string {
-	return fmt.Sprintf("[GET /extras/config-contexts/][%d] extrasConfigContextsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/config-contexts/][%d] extrasConfigContextsListOK %s", 200, payload)
 }
 
 func (o *ExtrasConfigContextsListOK) GetPayload() *ExtrasConfigContextsListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasConfigContextsListDefault) Code() int {
 }
 
 func (o *ExtrasConfigContextsListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/config-contexts/][%d] extras_config-contexts_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/config-contexts/][%d] extras_config-contexts_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigContextsListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/config-contexts/][%d] extras_config-contexts_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/config-contexts/][%d] extras_config-contexts_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigContextsListDefault) GetPayload() interface{} {

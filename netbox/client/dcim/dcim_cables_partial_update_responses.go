@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimCablesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimCablesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/cables/{id}/][%d] dcimCablesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/cables/{id}/][%d] dcimCablesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimCablesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/cables/{id}/][%d] dcimCablesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/cables/{id}/][%d] dcimCablesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimCablesPartialUpdateOK) GetPayload() *models.Cable {
@@ -173,11 +176,13 @@ func (o *DcimCablesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimCablesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/cables/{id}/][%d] dcim_cables_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/cables/{id}/][%d] dcim_cables_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimCablesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/cables/{id}/][%d] dcim_cables_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/cables/{id}/][%d] dcim_cables_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimCablesPartialUpdateDefault) GetPayload() interface{} {

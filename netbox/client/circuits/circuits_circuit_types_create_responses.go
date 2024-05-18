@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *CircuitsCircuitTypesCreateCreated) Code() int {
 }
 
 func (o *CircuitsCircuitTypesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /circuits/circuit-types/][%d] circuitsCircuitTypesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /circuits/circuit-types/][%d] circuitsCircuitTypesCreateCreated %s", 201, payload)
 }
 
 func (o *CircuitsCircuitTypesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /circuits/circuit-types/][%d] circuitsCircuitTypesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /circuits/circuit-types/][%d] circuitsCircuitTypesCreateCreated %s", 201, payload)
 }
 
 func (o *CircuitsCircuitTypesCreateCreated) GetPayload() *models.CircuitType {
@@ -173,11 +176,13 @@ func (o *CircuitsCircuitTypesCreateDefault) Code() int {
 }
 
 func (o *CircuitsCircuitTypesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /circuits/circuit-types/][%d] circuits_circuit-types_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /circuits/circuit-types/][%d] circuits_circuit-types_create default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTypesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /circuits/circuit-types/][%d] circuits_circuit-types_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /circuits/circuit-types/][%d] circuits_circuit-types_create default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTypesCreateDefault) GetPayload() interface{} {

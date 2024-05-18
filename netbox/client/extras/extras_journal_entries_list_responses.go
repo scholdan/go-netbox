@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasJournalEntriesListOK) Code() int {
 }
 
 func (o *ExtrasJournalEntriesListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extrasJournalEntriesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extrasJournalEntriesListOK %s", 200, payload)
 }
 
 func (o *ExtrasJournalEntriesListOK) String() string {
-	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extrasJournalEntriesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extrasJournalEntriesListOK %s", 200, payload)
 }
 
 func (o *ExtrasJournalEntriesListOK) GetPayload() *ExtrasJournalEntriesListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasJournalEntriesListDefault) Code() int {
 }
 
 func (o *ExtrasJournalEntriesListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extras_journal-entries_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extras_journal-entries_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJournalEntriesListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extras_journal-entries_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extras_journal-entries_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJournalEntriesListDefault) GetPayload() interface{} {

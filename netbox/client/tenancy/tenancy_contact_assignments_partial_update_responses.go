@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyContactAssignmentsPartialUpdateOK) Code() int {
 }
 
 func (o *TenancyContactAssignmentsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyContactAssignmentsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyContactAssignmentsPartialUpdateOK) GetPayload() *models.ContactAssignment {
@@ -173,11 +176,13 @@ func (o *TenancyContactAssignmentsPartialUpdateDefault) Code() int {
 }
 
 func (o *TenancyContactAssignmentsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactAssignmentsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactAssignmentsPartialUpdateDefault) GetPayload() interface{} {

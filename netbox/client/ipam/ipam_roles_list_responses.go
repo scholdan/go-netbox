@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamRolesListOK) Code() int {
 }
 
 func (o *IpamRolesListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/roles/][%d] ipamRolesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/roles/][%d] ipamRolesListOK %s", 200, payload)
 }
 
 func (o *IpamRolesListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/roles/][%d] ipamRolesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/roles/][%d] ipamRolesListOK %s", 200, payload)
 }
 
 func (o *IpamRolesListOK) GetPayload() *IpamRolesListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamRolesListDefault) Code() int {
 }
 
 func (o *IpamRolesListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/roles/][%d] ipam_roles_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/roles/][%d] ipam_roles_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamRolesListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/roles/][%d] ipam_roles_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/roles/][%d] ipam_roles_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamRolesListDefault) GetPayload() interface{} {

@@ -88,7 +88,7 @@ type WritableVLAN struct {
 	Site *int64 `json:"site,omitempty"`
 
 	// Status
-	// Enum: [active reserved deprecated]
+	// Enum: ["active","reserved","deprecated"]
 	Status string `json:"status,omitempty"`
 
 	// tags

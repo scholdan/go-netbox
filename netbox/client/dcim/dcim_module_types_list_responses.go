@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimModuleTypesListOK) Code() int {
 }
 
 func (o *DcimModuleTypesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/module-types/][%d] dcimModuleTypesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-types/][%d] dcimModuleTypesListOK %s", 200, payload)
 }
 
 func (o *DcimModuleTypesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/module-types/][%d] dcimModuleTypesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-types/][%d] dcimModuleTypesListOK %s", 200, payload)
 }
 
 func (o *DcimModuleTypesListOK) GetPayload() *DcimModuleTypesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimModuleTypesListDefault) Code() int {
 }
 
 func (o *DcimModuleTypesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/module-types/][%d] dcim_module-types_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-types/][%d] dcim_module-types_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleTypesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/module-types/][%d] dcim_module-types_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-types/][%d] dcim_module-types_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleTypesListDefault) GetPayload() interface{} {

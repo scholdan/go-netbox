@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationClustersCreateCreated) Code() int {
 }
 
 func (o *VirtualizationClustersCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualizationClustersCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualizationClustersCreateCreated %s", 201, payload)
 }
 
 func (o *VirtualizationClustersCreateCreated) String() string {
-	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualizationClustersCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualizationClustersCreateCreated %s", 201, payload)
 }
 
 func (o *VirtualizationClustersCreateCreated) GetPayload() *models.Cluster {
@@ -173,11 +176,13 @@ func (o *VirtualizationClustersCreateDefault) Code() int {
 }
 
 func (o *VirtualizationClustersCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualization_clusters_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualization_clusters_create default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClustersCreateDefault) String() string {
-	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualization_clusters_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualization_clusters_create default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClustersCreateDefault) GetPayload() interface{} {

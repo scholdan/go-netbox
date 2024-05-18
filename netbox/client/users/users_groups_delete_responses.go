@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *UsersGroupsDeleteNoContent) Code() int {
 }
 
 func (o *UsersGroupsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /users/groups/{id}/][%d] usersGroupsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /users/groups/{id}/][%d] usersGroupsDeleteNoContent", 204)
 }
 
 func (o *UsersGroupsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /users/groups/{id}/][%d] usersGroupsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /users/groups/{id}/][%d] usersGroupsDeleteNoContent", 204)
 }
 
 func (o *UsersGroupsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *UsersGroupsDeleteDefault) Code() int {
 }
 
 func (o *UsersGroupsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /users/groups/{id}/][%d] users_groups_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /users/groups/{id}/][%d] users_groups_delete default %s", o._statusCode, payload)
 }
 
 func (o *UsersGroupsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /users/groups/{id}/][%d] users_groups_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /users/groups/{id}/][%d] users_groups_delete default %s", o._statusCode, payload)
 }
 
 func (o *UsersGroupsDeleteDefault) GetPayload() interface{} {

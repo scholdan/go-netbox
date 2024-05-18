@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimRearPortTemplatesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimRearPortTemplatesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/{id}/][%d] dcimRearPortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/{id}/][%d] dcimRearPortTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimRearPortTemplatesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/{id}/][%d] dcimRearPortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/{id}/][%d] dcimRearPortTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimRearPortTemplatesPartialUpdateOK) GetPayload() *models.RearPortTemplate {
@@ -173,11 +176,13 @@ func (o *DcimRearPortTemplatesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimRearPortTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/{id}/][%d] dcim_rear-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/{id}/][%d] dcim_rear-port-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimRearPortTemplatesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/{id}/][%d] dcim_rear-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/{id}/][%d] dcim_rear-port-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimRearPortTemplatesPartialUpdateDefault) GetPayload() interface{} {

@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimInterfaceTemplatesListOK) Code() int {
 }
 
 func (o *DcimInterfaceTemplatesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcimInterfaceTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcimInterfaceTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimInterfaceTemplatesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcimInterfaceTemplatesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcimInterfaceTemplatesListOK %s", 200, payload)
 }
 
 func (o *DcimInterfaceTemplatesListOK) GetPayload() *DcimInterfaceTemplatesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimInterfaceTemplatesListDefault) Code() int {
 }
 
 func (o *DcimInterfaceTemplatesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcim_interface-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcim_interface-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfaceTemplatesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcim_interface-templates_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcim_interface-templates_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfaceTemplatesListDefault) GetPayload() interface{} {

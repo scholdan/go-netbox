@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimDeviceBaysDeleteNoContent) Code() int {
 }
 
 func (o *DcimDeviceBaysDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/device-bays/{id}/][%d] dcimDeviceBaysDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/device-bays/{id}/][%d] dcimDeviceBaysDeleteNoContent", 204)
 }
 
 func (o *DcimDeviceBaysDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/device-bays/{id}/][%d] dcimDeviceBaysDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/device-bays/{id}/][%d] dcimDeviceBaysDeleteNoContent", 204)
 }
 
 func (o *DcimDeviceBaysDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimDeviceBaysDeleteDefault) Code() int {
 }
 
 func (o *DcimDeviceBaysDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/device-bays/{id}/][%d] dcim_device-bays_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/device-bays/{id}/][%d] dcim_device-bays_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceBaysDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/device-bays/{id}/][%d] dcim_device-bays_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/device-bays/{id}/][%d] dcim_device-bays_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceBaysDeleteDefault) GetPayload() interface{} {

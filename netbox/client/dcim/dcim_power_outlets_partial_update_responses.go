@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimPowerOutletsPartialUpdateOK) Code() int {
 }
 
 func (o *DcimPowerOutletsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/power-outlets/{id}/][%d] dcimPowerOutletsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-outlets/{id}/][%d] dcimPowerOutletsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPowerOutletsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/power-outlets/{id}/][%d] dcimPowerOutletsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-outlets/{id}/][%d] dcimPowerOutletsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPowerOutletsPartialUpdateOK) GetPayload() *models.PowerOutlet {
@@ -173,11 +176,13 @@ func (o *DcimPowerOutletsPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimPowerOutletsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/power-outlets/{id}/][%d] dcim_power-outlets_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-outlets/{id}/][%d] dcim_power-outlets_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerOutletsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/power-outlets/{id}/][%d] dcim_power-outlets_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-outlets/{id}/][%d] dcim_power-outlets_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerOutletsPartialUpdateDefault) GetPayload() interface{} {

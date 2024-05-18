@@ -1251,12 +1251,12 @@ type DeviceAirflow struct {
 
 	// label
 	// Required: true
-	// Enum: [Front to rear Rear to front Left to right Right to left Side to rear Passive Mixed]
+	// Enum: ["Front to rear","Rear to front","Left to right","Right to left","Side to rear","Passive","Mixed"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
+	// Enum: ["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]
 	Value *string `json:"value"`
 }
 
@@ -1424,12 +1424,12 @@ type DeviceFace struct {
 
 	// label
 	// Required: true
-	// Enum: [Front Rear]
+	// Enum: ["Front","Rear"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [front rear]
+	// Enum: ["front","rear"]
 	Value *string `json:"value"`
 }
 
@@ -1567,12 +1567,12 @@ type DeviceStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Offline Active Planned Staged Failed Inventory Decommissioning]
+	// Enum: ["Offline","Active","Planned","Staged","Failed","Inventory","Decommissioning"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [offline active planned staged failed inventory decommissioning]
+	// Enum: ["offline","active","planned","staged","failed","inventory","decommissioning"]
 	Value *string `json:"value"`
 }
 

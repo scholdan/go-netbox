@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInventoryItemTemplatesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimInventoryItemTemplatesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-item-templates/{id}/][%d] dcimInventoryItemTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-item-templates/{id}/][%d] dcimInventoryItemTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemTemplatesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-item-templates/{id}/][%d] dcimInventoryItemTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-item-templates/{id}/][%d] dcimInventoryItemTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemTemplatesPartialUpdateOK) GetPayload() *models.InventoryItemTemplate {
@@ -173,11 +176,13 @@ func (o *DcimInventoryItemTemplatesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimInventoryItemTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-item-templates/{id}/][%d] dcim_inventory-item-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-item-templates/{id}/][%d] dcim_inventory-item-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemTemplatesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-item-templates/{id}/][%d] dcim_inventory-item-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/inventory-item-templates/{id}/][%d] dcim_inventory-item-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemTemplatesPartialUpdateDefault) GetPayload() interface{} {

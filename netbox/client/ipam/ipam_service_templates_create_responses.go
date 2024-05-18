@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamServiceTemplatesCreateCreated) Code() int {
 }
 
 func (o *IpamServiceTemplatesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/service-templates/][%d] ipamServiceTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/service-templates/][%d] ipamServiceTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *IpamServiceTemplatesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /ipam/service-templates/][%d] ipamServiceTemplatesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/service-templates/][%d] ipamServiceTemplatesCreateCreated %s", 201, payload)
 }
 
 func (o *IpamServiceTemplatesCreateCreated) GetPayload() *models.ServiceTemplate {
@@ -173,11 +176,13 @@ func (o *IpamServiceTemplatesCreateDefault) Code() int {
 }
 
 func (o *IpamServiceTemplatesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/service-templates/][%d] ipam_service-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/service-templates/][%d] ipam_service-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamServiceTemplatesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /ipam/service-templates/][%d] ipam_service-templates_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/service-templates/][%d] ipam_service-templates_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamServiceTemplatesCreateDefault) GetPayload() interface{} {

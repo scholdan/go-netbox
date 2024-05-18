@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimModuleBayTemplatesDeleteNoContent) Code() int {
 }
 
 func (o *DcimModuleBayTemplatesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimModuleBayTemplatesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimModuleBayTemplatesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimModuleBayTemplatesDeleteDefault) Code() int {
 }
 
 func (o *DcimModuleBayTemplatesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBayTemplatesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBayTemplatesDeleteDefault) GetPayload() interface{} {

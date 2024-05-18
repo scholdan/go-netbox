@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasImageAttachmentsReadOK) Code() int {
 }
 
 func (o *ExtrasImageAttachmentsReadOK) Error() string {
-	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extrasImageAttachmentsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extrasImageAttachmentsReadOK %s", 200, payload)
 }
 
 func (o *ExtrasImageAttachmentsReadOK) String() string {
-	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extrasImageAttachmentsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extrasImageAttachmentsReadOK %s", 200, payload)
 }
 
 func (o *ExtrasImageAttachmentsReadOK) GetPayload() *models.ImageAttachment {
@@ -173,11 +176,13 @@ func (o *ExtrasImageAttachmentsReadDefault) Code() int {
 }
 
 func (o *ExtrasImageAttachmentsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extras_image-attachments_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extras_image-attachments_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasImageAttachmentsReadDefault) String() string {
-	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extras_image-attachments_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extras_image-attachments_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasImageAttachmentsReadDefault) GetPayload() interface{} {

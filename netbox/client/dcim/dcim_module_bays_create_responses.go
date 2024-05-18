@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimModuleBaysCreateCreated) Code() int {
 }
 
 func (o *DcimModuleBaysCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/module-bays/][%d] dcimModuleBaysCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/module-bays/][%d] dcimModuleBaysCreateCreated %s", 201, payload)
 }
 
 func (o *DcimModuleBaysCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/module-bays/][%d] dcimModuleBaysCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/module-bays/][%d] dcimModuleBaysCreateCreated %s", 201, payload)
 }
 
 func (o *DcimModuleBaysCreateCreated) GetPayload() *models.ModuleBay {
@@ -173,11 +176,13 @@ func (o *DcimModuleBaysCreateDefault) Code() int {
 }
 
 func (o *DcimModuleBaysCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/module-bays/][%d] dcim_module-bays_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/module-bays/][%d] dcim_module-bays_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBaysCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/module-bays/][%d] dcim_module-bays_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/module-bays/][%d] dcim_module-bays_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBaysCreateDefault) GetPayload() interface{} {

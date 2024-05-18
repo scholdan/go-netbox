@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasCustomFieldsUpdateOK) Code() int {
 }
 
 func (o *ExtrasCustomFieldsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extrasCustomFieldsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extrasCustomFieldsUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extrasCustomFieldsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extrasCustomFieldsUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldsUpdateOK) GetPayload() *models.CustomField {
@@ -173,11 +176,13 @@ func (o *ExtrasCustomFieldsUpdateDefault) Code() int {
 }
 
 func (o *ExtrasCustomFieldsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extras_custom-fields_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extras_custom-fields_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extras_custom-fields_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extras_custom-fields_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldsUpdateDefault) GetPayload() interface{} {

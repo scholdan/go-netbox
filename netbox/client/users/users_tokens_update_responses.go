@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *UsersTokensUpdateOK) Code() int {
 }
 
 func (o *UsersTokensUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] usersTokensUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] usersTokensUpdateOK %s", 200, payload)
 }
 
 func (o *UsersTokensUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] usersTokensUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] usersTokensUpdateOK %s", 200, payload)
 }
 
 func (o *UsersTokensUpdateOK) GetPayload() *models.Token {
@@ -173,11 +176,13 @@ func (o *UsersTokensUpdateDefault) Code() int {
 }
 
 func (o *UsersTokensUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] users_tokens_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] users_tokens_update default %s", o._statusCode, payload)
 }
 
 func (o *UsersTokensUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] users_tokens_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] users_tokens_update default %s", o._statusCode, payload)
 }
 
 func (o *UsersTokensUpdateDefault) GetPayload() interface{} {

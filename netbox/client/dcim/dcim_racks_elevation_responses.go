@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimRacksElevationOK) Code() int {
 }
 
 func (o *DcimRacksElevationOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcimRacksElevationOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcimRacksElevationOK %s", 200, payload)
 }
 
 func (o *DcimRacksElevationOK) String() string {
-	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcimRacksElevationOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcimRacksElevationOK %s", 200, payload)
 }
 
 func (o *DcimRacksElevationOK) GetPayload() []*models.RackUnit {
@@ -171,11 +174,13 @@ func (o *DcimRacksElevationDefault) Code() int {
 }
 
 func (o *DcimRacksElevationDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcim_racks_elevation default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcim_racks_elevation default %s", o._statusCode, payload)
 }
 
 func (o *DcimRacksElevationDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcim_racks_elevation default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcim_racks_elevation default %s", o._statusCode, payload)
 }
 
 func (o *DcimRacksElevationDefault) GetPayload() interface{} {

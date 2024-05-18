@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationVirtualMachinesCreateCreated) Code() int {
 }
 
 func (o *VirtualizationVirtualMachinesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesCreateCreated %s", 201, payload)
 }
 
 func (o *VirtualizationVirtualMachinesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesCreateCreated %s", 201, payload)
 }
 
 func (o *VirtualizationVirtualMachinesCreateCreated) GetPayload() *models.VirtualMachineWithConfigContext {
@@ -173,11 +176,13 @@ func (o *VirtualizationVirtualMachinesCreateDefault) Code() int {
 }
 
 func (o *VirtualizationVirtualMachinesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualization_virtual-machines_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualization_virtual-machines_create default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualMachinesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualization_virtual-machines_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualization_virtual-machines_create default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualMachinesCreateDefault) GetPayload() interface{} {

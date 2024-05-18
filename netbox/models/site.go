@@ -813,12 +813,12 @@ type SiteStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Planned Staging Active Decommissioning Retired]
+	// Enum: ["Planned","Staging","Active","Decommissioning","Retired"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [planned staging active decommissioning retired]
+	// Enum: ["planned","staging","active","decommissioning","retired"]
 	Value *string `json:"value"`
 }
 

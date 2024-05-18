@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationVirtualDisksPartialUpdateOK) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualDisksPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/virtual-disks/{id}/][%d] virtualizationVirtualDisksPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualDisksPartialUpdateOK) GetPayload() *models.VirtualDisk {
@@ -173,11 +176,13 @@ func (o *VirtualizationVirtualDisksPartialUpdateDefault) Code() int {
 }
 
 func (o *VirtualizationVirtualDisksPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/virtual-disks/{id}/][%d] virtualization_virtual-disks_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualDisksPartialUpdateDefault) GetPayload() interface{} {

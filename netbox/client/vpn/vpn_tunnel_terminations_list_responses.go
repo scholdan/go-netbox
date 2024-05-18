@@ -22,6 +22,7 @@ package vpn
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *VpnTunnelTerminationsListOK) Code() int {
 }
 
 func (o *VpnTunnelTerminationsListOK) Error() string {
-	return fmt.Sprintf("[GET /vpn/tunnel-terminations/][%d] vpnTunnelTerminationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnel-terminations/][%d] vpnTunnelTerminationsListOK %s", 200, payload)
 }
 
 func (o *VpnTunnelTerminationsListOK) String() string {
-	return fmt.Sprintf("[GET /vpn/tunnel-terminations/][%d] vpnTunnelTerminationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnel-terminations/][%d] vpnTunnelTerminationsListOK %s", 200, payload)
 }
 
 func (o *VpnTunnelTerminationsListOK) GetPayload() *VpnTunnelTerminationsListOKBody {
@@ -178,11 +181,13 @@ func (o *VpnTunnelTerminationsListDefault) Code() int {
 }
 
 func (o *VpnTunnelTerminationsListDefault) Error() string {
-	return fmt.Sprintf("[GET /vpn/tunnel-terminations/][%d] vpn_tunnel-terminations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnel-terminations/][%d] vpn_tunnel-terminations_list default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelTerminationsListDefault) String() string {
-	return fmt.Sprintf("[GET /vpn/tunnel-terminations/][%d] vpn_tunnel-terminations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnel-terminations/][%d] vpn_tunnel-terminations_list default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelTerminationsListDefault) GetPayload() interface{} {

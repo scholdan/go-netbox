@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasCustomFieldsDeleteNoContent) Code() int {
 }
 
 func (o *ExtrasCustomFieldsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extrasCustomFieldsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extrasCustomFieldsDeleteNoContent", 204)
 }
 
 func (o *ExtrasCustomFieldsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extrasCustomFieldsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extrasCustomFieldsDeleteNoContent", 204)
 }
 
 func (o *ExtrasCustomFieldsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasCustomFieldsDeleteDefault) Code() int {
 }
 
 func (o *ExtrasCustomFieldsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extras_custom-fields_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extras_custom-fields_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extras_custom-fields_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extras_custom-fields_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldsDeleteDefault) GetPayload() interface{} {

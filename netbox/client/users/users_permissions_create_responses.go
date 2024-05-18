@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *UsersPermissionsCreateCreated) Code() int {
 }
 
 func (o *UsersPermissionsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /users/permissions/][%d] usersPermissionsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/permissions/][%d] usersPermissionsCreateCreated %s", 201, payload)
 }
 
 func (o *UsersPermissionsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /users/permissions/][%d] usersPermissionsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/permissions/][%d] usersPermissionsCreateCreated %s", 201, payload)
 }
 
 func (o *UsersPermissionsCreateCreated) GetPayload() *models.ObjectPermission {
@@ -173,11 +176,13 @@ func (o *UsersPermissionsCreateDefault) Code() int {
 }
 
 func (o *UsersPermissionsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /users/permissions/][%d] users_permissions_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/permissions/][%d] users_permissions_create default %s", o._statusCode, payload)
 }
 
 func (o *UsersPermissionsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /users/permissions/][%d] users_permissions_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/permissions/][%d] users_permissions_create default %s", o._statusCode, payload)
 }
 
 func (o *UsersPermissionsCreateDefault) GetPayload() interface{} {

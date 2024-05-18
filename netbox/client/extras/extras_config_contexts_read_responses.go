@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasConfigContextsReadOK) Code() int {
 }
 
 func (o *ExtrasConfigContextsReadOK) Error() string {
-	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extrasConfigContextsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extrasConfigContextsReadOK %s", 200, payload)
 }
 
 func (o *ExtrasConfigContextsReadOK) String() string {
-	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extrasConfigContextsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extrasConfigContextsReadOK %s", 200, payload)
 }
 
 func (o *ExtrasConfigContextsReadOK) GetPayload() *models.ConfigContext {
@@ -173,11 +176,13 @@ func (o *ExtrasConfigContextsReadDefault) Code() int {
 }
 
 func (o *ExtrasConfigContextsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extras_config-contexts_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extras_config-contexts_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigContextsReadDefault) String() string {
-	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extras_config-contexts_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extras_config-contexts_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasConfigContextsReadDefault) GetPayload() interface{} {

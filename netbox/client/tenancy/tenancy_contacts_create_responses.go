@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyContactsCreateCreated) Code() int {
 }
 
 func (o *TenancyContactsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancyContactsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancyContactsCreateCreated %s", 201, payload)
 }
 
 func (o *TenancyContactsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancyContactsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancyContactsCreateCreated %s", 201, payload)
 }
 
 func (o *TenancyContactsCreateCreated) GetPayload() *models.Contact {
@@ -173,11 +176,13 @@ func (o *TenancyContactsCreateDefault) Code() int {
 }
 
 func (o *TenancyContactsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancy_contacts_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancy_contacts_create default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancy_contacts_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancy_contacts_create default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactsCreateDefault) GetPayload() interface{} {

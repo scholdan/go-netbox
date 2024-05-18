@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasSavedFiltersCreateCreated) Code() int {
 }
 
 func (o *ExtrasSavedFiltersCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /extras/saved-filters/][%d] extrasSavedFiltersCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/saved-filters/][%d] extrasSavedFiltersCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasSavedFiltersCreateCreated) String() string {
-	return fmt.Sprintf("[POST /extras/saved-filters/][%d] extrasSavedFiltersCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/saved-filters/][%d] extrasSavedFiltersCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasSavedFiltersCreateCreated) GetPayload() *models.SavedFilter {
@@ -173,11 +176,13 @@ func (o *ExtrasSavedFiltersCreateDefault) Code() int {
 }
 
 func (o *ExtrasSavedFiltersCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /extras/saved-filters/][%d] extras_saved-filters_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/saved-filters/][%d] extras_saved-filters_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasSavedFiltersCreateDefault) String() string {
-	return fmt.Sprintf("[POST /extras/saved-filters/][%d] extras_saved-filters_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/saved-filters/][%d] extras_saved-filters_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasSavedFiltersCreateDefault) GetPayload() interface{} {

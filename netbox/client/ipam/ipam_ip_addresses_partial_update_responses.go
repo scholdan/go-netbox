@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamIPAddressesPartialUpdateOK) Code() int {
 }
 
 func (o *IpamIPAddressesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipamIpAddressesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipamIpAddressesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamIPAddressesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipamIpAddressesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipamIpAddressesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamIPAddressesPartialUpdateOK) GetPayload() *models.IPAddress {
@@ -173,11 +176,13 @@ func (o *IpamIPAddressesPartialUpdateDefault) Code() int {
 }
 
 func (o *IpamIPAddressesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPAddressesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPAddressesPartialUpdateDefault) GetPayload() interface{} {

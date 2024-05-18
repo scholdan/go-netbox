@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasJournalEntriesUpdateOK) Code() int {
 }
 
 func (o *ExtrasJournalEntriesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /extras/journal-entries/{id}/][%d] extrasJournalEntriesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/journal-entries/{id}/][%d] extrasJournalEntriesUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasJournalEntriesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /extras/journal-entries/{id}/][%d] extrasJournalEntriesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/journal-entries/{id}/][%d] extrasJournalEntriesUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasJournalEntriesUpdateOK) GetPayload() *models.JournalEntry {
@@ -173,11 +176,13 @@ func (o *ExtrasJournalEntriesUpdateDefault) Code() int {
 }
 
 func (o *ExtrasJournalEntriesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /extras/journal-entries/{id}/][%d] extras_journal-entries_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/journal-entries/{id}/][%d] extras_journal-entries_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJournalEntriesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /extras/journal-entries/{id}/][%d] extras_journal-entries_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/journal-entries/{id}/][%d] extras_journal-entries_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJournalEntriesUpdateDefault) GetPayload() interface{} {

@@ -494,12 +494,12 @@ type AggregateFamily struct {
 
 	// label
 	// Required: true
-	// Enum: [IPv4 IPv6]
+	// Enum: ["IPv4","IPv6"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [4 6]
+	// Enum: [4,6]
 	Value *int64 `json:"value"`
 }
 

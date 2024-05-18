@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *UsersGroupsPartialUpdateOK) Code() int {
 }
 
 func (o *UsersGroupsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] usersGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] usersGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *UsersGroupsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] usersGroupsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] usersGroupsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *UsersGroupsPartialUpdateOK) GetPayload() *models.Group {
@@ -173,11 +176,13 @@ func (o *UsersGroupsPartialUpdateDefault) Code() int {
 }
 
 func (o *UsersGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] users_groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] users_groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *UsersGroupsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] users_groups_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] users_groups_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *UsersGroupsPartialUpdateDefault) GetPayload() interface{} {

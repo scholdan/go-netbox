@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimPowerFeedsListOK) Code() int {
 }
 
 func (o *DcimPowerFeedsListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcimPowerFeedsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcimPowerFeedsListOK %s", 200, payload)
 }
 
 func (o *DcimPowerFeedsListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcimPowerFeedsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcimPowerFeedsListOK %s", 200, payload)
 }
 
 func (o *DcimPowerFeedsListOK) GetPayload() *DcimPowerFeedsListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimPowerFeedsListDefault) Code() int {
 }
 
 func (o *DcimPowerFeedsListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcim_power-feeds_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcim_power-feeds_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerFeedsListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcim_power-feeds_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcim_power-feeds_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerFeedsListDefault) GetPayload() interface{} {

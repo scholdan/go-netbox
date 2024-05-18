@@ -51,7 +51,7 @@ type NestedFHRPGroup struct {
 
 	// Protocol
 	// Required: true
-	// Enum: [vrrp2 vrrp3 carp clusterxl hsrp glbp other]
+	// Enum: ["vrrp2","vrrp3","carp","clusterxl","hsrp","glbp","other"]
 	Protocol *string `json:"protocol"`
 
 	// Url

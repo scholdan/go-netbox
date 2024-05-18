@@ -51,7 +51,7 @@ type WritableTunnel struct {
 	// * `ip-ip` - IP-in-IP
 	// * `gre` - GRE
 	// Required: true
-	// Enum: [ipsec-transport ipsec-tunnel ip-ip gre]
+	// Enum: ["ipsec-transport","ipsec-tunnel","ip-ip","gre"]
 	Encapsulation *string `json:"encapsulation"`
 
 	// group
@@ -71,7 +71,7 @@ type WritableTunnel struct {
 	// * `active` - Active
 	// * `disabled` - Disabled
 	// Required: true
-	// Enum: [planned active disabled]
+	// Enum: ["planned","active","disabled"]
 	Status *string `json:"status"`
 
 	// tags

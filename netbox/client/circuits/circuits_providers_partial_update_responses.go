@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *CircuitsProvidersPartialUpdateOK) Code() int {
 }
 
 func (o *CircuitsProvidersPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuitsProvidersPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuitsProvidersPartialUpdateOK %s", 200, payload)
 }
 
 func (o *CircuitsProvidersPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuitsProvidersPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuitsProvidersPartialUpdateOK %s", 200, payload)
 }
 
 func (o *CircuitsProvidersPartialUpdateOK) GetPayload() *models.Provider {
@@ -173,11 +176,13 @@ func (o *CircuitsProvidersPartialUpdateDefault) Code() int {
 }
 
 func (o *CircuitsProvidersPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuits_providers_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuits_providers_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsProvidersPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuits_providers_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuits_providers_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsProvidersPartialUpdateDefault) GetPayload() interface{} {

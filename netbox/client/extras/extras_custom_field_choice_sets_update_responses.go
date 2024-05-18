@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasCustomFieldChoiceSetsUpdateOK) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsUpdateOK) GetPayload() *models.CustomFieldChoiceSet {
@@ -173,11 +176,13 @@ func (o *ExtrasCustomFieldChoiceSetsUpdateDefault) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsUpdateDefault) GetPayload() interface{} {

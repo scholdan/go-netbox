@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamAsnsCreateCreated) Code() int {
 }
 
 func (o *IpamAsnsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/asns/][%d] ipamAsnsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/asns/][%d] ipamAsnsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamAsnsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /ipam/asns/][%d] ipamAsnsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/asns/][%d] ipamAsnsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamAsnsCreateCreated) GetPayload() *models.ASN {
@@ -173,11 +176,13 @@ func (o *IpamAsnsCreateDefault) Code() int {
 }
 
 func (o *IpamAsnsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/asns/][%d] ipam_asns_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/asns/][%d] ipam_asns_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamAsnsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /ipam/asns/][%d] ipam_asns_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/asns/][%d] ipam_asns_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamAsnsCreateDefault) GetPayload() interface{} {

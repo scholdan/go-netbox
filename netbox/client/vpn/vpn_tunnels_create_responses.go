@@ -21,6 +21,7 @@ package vpn
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VpnTunnelsCreateCreated) Code() int {
 }
 
 func (o *VpnTunnelsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /vpn/tunnels/][%d] vpnTunnelsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /vpn/tunnels/][%d] vpnTunnelsCreateCreated %s", 201, payload)
 }
 
 func (o *VpnTunnelsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /vpn/tunnels/][%d] vpnTunnelsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /vpn/tunnels/][%d] vpnTunnelsCreateCreated %s", 201, payload)
 }
 
 func (o *VpnTunnelsCreateCreated) GetPayload() *models.Tunnel {
@@ -173,11 +176,13 @@ func (o *VpnTunnelsCreateDefault) Code() int {
 }
 
 func (o *VpnTunnelsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /vpn/tunnels/][%d] vpn_tunnels_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /vpn/tunnels/][%d] vpn_tunnels_create default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /vpn/tunnels/][%d] vpn_tunnels_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /vpn/tunnels/][%d] vpn_tunnels_create default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelsCreateDefault) GetPayload() interface{} {

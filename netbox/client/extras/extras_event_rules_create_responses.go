@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasEventRulesCreateCreated) Code() int {
 }
 
 func (o *ExtrasEventRulesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /extras/event-rules/][%d] extrasEventRulesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/event-rules/][%d] extrasEventRulesCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasEventRulesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /extras/event-rules/][%d] extrasEventRulesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/event-rules/][%d] extrasEventRulesCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasEventRulesCreateCreated) GetPayload() *models.EventRule {
@@ -173,11 +176,13 @@ func (o *ExtrasEventRulesCreateDefault) Code() int {
 }
 
 func (o *ExtrasEventRulesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /extras/event-rules/][%d] extras_event_rules_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/event-rules/][%d] extras_event_rules_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasEventRulesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /extras/event-rules/][%d] extras_event_rules_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/event-rules/][%d] extras_event_rules_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasEventRulesCreateDefault) GetPayload() interface{} {

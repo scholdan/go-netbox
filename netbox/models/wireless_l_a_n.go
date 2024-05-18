@@ -659,12 +659,12 @@ type WirelessLANAuthCipher struct {
 
 	// label
 	// Required: true
-	// Enum: [Auto TKIP AES]
+	// Enum: ["Auto","TKIP","AES"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [auto tkip aes]
+	// Enum: ["auto","tkip","aes"]
 	Value *string `json:"value"`
 }
 
@@ -808,12 +808,12 @@ type WirelessLANAuthType struct {
 
 	// label
 	// Required: true
-	// Enum: [Open WEP WPA Personal (PSK) WPA Enterprise]
+	// Enum: ["Open","WEP","WPA Personal (PSK)","WPA Enterprise"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [open wep wpa-personal wpa-enterprise]
+	// Enum: ["open","wep","wpa-personal","wpa-enterprise"]
 	Value *string `json:"value"`
 }
 
@@ -963,12 +963,12 @@ type WirelessLANStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Active Reserved Disabled Deprecated]
+	// Enum: ["Active","Reserved","Disabled","Deprecated"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [active reserved disabled deprecated]
+	// Enum: ["active","reserved","disabled","deprecated"]
 	Value *string `json:"value"`
 }
 

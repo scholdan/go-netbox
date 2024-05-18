@@ -546,12 +546,12 @@ type ModuleStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Offline Active Planned Staged Failed Decommissioning]
+	// Enum: ["Offline","Active","Planned","Staged","Failed","Decommissioning"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [offline active planned staged failed decommissioning]
+	// Enum: ["offline","active","planned","staged","failed","decommissioning"]
 	Value *string `json:"value"`
 }
 

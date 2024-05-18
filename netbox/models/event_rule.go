@@ -463,12 +463,12 @@ func (m *EventRule) UnmarshalBinary(b []byte) error {
 type EventRuleActionType struct {
 
 	// label
-	// Enum: [Webhook Script]
+	// Enum: ["Webhook","Script"]
 	Label string `json:"label,omitempty"`
 
 	// * `webhook` - Webhook
 	// * `script` - Script
-	// Enum: [webhook script]
+	// Enum: ["webhook","script"]
 	Value string `json:"value,omitempty"`
 }
 

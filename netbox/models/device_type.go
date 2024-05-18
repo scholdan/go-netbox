@@ -702,12 +702,12 @@ type DeviceTypeAirflow struct {
 
 	// label
 	// Required: true
-	// Enum: [Front to rear Rear to front Left to right Right to left Side to rear Passive Mixed]
+	// Enum: ["Front to rear","Rear to front","Left to right","Right to left","Side to rear","Passive","Mixed"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
+	// Enum: ["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]
 	Value *string `json:"value"`
 }
 
@@ -875,12 +875,12 @@ type DeviceTypeSubdeviceRole struct {
 
 	// label
 	// Required: true
-	// Enum: [Parent Child]
+	// Enum: ["Parent","Child"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [parent child]
+	// Enum: ["parent","child"]
 	Value *string `json:"value"`
 }
 
@@ -1018,12 +1018,12 @@ type DeviceTypeWeightUnit struct {
 
 	// label
 	// Required: true
-	// Enum: [Kilograms Grams Pounds Ounces]
+	// Enum: ["Kilograms","Grams","Pounds","Ounces"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [kg g lb oz]
+	// Enum: ["kg","g","lb","oz"]
 	Value *string `json:"value"`
 }
 

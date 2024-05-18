@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyContactAssignmentsCreateCreated) Code() int {
 }
 
 func (o *TenancyContactAssignmentsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /tenancy/contact-assignments/][%d] tenancyContactAssignmentsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contact-assignments/][%d] tenancyContactAssignmentsCreateCreated %s", 201, payload)
 }
 
 func (o *TenancyContactAssignmentsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /tenancy/contact-assignments/][%d] tenancyContactAssignmentsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contact-assignments/][%d] tenancyContactAssignmentsCreateCreated %s", 201, payload)
 }
 
 func (o *TenancyContactAssignmentsCreateCreated) GetPayload() *models.ContactAssignment {
@@ -173,11 +176,13 @@ func (o *TenancyContactAssignmentsCreateDefault) Code() int {
 }
 
 func (o *TenancyContactAssignmentsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /tenancy/contact-assignments/][%d] tenancy_contact-assignments_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contact-assignments/][%d] tenancy_contact-assignments_create default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactAssignmentsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /tenancy/contact-assignments/][%d] tenancy_contact-assignments_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tenancy/contact-assignments/][%d] tenancy_contact-assignments_create default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactAssignmentsCreateDefault) GetPayload() interface{} {

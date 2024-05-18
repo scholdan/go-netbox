@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *CircuitsCircuitTerminationsPathsOK) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsPathsOK) Error() string {
-	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuitsCircuitTerminationsPathsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuitsCircuitTerminationsPathsOK %s", 200, payload)
 }
 
 func (o *CircuitsCircuitTerminationsPathsOK) String() string {
-	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuitsCircuitTerminationsPathsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuitsCircuitTerminationsPathsOK %s", 200, payload)
 }
 
 func (o *CircuitsCircuitTerminationsPathsOK) GetPayload() *models.CircuitTermination {
@@ -173,11 +176,13 @@ func (o *CircuitsCircuitTerminationsPathsDefault) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsPathsDefault) Error() string {
-	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuits_circuit-terminations_paths default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuits_circuit-terminations_paths default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsPathsDefault) String() string {
-	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuits_circuit-terminations_paths default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuits_circuit-terminations_paths default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsPathsDefault) GetPayload() interface{} {

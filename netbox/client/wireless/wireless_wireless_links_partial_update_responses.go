@@ -21,6 +21,7 @@ package wireless
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *WirelessWirelessLinksPartialUpdateOK) Code() int {
 }
 
 func (o *WirelessWirelessLinksPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /wireless/wireless-links/{id}/][%d] wirelessWirelessLinksPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /wireless/wireless-links/{id}/][%d] wirelessWirelessLinksPartialUpdateOK %s", 200, payload)
 }
 
 func (o *WirelessWirelessLinksPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /wireless/wireless-links/{id}/][%d] wirelessWirelessLinksPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /wireless/wireless-links/{id}/][%d] wirelessWirelessLinksPartialUpdateOK %s", 200, payload)
 }
 
 func (o *WirelessWirelessLinksPartialUpdateOK) GetPayload() *models.WirelessLink {
@@ -173,11 +176,13 @@ func (o *WirelessWirelessLinksPartialUpdateDefault) Code() int {
 }
 
 func (o *WirelessWirelessLinksPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /wireless/wireless-links/{id}/][%d] wireless_wireless-links_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /wireless/wireless-links/{id}/][%d] wireless_wireless-links_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLinksPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /wireless/wireless-links/{id}/][%d] wireless_wireless-links_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /wireless/wireless-links/{id}/][%d] wireless_wireless-links_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLinksPartialUpdateDefault) GetPayload() interface{} {

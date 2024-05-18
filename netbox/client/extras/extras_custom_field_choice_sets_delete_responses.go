@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasCustomFieldChoiceSetsDeleteNoContent) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsDeleteNoContent", 204)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/custom-field-choice-sets/{id}/][%d] extrasCustomFieldChoiceSetsDeleteNoContent", 204)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) Code() int {
 }
 
 func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/custom-field-choice-sets/{id}/][%d] extras_custom-field-choice-sets_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldChoiceSetsDeleteDefault) GetPayload() interface{} {

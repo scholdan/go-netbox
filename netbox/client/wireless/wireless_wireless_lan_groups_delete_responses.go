@@ -21,6 +21,7 @@ package wireless
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *WirelessWirelessLanGroupsDeleteNoContent) Code() int {
 }
 
 func (o *WirelessWirelessLanGroupsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsDeleteNoContent", 204)
 }
 
 func (o *WirelessWirelessLanGroupsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsDeleteNoContent", 204)
 }
 
 func (o *WirelessWirelessLanGroupsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *WirelessWirelessLanGroupsDeleteDefault) Code() int {
 }
 
 func (o *WirelessWirelessLanGroupsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_delete default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLanGroupsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_delete default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLanGroupsDeleteDefault) GetPayload() interface{} {

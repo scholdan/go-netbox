@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInterfaceTemplatesReadOK) Code() int {
 }
 
 func (o *DcimInterfaceTemplatesReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesReadOK %s", 200, payload)
 }
 
 func (o *DcimInterfaceTemplatesReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesReadOK %s", 200, payload)
 }
 
 func (o *DcimInterfaceTemplatesReadOK) GetPayload() *models.InterfaceTemplate {
@@ -173,11 +176,13 @@ func (o *DcimInterfaceTemplatesReadDefault) Code() int {
 }
 
 func (o *DcimInterfaceTemplatesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcim_interface-templates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcim_interface-templates_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfaceTemplatesReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcim_interface-templates_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcim_interface-templates_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfaceTemplatesReadDefault) GetPayload() interface{} {

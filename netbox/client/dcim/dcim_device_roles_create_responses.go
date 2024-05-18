@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimDeviceRolesCreateCreated) Code() int {
 }
 
 func (o *DcimDeviceRolesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcimDeviceRolesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcimDeviceRolesCreateCreated %s", 201, payload)
 }
 
 func (o *DcimDeviceRolesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcimDeviceRolesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcimDeviceRolesCreateCreated %s", 201, payload)
 }
 
 func (o *DcimDeviceRolesCreateCreated) GetPayload() *models.DeviceRole {
@@ -173,11 +176,13 @@ func (o *DcimDeviceRolesCreateDefault) Code() int {
 }
 
 func (o *DcimDeviceRolesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcim_device-roles_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcim_device-roles_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceRolesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcim_device-roles_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcim_device-roles_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceRolesCreateDefault) GetPayload() interface{} {

@@ -22,6 +22,7 @@ package users
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *UsersUsersListOK) Code() int {
 }
 
 func (o *UsersUsersListOK) Error() string {
-	return fmt.Sprintf("[GET /users/users/][%d] usersUsersListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/users/][%d] usersUsersListOK %s", 200, payload)
 }
 
 func (o *UsersUsersListOK) String() string {
-	return fmt.Sprintf("[GET /users/users/][%d] usersUsersListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/users/][%d] usersUsersListOK %s", 200, payload)
 }
 
 func (o *UsersUsersListOK) GetPayload() *UsersUsersListOKBody {
@@ -178,11 +181,13 @@ func (o *UsersUsersListDefault) Code() int {
 }
 
 func (o *UsersUsersListDefault) Error() string {
-	return fmt.Sprintf("[GET /users/users/][%d] users_users_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/users/][%d] users_users_list default %s", o._statusCode, payload)
 }
 
 func (o *UsersUsersListDefault) String() string {
-	return fmt.Sprintf("[GET /users/users/][%d] users_users_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/users/][%d] users_users_list default %s", o._statusCode, payload)
 }
 
 func (o *UsersUsersListDefault) GetPayload() interface{} {

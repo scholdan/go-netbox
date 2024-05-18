@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *IpamAggregatesDeleteNoContent) Code() int {
 }
 
 func (o *IpamAggregatesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/aggregates/{id}/][%d] ipamAggregatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/aggregates/{id}/][%d] ipamAggregatesDeleteNoContent", 204)
 }
 
 func (o *IpamAggregatesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /ipam/aggregates/{id}/][%d] ipamAggregatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/aggregates/{id}/][%d] ipamAggregatesDeleteNoContent", 204)
 }
 
 func (o *IpamAggregatesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *IpamAggregatesDeleteDefault) Code() int {
 }
 
 func (o *IpamAggregatesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/aggregates/{id}/][%d] ipam_aggregates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/aggregates/{id}/][%d] ipam_aggregates_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamAggregatesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /ipam/aggregates/{id}/][%d] ipam_aggregates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/aggregates/{id}/][%d] ipam_aggregates_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamAggregatesDeleteDefault) GetPayload() interface{} {

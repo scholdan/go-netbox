@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInventoryItemRolesReadOK) Code() int {
 }
 
 func (o *DcimInventoryItemRolesReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesReadOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemRolesReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesReadOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemRolesReadOK) GetPayload() *models.InventoryItemRole {
@@ -173,11 +176,13 @@ func (o *DcimInventoryItemRolesReadDefault) Code() int {
 }
 
 func (o *DcimInventoryItemRolesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemRolesReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemRolesReadDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *CircuitsProviderNetworksPartialUpdateOK) Code() int {
 }
 
 func (o *CircuitsProviderNetworksPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksPartialUpdateOK %s", 200, payload)
 }
 
 func (o *CircuitsProviderNetworksPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksPartialUpdateOK %s", 200, payload)
 }
 
 func (o *CircuitsProviderNetworksPartialUpdateOK) GetPayload() *models.ProviderNetwork {
@@ -173,11 +176,13 @@ func (o *CircuitsProviderNetworksPartialUpdateDefault) Code() int {
 }
 
 func (o *CircuitsProviderNetworksPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /circuits/provider-networks/{id}/][%d] circuits_provider-networks_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/provider-networks/{id}/][%d] circuits_provider-networks_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsProviderNetworksPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /circuits/provider-networks/{id}/][%d] circuits_provider-networks_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /circuits/provider-networks/{id}/][%d] circuits_provider-networks_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsProviderNetworksPartialUpdateDefault) GetPayload() interface{} {

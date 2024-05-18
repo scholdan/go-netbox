@@ -46,7 +46,7 @@ type WritableEventRule struct {
 
 	// * `webhook` - Webhook
 	// * `script` - Script
-	// Enum: [webhook script]
+	// Enum: ["webhook","script"]
 	ActionType string `json:"action_type,omitempty"`
 
 	// Conditions

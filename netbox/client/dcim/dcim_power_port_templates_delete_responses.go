@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimPowerPortTemplatesDeleteNoContent) Code() int {
 }
 
 func (o *DcimPowerPortTemplatesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimPowerPortTemplatesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesDeleteNoContent", 204)
 }
 
 func (o *DcimPowerPortTemplatesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimPowerPortTemplatesDeleteDefault) Code() int {
 }
 
 func (o *DcimPowerPortTemplatesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPortTemplatesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPortTemplatesDeleteDefault) GetPayload() interface{} {

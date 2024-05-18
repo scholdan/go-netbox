@@ -700,12 +700,12 @@ type CircuitStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Planned Provisioning Active Offline Deprovisioning Decommissioned]
+	// Enum: ["Planned","Provisioning","Active","Offline","Deprovisioning","Decommissioned"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [planned provisioning active offline deprovisioning decommissioned]
+	// Enum: ["planned","provisioning","active","offline","deprovisioning","decommissioned"]
 	Value *string `json:"value"`
 }
 

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimPowerPortsReadOK) Code() int {
 }
 
 func (o *DcimPowerPortsReadOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcimPowerPortsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcimPowerPortsReadOK %s", 200, payload)
 }
 
 func (o *DcimPowerPortsReadOK) String() string {
-	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcimPowerPortsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcimPowerPortsReadOK %s", 200, payload)
 }
 
 func (o *DcimPowerPortsReadOK) GetPayload() *models.PowerPort {
@@ -173,11 +176,13 @@ func (o *DcimPowerPortsReadDefault) Code() int {
 }
 
 func (o *DcimPowerPortsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcim_power-ports_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcim_power-ports_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPortsReadDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcim_power-ports_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcim_power-ports_read default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPortsReadDefault) GetPayload() interface{} {

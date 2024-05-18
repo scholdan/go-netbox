@@ -22,6 +22,7 @@ package circuits
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *CircuitsCircuitTerminationsListOK) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsListOK) Error() string {
-	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsListOK %s", 200, payload)
 }
 
 func (o *CircuitsCircuitTerminationsListOK) String() string {
-	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsListOK %s", 200, payload)
 }
 
 func (o *CircuitsCircuitTerminationsListOK) GetPayload() *CircuitsCircuitTerminationsListOKBody {
@@ -178,11 +181,13 @@ func (o *CircuitsCircuitTerminationsListDefault) Code() int {
 }
 
 func (o *CircuitsCircuitTerminationsListDefault) Error() string {
-	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuits_circuit-terminations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuits_circuit-terminations_list default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsListDefault) String() string {
-	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuits_circuit-terminations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuits_circuit-terminations_list default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTerminationsListDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasImageAttachmentsCreateCreated) Code() int {
 }
 
 func (o *ExtrasImageAttachmentsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extrasImageAttachmentsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extrasImageAttachmentsCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasImageAttachmentsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extrasImageAttachmentsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extrasImageAttachmentsCreateCreated %s", 201, payload)
 }
 
 func (o *ExtrasImageAttachmentsCreateCreated) GetPayload() *models.ImageAttachment {
@@ -173,11 +176,13 @@ func (o *ExtrasImageAttachmentsCreateDefault) Code() int {
 }
 
 func (o *ExtrasImageAttachmentsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extras_image-attachments_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extras_image-attachments_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasImageAttachmentsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extras_image-attachments_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extras_image-attachments_create default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasImageAttachmentsCreateDefault) GetPayload() interface{} {

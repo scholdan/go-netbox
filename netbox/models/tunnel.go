@@ -45,7 +45,7 @@ type Tunnel struct {
 	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// custom fields
-	CustomFields interface{} `json:"custom_fields,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 
 	// description
 	// Max Length: 200
@@ -547,14 +547,14 @@ func (m *Tunnel) UnmarshalBinary(b []byte) error {
 type TunnelEncapsulation struct {
 
 	// label
-	// Enum: [IPsec - Transport IPsec - Tunnel IP-in-IP GRE]
+	// Enum: ["IPsec - Transport","IPsec - Tunnel","IP-in-IP","GRE"]
 	Label string `json:"label,omitempty"`
 
 	// * `ipsec-transport` - IPsec - Transport
 	// * `ipsec-tunnel` - IPsec - Tunnel
 	// * `ip-ip` - IP-in-IP
 	// * `gre` - GRE
-	// Enum: [ipsec-transport ipsec-tunnel ip-ip gre]
+	// Enum: ["ipsec-transport","ipsec-tunnel","ip-ip","gre"]
 	Value string `json:"value,omitempty"`
 }
 
@@ -701,13 +701,13 @@ func (m *TunnelEncapsulation) UnmarshalBinary(b []byte) error {
 type TunnelStatus struct {
 
 	// label
-	// Enum: [Planned Active Disabled]
+	// Enum: ["Planned","Active","Disabled"]
 	Label string `json:"label,omitempty"`
 
 	// * `planned` - Planned
 	// * `active` - Active
 	// * `disabled` - Disabled
-	// Enum: [planned active disabled]
+	// Enum: ["planned","active","disabled"]
 	Value string `json:"value,omitempty"`
 }
 

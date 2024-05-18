@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationInterfacesPartialUpdateOK) Code() int {
 }
 
 func (o *VirtualizationInterfacesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualizationInterfacesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualizationInterfacesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationInterfacesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualizationInterfacesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualizationInterfacesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationInterfacesPartialUpdateOK) GetPayload() *models.VMInterface {
@@ -173,11 +176,13 @@ func (o *VirtualizationInterfacesPartialUpdateDefault) Code() int {
 }
 
 func (o *VirtualizationInterfacesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualization_interfaces_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualization_interfaces_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualization_interfaces_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualization_interfaces_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationInterfacesPartialUpdateDefault) GetPayload() interface{} {

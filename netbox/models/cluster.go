@@ -620,12 +620,12 @@ type ClusterStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Planned Staging Active Decommissioning Offline]
+	// Enum: ["Planned","Staging","Active","Decommissioning","Offline"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [planned staging active decommissioning offline]
+	// Enum: ["planned","staging","active","decommissioning","offline"]
 	Value *string `json:"value"`
 }
 

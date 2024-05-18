@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamPrefixesUpdateOK) Code() int {
 }
 
 func (o *IpamPrefixesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /ipam/prefixes/{id}/][%d] ipamPrefixesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/prefixes/{id}/][%d] ipamPrefixesUpdateOK %s", 200, payload)
 }
 
 func (o *IpamPrefixesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /ipam/prefixes/{id}/][%d] ipamPrefixesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/prefixes/{id}/][%d] ipamPrefixesUpdateOK %s", 200, payload)
 }
 
 func (o *IpamPrefixesUpdateOK) GetPayload() *models.Prefix {
@@ -173,11 +176,13 @@ func (o *IpamPrefixesUpdateDefault) Code() int {
 }
 
 func (o *IpamPrefixesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /ipam/prefixes/{id}/][%d] ipam_prefixes_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/prefixes/{id}/][%d] ipam_prefixes_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /ipam/prefixes/{id}/][%d] ipam_prefixes_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/prefixes/{id}/][%d] ipam_prefixes_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesUpdateDefault) GetPayload() interface{} {

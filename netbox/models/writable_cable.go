@@ -83,11 +83,11 @@ type WritableCable struct {
 	Length *float64 `json:"length"`
 
 	// Length unit
-	// Enum: [km m cm mi ft in]
+	// Enum: ["km","m","cm","mi","ft","in"]
 	LengthUnit string `json:"length_unit,omitempty"`
 
 	// Status
-	// Enum: [connected planned decommissioning]
+	// Enum: ["connected","planned","decommissioning"]
 	Status string `json:"status,omitempty"`
 
 	// tags
@@ -97,7 +97,7 @@ type WritableCable struct {
 	Tenant *int64 `json:"tenant"`
 
 	// Type
-	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 cat7a cat8 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 mmf-om5 smf smf-os1 smf-os2 aoc power]
+	// Enum: ["cat3","cat5","cat5e","cat6","cat6a","cat7","cat7a","cat8","dac-active","dac-passive","mrj21-trunk","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","mmf-om5","smf","smf-os1","smf-os2","aoc","power"]
 	Type string `json:"type"`
 
 	// Url

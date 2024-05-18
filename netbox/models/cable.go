@@ -95,7 +95,7 @@ type Cable struct {
 	Tenant *NestedTenant `json:"tenant,omitempty"`
 
 	// Type
-	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 cat7a cat8 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 mmf-om5 smf smf-os1 smf-os2 aoc power]
+	// Enum: ["cat3","cat5","cat5e","cat6","cat6a","cat7","cat7a","cat8","dac-active","dac-passive","mrj21-trunk","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","mmf-om5","smf","smf-os1","smf-os2","aoc","power"]
 	Type string `json:"type,omitempty"`
 
 	// Url
@@ -744,12 +744,12 @@ type CableLengthUnit struct {
 
 	// label
 	// Required: true
-	// Enum: [Kilometers Meters Centimeters Miles Feet Inches]
+	// Enum: ["Kilometers","Meters","Centimeters","Miles","Feet","Inches"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [km m cm mi ft in]
+	// Enum: ["km","m","cm","mi","ft","in"]
 	Value *string `json:"value"`
 }
 
@@ -911,12 +911,12 @@ type CableStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Connected Planned Decommissioning]
+	// Enum: ["Connected","Planned","Decommissioning"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [connected planned decommissioning]
+	// Enum: ["connected","planned","decommissioning"]
 	Value *string `json:"value"`
 }
 

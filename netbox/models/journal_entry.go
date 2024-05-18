@@ -402,12 +402,12 @@ type JournalEntryKind struct {
 
 	// label
 	// Required: true
-	// Enum: [Info Success Warning Danger]
+	// Enum: ["Info","Success","Warning","Danger"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [info success warning danger]
+	// Enum: ["info","success","warning","danger"]
 	Value *string `json:"value"`
 }
 

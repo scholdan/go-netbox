@@ -103,7 +103,7 @@ type WritablePrefix struct {
 	// Status
 	//
 	// Operational status of this prefix
-	// Enum: [container active reserved deprecated]
+	// Enum: ["container","active","reserved","deprecated"]
 	Status string `json:"status,omitempty"`
 
 	// tags

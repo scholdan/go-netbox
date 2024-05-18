@@ -472,13 +472,13 @@ func (m *TunnelTermination) UnmarshalBinary(b []byte) error {
 type TunnelTerminationRole struct {
 
 	// label
-	// Enum: [Peer Hub Spoke]
+	// Enum: ["Peer","Hub","Spoke"]
 	Label string `json:"label,omitempty"`
 
 	// * `peer` - Peer
 	// * `hub` - Hub
 	// * `spoke` - Spoke
-	// Enum: [peer hub spoke]
+	// Enum: ["peer","hub","spoke"]
 	Value string `json:"value,omitempty"`
 }
 

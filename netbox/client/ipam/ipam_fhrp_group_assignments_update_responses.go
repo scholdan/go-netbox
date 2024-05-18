@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamFhrpGroupAssignmentsUpdateOK) Code() int {
 }
 
 func (o *IpamFhrpGroupAssignmentsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsUpdateOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsUpdateOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsUpdateOK) GetPayload() *models.FHRPGroupAssignment {
@@ -173,11 +176,13 @@ func (o *IpamFhrpGroupAssignmentsUpdateDefault) Code() int {
 }
 
 func (o *IpamFhrpGroupAssignmentsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsUpdateDefault) GetPayload() interface{} {

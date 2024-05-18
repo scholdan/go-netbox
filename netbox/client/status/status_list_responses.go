@@ -21,6 +21,7 @@ package status
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -99,11 +100,13 @@ func (o *StatusListOK) Code() int {
 }
 
 func (o *StatusListOK) Error() string {
-	return fmt.Sprintf("[GET /status/][%d] statusListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /status/][%d] statusListOK %s", 200, payload)
 }
 
 func (o *StatusListOK) String() string {
-	return fmt.Sprintf("[GET /status/][%d] statusListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /status/][%d] statusListOK %s", 200, payload)
 }
 
 func (o *StatusListOK) GetPayload() interface{} {
@@ -169,11 +172,13 @@ func (o *StatusListDefault) Code() int {
 }
 
 func (o *StatusListDefault) Error() string {
-	return fmt.Sprintf("[GET /status/][%d] status_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /status/][%d] status_list default %s", o._statusCode, payload)
 }
 
 func (o *StatusListDefault) String() string {
-	return fmt.Sprintf("[GET /status/][%d] status_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /status/][%d] status_list default %s", o._statusCode, payload)
 }
 
 func (o *StatusListDefault) GetPayload() interface{} {

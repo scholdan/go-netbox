@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamVlansReadOK) Code() int {
 }
 
 func (o *IpamVlansReadOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipamVlansReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipamVlansReadOK %s", 200, payload)
 }
 
 func (o *IpamVlansReadOK) String() string {
-	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipamVlansReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipamVlansReadOK %s", 200, payload)
 }
 
 func (o *IpamVlansReadOK) GetPayload() *models.VLAN {
@@ -173,11 +176,13 @@ func (o *IpamVlansReadDefault) Code() int {
 }
 
 func (o *IpamVlansReadDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipam_vlans_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipam_vlans_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlansReadDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipam_vlans_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipam_vlans_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlansReadDefault) GetPayload() interface{} {

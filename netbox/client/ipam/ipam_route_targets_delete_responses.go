@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *IpamRouteTargetsDeleteNoContent) Code() int {
 }
 
 func (o *IpamRouteTargetsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipamRouteTargetsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipamRouteTargetsDeleteNoContent", 204)
 }
 
 func (o *IpamRouteTargetsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipamRouteTargetsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipamRouteTargetsDeleteNoContent", 204)
 }
 
 func (o *IpamRouteTargetsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *IpamRouteTargetsDeleteDefault) Code() int {
 }
 
 func (o *IpamRouteTargetsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipam_route-targets_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipam_route-targets_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamRouteTargetsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipam_route-targets_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipam_route-targets_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamRouteTargetsDeleteDefault) GetPayload() interface{} {

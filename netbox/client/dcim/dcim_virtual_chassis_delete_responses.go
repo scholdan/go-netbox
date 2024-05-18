@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *DcimVirtualChassisDeleteNoContent) Code() int {
 }
 
 func (o *DcimVirtualChassisDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisDeleteNoContent", 204)
 }
 
 func (o *DcimVirtualChassisDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisDeleteNoContent", 204)
 }
 
 func (o *DcimVirtualChassisDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *DcimVirtualChassisDeleteDefault) Code() int {
 }
 
 func (o *DcimVirtualChassisDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualChassisDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_delete default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualChassisDeleteDefault) GetPayload() interface{} {

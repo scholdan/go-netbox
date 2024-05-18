@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *UsersTokensProvisionCreateCreated) Code() int {
 }
 
 func (o *UsersTokensProvisionCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /users/tokens/provision/][%d] usersTokensProvisionCreateCreated ", 201)
+	return fmt.Sprintf("[POST /users/tokens/provision/][%d] usersTokensProvisionCreateCreated", 201)
 }
 
 func (o *UsersTokensProvisionCreateCreated) String() string {
-	return fmt.Sprintf("[POST /users/tokens/provision/][%d] usersTokensProvisionCreateCreated ", 201)
+	return fmt.Sprintf("[POST /users/tokens/provision/][%d] usersTokensProvisionCreateCreated", 201)
 }
 
 func (o *UsersTokensProvisionCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *UsersTokensProvisionCreateDefault) Code() int {
 }
 
 func (o *UsersTokensProvisionCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /users/tokens/provision/][%d] users_tokens_provision_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/tokens/provision/][%d] users_tokens_provision_create default %s", o._statusCode, payload)
 }
 
 func (o *UsersTokensProvisionCreateDefault) String() string {
-	return fmt.Sprintf("[POST /users/tokens/provision/][%d] users_tokens_provision_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/tokens/provision/][%d] users_tokens_provision_create default %s", o._statusCode, payload)
 }
 
 func (o *UsersTokensProvisionCreateDefault) GetPayload() interface{} {

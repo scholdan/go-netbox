@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamFhrpGroupAssignmentsListOK) Code() int {
 }
 
 func (o *IpamFhrpGroupAssignmentsListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/][%d] ipamFhrpGroupAssignmentsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/][%d] ipamFhrpGroupAssignmentsListOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/][%d] ipamFhrpGroupAssignmentsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/][%d] ipamFhrpGroupAssignmentsListOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsListOK) GetPayload() *IpamFhrpGroupAssignmentsListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamFhrpGroupAssignmentsListDefault) Code() int {
 }
 
 func (o *IpamFhrpGroupAssignmentsListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/][%d] ipam_fhrp-group-assignments_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/][%d] ipam_fhrp-group-assignments_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/][%d] ipam_fhrp-group-assignments_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/][%d] ipam_fhrp-group-assignments_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupAssignmentsListDefault) GetPayload() interface{} {

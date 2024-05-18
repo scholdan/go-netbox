@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamVrfsReadOK) Code() int {
 }
 
 func (o *IpamVrfsReadOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipamVrfsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipamVrfsReadOK %s", 200, payload)
 }
 
 func (o *IpamVrfsReadOK) String() string {
-	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipamVrfsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipamVrfsReadOK %s", 200, payload)
 }
 
 func (o *IpamVrfsReadOK) GetPayload() *models.VRF {
@@ -173,11 +176,13 @@ func (o *IpamVrfsReadDefault) Code() int {
 }
 
 func (o *IpamVrfsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipam_vrfs_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipam_vrfs_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamVrfsReadDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipam_vrfs_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipam_vrfs_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamVrfsReadDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimInventoryItemRolesUpdateOK) Code() int {
 }
 
 func (o *DcimInventoryItemRolesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemRolesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesUpdateOK %s", 200, payload)
 }
 
 func (o *DcimInventoryItemRolesUpdateOK) GetPayload() *models.InventoryItemRole {
@@ -173,11 +176,13 @@ func (o *DcimInventoryItemRolesUpdateDefault) Code() int {
 }
 
 func (o *DcimInventoryItemRolesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemRolesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimInventoryItemRolesUpdateDefault) GetPayload() interface{} {

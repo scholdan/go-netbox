@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *UsersGroupsReadOK) Code() int {
 }
 
 func (o *UsersGroupsReadOK) Error() string {
-	return fmt.Sprintf("[GET /users/groups/{id}/][%d] usersGroupsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/groups/{id}/][%d] usersGroupsReadOK %s", 200, payload)
 }
 
 func (o *UsersGroupsReadOK) String() string {
-	return fmt.Sprintf("[GET /users/groups/{id}/][%d] usersGroupsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/groups/{id}/][%d] usersGroupsReadOK %s", 200, payload)
 }
 
 func (o *UsersGroupsReadOK) GetPayload() *models.Group {
@@ -173,11 +176,13 @@ func (o *UsersGroupsReadDefault) Code() int {
 }
 
 func (o *UsersGroupsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /users/groups/{id}/][%d] users_groups_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/groups/{id}/][%d] users_groups_read default %s", o._statusCode, payload)
 }
 
 func (o *UsersGroupsReadDefault) String() string {
-	return fmt.Sprintf("[GET /users/groups/{id}/][%d] users_groups_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/groups/{id}/][%d] users_groups_read default %s", o._statusCode, payload)
 }
 
 func (o *UsersGroupsReadDefault) GetPayload() interface{} {

@@ -37,7 +37,7 @@ import (
 type WritableDeviceWithConfigContext struct {
 
 	// Airflow
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
+	// Enum: ["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]
 	Airflow string `json:"airflow,omitempty"`
 
 	// Asset tag
@@ -77,7 +77,7 @@ type WritableDeviceWithConfigContext struct {
 	Display string `json:"display,omitempty"`
 
 	// Rack face
-	// Enum: [front rear]
+	// Enum: ["front","rear"]
 	Face string `json:"face,omitempty"`
 
 	// ID
@@ -135,7 +135,7 @@ type WritableDeviceWithConfigContext struct {
 	Site *int64 `json:"site"`
 
 	// Status
-	// Enum: [offline active planned staged failed inventory decommissioning]
+	// Enum: ["offline","active","planned","staged","failed","inventory","decommissioning"]
 	Status string `json:"status,omitempty"`
 
 	// tags

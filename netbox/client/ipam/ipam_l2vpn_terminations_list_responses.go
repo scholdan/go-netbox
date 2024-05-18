@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamL2vpnTerminationsListOK) Code() int {
 }
 
 func (o *IpamL2vpnTerminationsListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsListOK %s", 200, payload)
 }
 
 func (o *IpamL2vpnTerminationsListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsListOK %s", 200, payload)
 }
 
 func (o *IpamL2vpnTerminationsListOK) GetPayload() *IpamL2vpnTerminationsListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamL2vpnTerminationsListDefault) Code() int {
 }
 
 func (o *IpamL2vpnTerminationsListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamL2vpnTerminationsListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamL2vpnTerminationsListDefault) GetPayload() interface{} {

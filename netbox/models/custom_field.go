@@ -699,12 +699,12 @@ type CustomFieldFilterLogic struct {
 
 	// label
 	// Required: true
-	// Enum: [Disabled Loose Exact]
+	// Enum: ["Disabled","Loose","Exact"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [disabled loose exact]
+	// Enum: ["disabled","loose","exact"]
 	Value *string `json:"value"`
 }
 
@@ -848,12 +848,12 @@ type CustomFieldType struct {
 
 	// label
 	// Required: true
-	// Enum: [Text Text (long) Integer Decimal Boolean (true/false) Date URL JSON Selection Multiple selection Object Multiple objects]
+	// Enum: ["Text","Text (long)","Integer","Decimal","Boolean (true/false)","Date","URL","JSON","Selection","Multiple selection","Object","Multiple objects"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [text longtext integer decimal boolean date url json select multiselect object multiobject]
+	// Enum: ["text","longtext","integer","decimal","boolean","date","url","json","select","multiselect","object","multiobject"]
 	Value *string `json:"value"`
 }
 
@@ -1051,12 +1051,12 @@ type CustomFieldUIVisibility struct {
 
 	// label
 	// Required: true
-	// Enum: [Read/Write Read-only Hidden]
+	// Enum: ["Read/Write","Read-only","Hidden"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [read-write read-only hidden]
+	// Enum: ["read-write","read-only","hidden"]
 	Value *string `json:"value"`
 }
 

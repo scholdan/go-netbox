@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamPrefixesAvailablePrefixesCreateCreated) Code() int {
 }
 
 func (o *IpamPrefixesAvailablePrefixesCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesCreateCreated %s", 201, payload)
 }
 
 func (o *IpamPrefixesAvailablePrefixesCreateCreated) String() string {
-	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesCreateCreated %s", 201, payload)
 }
 
 func (o *IpamPrefixesAvailablePrefixesCreateCreated) GetPayload() *models.Prefix {
@@ -173,11 +176,13 @@ func (o *IpamPrefixesAvailablePrefixesCreateDefault) Code() int {
 }
 
 func (o *IpamPrefixesAvailablePrefixesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesAvailablePrefixesCreateDefault) String() string {
-	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesAvailablePrefixesCreateDefault) GetPayload() interface{} {

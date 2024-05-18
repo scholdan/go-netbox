@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *UsersPermissionsDeleteNoContent) Code() int {
 }
 
 func (o *UsersPermissionsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] usersPermissionsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] usersPermissionsDeleteNoContent", 204)
 }
 
 func (o *UsersPermissionsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] usersPermissionsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] usersPermissionsDeleteNoContent", 204)
 }
 
 func (o *UsersPermissionsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *UsersPermissionsDeleteDefault) Code() int {
 }
 
 func (o *UsersPermissionsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] users_permissions_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] users_permissions_delete default %s", o._statusCode, payload)
 }
 
 func (o *UsersPermissionsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] users_permissions_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] users_permissions_delete default %s", o._statusCode, payload)
 }
 
 func (o *UsersPermissionsDeleteDefault) GetPayload() interface{} {

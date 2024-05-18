@@ -1029,12 +1029,12 @@ type RackOuterUnit struct {
 
 	// label
 	// Required: true
-	// Enum: [Millimeters Inches]
+	// Enum: ["Millimeters","Inches"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [mm in]
+	// Enum: ["mm","in"]
 	Value *string `json:"value"`
 }
 
@@ -1172,12 +1172,12 @@ type RackStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Reserved Available Planned Active Deprecated]
+	// Enum: ["Reserved","Available","Planned","Active","Deprecated"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [reserved available planned active deprecated]
+	// Enum: ["reserved","available","planned","active","deprecated"]
 	Value *string `json:"value"`
 }
 
@@ -1333,12 +1333,12 @@ type RackType struct {
 
 	// label
 	// Required: true
-	// Enum: [2-post frame 4-post frame 4-post cabinet Wall-mounted frame Wall-mounted frame (vertical) Wall-mounted cabinet Wall-mounted cabinet (vertical)]
+	// Enum: ["2-post frame","4-post frame","4-post cabinet","Wall-mounted frame","Wall-mounted frame (vertical)","Wall-mounted cabinet","Wall-mounted cabinet (vertical)"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [2-post-frame 4-post-frame 4-post-cabinet wall-frame wall-frame-vertical wall-cabinet wall-cabinet-vertical]
+	// Enum: ["2-post-frame","4-post-frame","4-post-cabinet","wall-frame","wall-frame-vertical","wall-cabinet","wall-cabinet-vertical"]
 	Value *string `json:"value"`
 }
 
@@ -1506,12 +1506,12 @@ type RackWeightUnit struct {
 
 	// label
 	// Required: true
-	// Enum: [Kilograms Grams Pounds Ounces]
+	// Enum: ["Kilograms","Grams","Pounds","Ounces"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [kg g lb oz]
+	// Enum: ["kg","g","lb","oz"]
 	Value *string `json:"value"`
 }
 
@@ -1661,12 +1661,12 @@ type RackWidth struct {
 
 	// label
 	// Required: true
-	// Enum: [10 inches 19 inches 21 inches 23 inches]
+	// Enum: ["10 inches","19 inches","21 inches","23 inches"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [10 19 21 23]
+	// Enum: [10,19,21,23]
 	Value *int64 `json:"value"`
 }
 

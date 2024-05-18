@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *UsersTokensReadOK) Code() int {
 }
 
 func (o *UsersTokensReadOK) Error() string {
-	return fmt.Sprintf("[GET /users/tokens/{id}/][%d] usersTokensReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/tokens/{id}/][%d] usersTokensReadOK %s", 200, payload)
 }
 
 func (o *UsersTokensReadOK) String() string {
-	return fmt.Sprintf("[GET /users/tokens/{id}/][%d] usersTokensReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/tokens/{id}/][%d] usersTokensReadOK %s", 200, payload)
 }
 
 func (o *UsersTokensReadOK) GetPayload() *models.Token {
@@ -173,11 +176,13 @@ func (o *UsersTokensReadDefault) Code() int {
 }
 
 func (o *UsersTokensReadDefault) Error() string {
-	return fmt.Sprintf("[GET /users/tokens/{id}/][%d] users_tokens_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/tokens/{id}/][%d] users_tokens_read default %s", o._statusCode, payload)
 }
 
 func (o *UsersTokensReadDefault) String() string {
-	return fmt.Sprintf("[GET /users/tokens/{id}/][%d] users_tokens_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /users/tokens/{id}/][%d] users_tokens_read default %s", o._statusCode, payload)
 }
 
 func (o *UsersTokensReadDefault) GetPayload() interface{} {

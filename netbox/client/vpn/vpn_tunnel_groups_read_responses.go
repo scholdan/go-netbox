@@ -21,6 +21,7 @@ package vpn
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VpnTunnelGroupsReadOK) Code() int {
 }
 
 func (o *VpnTunnelGroupsReadOK) Error() string {
-	return fmt.Sprintf("[GET /vpn/tunnel-groups/{id}/][%d] vpnTunnelGroupsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnel-groups/{id}/][%d] vpnTunnelGroupsReadOK %s", 200, payload)
 }
 
 func (o *VpnTunnelGroupsReadOK) String() string {
-	return fmt.Sprintf("[GET /vpn/tunnel-groups/{id}/][%d] vpnTunnelGroupsReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnel-groups/{id}/][%d] vpnTunnelGroupsReadOK %s", 200, payload)
 }
 
 func (o *VpnTunnelGroupsReadOK) GetPayload() *models.TunnelGroup {
@@ -173,11 +176,13 @@ func (o *VpnTunnelGroupsReadDefault) Code() int {
 }
 
 func (o *VpnTunnelGroupsReadDefault) Error() string {
-	return fmt.Sprintf("[GET /vpn/tunnel-groups/{id}/][%d] vpn_tunnel-groups_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnel-groups/{id}/][%d] vpn_tunnel-groups_read default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelGroupsReadDefault) String() string {
-	return fmt.Sprintf("[GET /vpn/tunnel-groups/{id}/][%d] vpn_tunnel-groups_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /vpn/tunnel-groups/{id}/][%d] vpn_tunnel-groups_read default %s", o._statusCode, payload)
 }
 
 func (o *VpnTunnelGroupsReadDefault) GetPayload() interface{} {

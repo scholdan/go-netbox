@@ -22,6 +22,7 @@ package extras
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *ExtrasContentTypesListOK) Code() int {
 }
 
 func (o *ExtrasContentTypesListOK) Error() string {
-	return fmt.Sprintf("[GET /extras/content-types/][%d] extrasContentTypesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/content-types/][%d] extrasContentTypesListOK %s", 200, payload)
 }
 
 func (o *ExtrasContentTypesListOK) String() string {
-	return fmt.Sprintf("[GET /extras/content-types/][%d] extrasContentTypesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/content-types/][%d] extrasContentTypesListOK %s", 200, payload)
 }
 
 func (o *ExtrasContentTypesListOK) GetPayload() *ExtrasContentTypesListOKBody {
@@ -178,11 +181,13 @@ func (o *ExtrasContentTypesListDefault) Code() int {
 }
 
 func (o *ExtrasContentTypesListDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/content-types/][%d] extras_content-types_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/content-types/][%d] extras_content-types_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasContentTypesListDefault) String() string {
-	return fmt.Sprintf("[GET /extras/content-types/][%d] extras_content-types_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/content-types/][%d] extras_content-types_list default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasContentTypesListDefault) GetPayload() interface{} {

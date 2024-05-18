@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *UsersUsersCreateCreated) Code() int {
 }
 
 func (o *UsersUsersCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /users/users/][%d] usersUsersCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/users/][%d] usersUsersCreateCreated %s", 201, payload)
 }
 
 func (o *UsersUsersCreateCreated) String() string {
-	return fmt.Sprintf("[POST /users/users/][%d] usersUsersCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/users/][%d] usersUsersCreateCreated %s", 201, payload)
 }
 
 func (o *UsersUsersCreateCreated) GetPayload() *models.User {
@@ -173,11 +176,13 @@ func (o *UsersUsersCreateDefault) Code() int {
 }
 
 func (o *UsersUsersCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /users/users/][%d] users_users_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/users/][%d] users_users_create default %s", o._statusCode, payload)
 }
 
 func (o *UsersUsersCreateDefault) String() string {
-	return fmt.Sprintf("[POST /users/users/][%d] users_users_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /users/users/][%d] users_users_create default %s", o._statusCode, payload)
 }
 
 func (o *UsersUsersCreateDefault) GetPayload() interface{} {

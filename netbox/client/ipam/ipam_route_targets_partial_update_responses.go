@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamRouteTargetsPartialUpdateOK) Code() int {
 }
 
 func (o *IpamRouteTargetsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipamRouteTargetsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipamRouteTargetsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamRouteTargetsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipamRouteTargetsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipamRouteTargetsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamRouteTargetsPartialUpdateOK) GetPayload() *models.RouteTarget {
@@ -173,11 +176,13 @@ func (o *IpamRouteTargetsPartialUpdateDefault) Code() int {
 }
 
 func (o *IpamRouteTargetsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipam_route-targets_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipam_route-targets_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamRouteTargetsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipam_route-targets_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipam_route-targets_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamRouteTargetsPartialUpdateDefault) GetPayload() interface{} {

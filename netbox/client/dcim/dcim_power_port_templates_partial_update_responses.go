@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimPowerPortTemplatesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimPowerPortTemplatesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPowerPortTemplatesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimPowerPortTemplatesPartialUpdateOK) GetPayload() *models.PowerPortTemplate {
@@ -173,11 +176,13 @@ func (o *DcimPowerPortTemplatesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimPowerPortTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPortTemplatesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimPowerPortTemplatesPartialUpdateDefault) GetPayload() interface{} {

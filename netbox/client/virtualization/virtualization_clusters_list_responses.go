@@ -22,6 +22,7 @@ package virtualization
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *VirtualizationClustersListOK) Code() int {
 }
 
 func (o *VirtualizationClustersListOK) Error() string {
-	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualizationClustersListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualizationClustersListOK %s", 200, payload)
 }
 
 func (o *VirtualizationClustersListOK) String() string {
-	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualizationClustersListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualizationClustersListOK %s", 200, payload)
 }
 
 func (o *VirtualizationClustersListOK) GetPayload() *VirtualizationClustersListOKBody {
@@ -178,11 +181,13 @@ func (o *VirtualizationClustersListDefault) Code() int {
 }
 
 func (o *VirtualizationClustersListDefault) Error() string {
-	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualization_clusters_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualization_clusters_list default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClustersListDefault) String() string {
-	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualization_clusters_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualization_clusters_list default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClustersListDefault) GetPayload() interface{} {

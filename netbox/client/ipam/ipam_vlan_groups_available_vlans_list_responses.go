@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamVlanGroupsAvailableVlansListOK) Code() int {
 }
 
 func (o *IpamVlanGroupsAvailableVlansListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipamVlanGroupsAvailableVlansListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipamVlanGroupsAvailableVlansListOK %s", 200, payload)
 }
 
 func (o *IpamVlanGroupsAvailableVlansListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipamVlanGroupsAvailableVlansListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipamVlanGroupsAvailableVlansListOK %s", 200, payload)
 }
 
 func (o *IpamVlanGroupsAvailableVlansListOK) GetPayload() []*models.AvailableVLAN {
@@ -171,11 +174,13 @@ func (o *IpamVlanGroupsAvailableVlansListDefault) Code() int {
 }
 
 func (o *IpamVlanGroupsAvailableVlansListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipam_vlan-groups_available-vlans_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipam_vlan-groups_available-vlans_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlanGroupsAvailableVlansListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipam_vlan-groups_available-vlans_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipam_vlan-groups_available-vlans_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlanGroupsAvailableVlansListDefault) GetPayload() interface{} {

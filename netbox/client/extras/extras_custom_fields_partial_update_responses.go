@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasCustomFieldsPartialUpdateOK) Code() int {
 }
 
 func (o *ExtrasCustomFieldsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extrasCustomFieldsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extrasCustomFieldsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extrasCustomFieldsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extrasCustomFieldsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *ExtrasCustomFieldsPartialUpdateOK) GetPayload() *models.CustomField {
@@ -173,11 +176,13 @@ func (o *ExtrasCustomFieldsPartialUpdateDefault) Code() int {
 }
 
 func (o *ExtrasCustomFieldsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extras_custom-fields_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extras_custom-fields_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extras_custom-fields_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extras_custom-fields_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasCustomFieldsPartialUpdateDefault) GetPayload() interface{} {

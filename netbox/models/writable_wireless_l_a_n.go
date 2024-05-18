@@ -37,7 +37,7 @@ import (
 type WritableWirelessLAN struct {
 
 	// Auth cipher
-	// Enum: [auto tkip aes]
+	// Enum: ["auto","tkip","aes"]
 	AuthCipher string `json:"auth_cipher,omitempty"`
 
 	// Pre-shared key
@@ -45,7 +45,7 @@ type WritableWirelessLAN struct {
 	AuthPsk string `json:"auth_psk,omitempty"`
 
 	// Auth Type
-	// Enum: [open wep wpa-personal wpa-enterprise]
+	// Enum: ["open","wep","wpa-personal","wpa-enterprise"]
 	AuthType string `json:"auth_type,omitempty"`
 
 	// Comments
@@ -86,7 +86,7 @@ type WritableWirelessLAN struct {
 	Ssid *string `json:"ssid"`
 
 	// Status
-	// Enum: [active reserved disabled deprecated]
+	// Enum: ["active","reserved","disabled","deprecated"]
 	Status string `json:"status,omitempty"`
 
 	// tags

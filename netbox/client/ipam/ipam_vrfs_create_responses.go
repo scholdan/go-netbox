@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamVrfsCreateCreated) Code() int {
 }
 
 func (o *IpamVrfsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipamVrfsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipamVrfsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamVrfsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipamVrfsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipamVrfsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamVrfsCreateCreated) GetPayload() *models.VRF {
@@ -173,11 +176,13 @@ func (o *IpamVrfsCreateDefault) Code() int {
 }
 
 func (o *IpamVrfsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipam_vrfs_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipam_vrfs_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamVrfsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipam_vrfs_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipam_vrfs_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamVrfsCreateDefault) GetPayload() interface{} {

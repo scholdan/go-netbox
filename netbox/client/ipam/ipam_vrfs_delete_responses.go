@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *IpamVrfsDeleteNoContent) Code() int {
 }
 
 func (o *IpamVrfsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipamVrfsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipamVrfsDeleteNoContent", 204)
 }
 
 func (o *IpamVrfsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipamVrfsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipamVrfsDeleteNoContent", 204)
 }
 
 func (o *IpamVrfsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *IpamVrfsDeleteDefault) Code() int {
 }
 
 func (o *IpamVrfsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipam_vrfs_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipam_vrfs_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamVrfsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipam_vrfs_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipam_vrfs_delete default %s", o._statusCode, payload)
 }
 
 func (o *IpamVrfsDeleteDefault) GetPayload() interface{} {

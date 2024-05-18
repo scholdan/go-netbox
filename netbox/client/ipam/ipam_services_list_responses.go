@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamServicesListOK) Code() int {
 }
 
 func (o *IpamServicesListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/services/][%d] ipamServicesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/services/][%d] ipamServicesListOK %s", 200, payload)
 }
 
 func (o *IpamServicesListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/services/][%d] ipamServicesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/services/][%d] ipamServicesListOK %s", 200, payload)
 }
 
 func (o *IpamServicesListOK) GetPayload() *IpamServicesListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamServicesListDefault) Code() int {
 }
 
 func (o *IpamServicesListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/services/][%d] ipam_services_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/services/][%d] ipam_services_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamServicesListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/services/][%d] ipam_services_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/services/][%d] ipam_services_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamServicesListDefault) GetPayload() interface{} {

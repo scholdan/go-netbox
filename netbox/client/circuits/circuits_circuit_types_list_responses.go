@@ -22,6 +22,7 @@ package circuits
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *CircuitsCircuitTypesListOK) Code() int {
 }
 
 func (o *CircuitsCircuitTypesListOK) Error() string {
-	return fmt.Sprintf("[GET /circuits/circuit-types/][%d] circuitsCircuitTypesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-types/][%d] circuitsCircuitTypesListOK %s", 200, payload)
 }
 
 func (o *CircuitsCircuitTypesListOK) String() string {
-	return fmt.Sprintf("[GET /circuits/circuit-types/][%d] circuitsCircuitTypesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-types/][%d] circuitsCircuitTypesListOK %s", 200, payload)
 }
 
 func (o *CircuitsCircuitTypesListOK) GetPayload() *CircuitsCircuitTypesListOKBody {
@@ -178,11 +181,13 @@ func (o *CircuitsCircuitTypesListDefault) Code() int {
 }
 
 func (o *CircuitsCircuitTypesListDefault) Error() string {
-	return fmt.Sprintf("[GET /circuits/circuit-types/][%d] circuits_circuit-types_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-types/][%d] circuits_circuit-types_list default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTypesListDefault) String() string {
-	return fmt.Sprintf("[GET /circuits/circuit-types/][%d] circuits_circuit-types_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/circuit-types/][%d] circuits_circuit-types_list default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsCircuitTypesListDefault) GetPayload() interface{} {

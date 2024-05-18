@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationClustersReadOK) Code() int {
 }
 
 func (o *VirtualizationClustersReadOK) Error() string {
-	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualizationClustersReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualizationClustersReadOK %s", 200, payload)
 }
 
 func (o *VirtualizationClustersReadOK) String() string {
-	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualizationClustersReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualizationClustersReadOK %s", 200, payload)
 }
 
 func (o *VirtualizationClustersReadOK) GetPayload() *models.Cluster {
@@ -173,11 +176,13 @@ func (o *VirtualizationClustersReadDefault) Code() int {
 }
 
 func (o *VirtualizationClustersReadDefault) Error() string {
-	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualization_clusters_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualization_clusters_read default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClustersReadDefault) String() string {
-	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualization_clusters_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualization_clusters_read default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClustersReadDefault) GetPayload() interface{} {

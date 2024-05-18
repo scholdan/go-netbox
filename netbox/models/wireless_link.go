@@ -648,12 +648,12 @@ type WirelessLinkAuthCipher struct {
 
 	// label
 	// Required: true
-	// Enum: [Auto TKIP AES]
+	// Enum: ["Auto","TKIP","AES"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [auto tkip aes]
+	// Enum: ["auto","tkip","aes"]
 	Value *string `json:"value"`
 }
 
@@ -797,12 +797,12 @@ type WirelessLinkAuthType struct {
 
 	// label
 	// Required: true
-	// Enum: [Open WEP WPA Personal (PSK) WPA Enterprise]
+	// Enum: ["Open","WEP","WPA Personal (PSK)","WPA Enterprise"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [open wep wpa-personal wpa-enterprise]
+	// Enum: ["open","wep","wpa-personal","wpa-enterprise"]
 	Value *string `json:"value"`
 }
 
@@ -952,12 +952,12 @@ type WirelessLinkStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Connected Planned Decommissioning]
+	// Enum: ["Connected","Planned","Decommissioning"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [connected planned decommissioning]
+	// Enum: ["connected","planned","decommissioning"]
 	Value *string `json:"value"`
 }
 

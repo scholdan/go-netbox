@@ -68,7 +68,7 @@ type Webhook struct {
 	HTTPContentType string `json:"http_content_type,omitempty"`
 
 	// HTTP method
-	// Enum: [GET POST PUT PATCH DELETE]
+	// Enum: ["GET","POST","PUT","PATCH","DELETE"]
 	HTTPMethod string `json:"http_method,omitempty"`
 
 	// ID

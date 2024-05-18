@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasTagsDeleteNoContent) Code() int {
 }
 
 func (o *ExtrasTagsDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extrasTagsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extrasTagsDeleteNoContent", 204)
 }
 
 func (o *ExtrasTagsDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extrasTagsDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extrasTagsDeleteNoContent", 204)
 }
 
 func (o *ExtrasTagsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasTagsDeleteDefault) Code() int {
 }
 
 func (o *ExtrasTagsDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extras_tags_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extras_tags_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extras_tags_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extras_tags_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasTagsDeleteDefault) GetPayload() interface{} {

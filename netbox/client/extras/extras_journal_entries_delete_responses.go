@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *ExtrasJournalEntriesDeleteNoContent) Code() int {
 }
 
 func (o *ExtrasJournalEntriesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extrasJournalEntriesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extrasJournalEntriesDeleteNoContent", 204)
 }
 
 func (o *ExtrasJournalEntriesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extrasJournalEntriesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extrasJournalEntriesDeleteNoContent", 204)
 }
 
 func (o *ExtrasJournalEntriesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *ExtrasJournalEntriesDeleteDefault) Code() int {
 }
 
 func (o *ExtrasJournalEntriesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extras_journal-entries_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extras_journal-entries_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJournalEntriesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extras_journal-entries_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extras_journal-entries_delete default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasJournalEntriesDeleteDefault) GetPayload() interface{} {

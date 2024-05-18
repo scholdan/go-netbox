@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *ExtrasContentTypesReadOK) Code() int {
 }
 
 func (o *ExtrasContentTypesReadOK) Error() string {
-	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extrasContentTypesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extrasContentTypesReadOK %s", 200, payload)
 }
 
 func (o *ExtrasContentTypesReadOK) String() string {
-	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extrasContentTypesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extrasContentTypesReadOK %s", 200, payload)
 }
 
 func (o *ExtrasContentTypesReadOK) GetPayload() *models.ContentType {
@@ -173,11 +176,13 @@ func (o *ExtrasContentTypesReadDefault) Code() int {
 }
 
 func (o *ExtrasContentTypesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extras_content-types_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extras_content-types_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasContentTypesReadDefault) String() string {
-	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extras_content-types_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extras_content-types_read default %s", o._statusCode, payload)
 }
 
 func (o *ExtrasContentTypesReadDefault) GetPayload() interface{} {

@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimModuleBaysListOK) Code() int {
 }
 
 func (o *DcimModuleBaysListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/module-bays/][%d] dcimModuleBaysListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-bays/][%d] dcimModuleBaysListOK %s", 200, payload)
 }
 
 func (o *DcimModuleBaysListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/module-bays/][%d] dcimModuleBaysListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-bays/][%d] dcimModuleBaysListOK %s", 200, payload)
 }
 
 func (o *DcimModuleBaysListOK) GetPayload() *DcimModuleBaysListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimModuleBaysListDefault) Code() int {
 }
 
 func (o *DcimModuleBaysListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/module-bays/][%d] dcim_module-bays_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-bays/][%d] dcim_module-bays_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBaysListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/module-bays/][%d] dcim_module-bays_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/module-bays/][%d] dcim_module-bays_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimModuleBaysListDefault) GetPayload() interface{} {

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimRackReservationsCreateCreated) Code() int {
 }
 
 func (o *DcimRackReservationsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcimRackReservationsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcimRackReservationsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimRackReservationsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcimRackReservationsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcimRackReservationsCreateCreated %s", 201, payload)
 }
 
 func (o *DcimRackReservationsCreateCreated) GetPayload() *models.RackReservation {
@@ -173,11 +176,13 @@ func (o *DcimRackReservationsCreateDefault) Code() int {
 }
 
 func (o *DcimRackReservationsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcim_rack-reservations_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcim_rack-reservations_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackReservationsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcim_rack-reservations_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcim_rack-reservations_create default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackReservationsCreateDefault) GetPayload() interface{} {

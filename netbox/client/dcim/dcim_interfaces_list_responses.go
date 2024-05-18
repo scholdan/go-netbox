@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimInterfacesListOK) Code() int {
 }
 
 func (o *DcimInterfacesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/interfaces/][%d] dcimInterfacesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interfaces/][%d] dcimInterfacesListOK %s", 200, payload)
 }
 
 func (o *DcimInterfacesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/interfaces/][%d] dcimInterfacesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interfaces/][%d] dcimInterfacesListOK %s", 200, payload)
 }
 
 func (o *DcimInterfacesListOK) GetPayload() *DcimInterfacesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimInterfacesListDefault) Code() int {
 }
 
 func (o *DcimInterfacesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/interfaces/][%d] dcim_interfaces_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interfaces/][%d] dcim_interfaces_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfacesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/interfaces/][%d] dcim_interfaces_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/interfaces/][%d] dcim_interfaces_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimInterfacesListDefault) GetPayload() interface{} {

@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamRouteTargetsListOK) Code() int {
 }
 
 func (o *IpamRouteTargetsListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipamRouteTargetsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipamRouteTargetsListOK %s", 200, payload)
 }
 
 func (o *IpamRouteTargetsListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipamRouteTargetsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipamRouteTargetsListOK %s", 200, payload)
 }
 
 func (o *IpamRouteTargetsListOK) GetPayload() *IpamRouteTargetsListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamRouteTargetsListDefault) Code() int {
 }
 
 func (o *IpamRouteTargetsListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipam_route-targets_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipam_route-targets_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamRouteTargetsListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipam_route-targets_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipam_route-targets_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamRouteTargetsListDefault) GetPayload() interface{} {

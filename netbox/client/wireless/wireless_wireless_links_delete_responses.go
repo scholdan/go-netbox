@@ -21,6 +21,7 @@ package wireless
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *WirelessWirelessLinksDeleteNoContent) Code() int {
 }
 
 func (o *WirelessWirelessLinksDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /wireless/wireless-links/{id}/][%d] wirelessWirelessLinksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /wireless/wireless-links/{id}/][%d] wirelessWirelessLinksDeleteNoContent", 204)
 }
 
 func (o *WirelessWirelessLinksDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /wireless/wireless-links/{id}/][%d] wirelessWirelessLinksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /wireless/wireless-links/{id}/][%d] wirelessWirelessLinksDeleteNoContent", 204)
 }
 
 func (o *WirelessWirelessLinksDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *WirelessWirelessLinksDeleteDefault) Code() int {
 }
 
 func (o *WirelessWirelessLinksDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /wireless/wireless-links/{id}/][%d] wireless_wireless-links_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /wireless/wireless-links/{id}/][%d] wireless_wireless-links_delete default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLinksDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /wireless/wireless-links/{id}/][%d] wireless_wireless-links_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /wireless/wireless-links/{id}/][%d] wireless_wireless-links_delete default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLinksDeleteDefault) GetPayload() interface{} {

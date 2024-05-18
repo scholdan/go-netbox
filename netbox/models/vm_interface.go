@@ -817,12 +817,12 @@ type VMInterfaceMode struct {
 
 	// label
 	// Required: true
-	// Enum: [Access Tagged Tagged (All)]
+	// Enum: ["Access","Tagged","Tagged (All)"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [access tagged tagged-all]
+	// Enum: ["access","tagged","tagged-all"]
 	Value *string `json:"value"`
 }
 

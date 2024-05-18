@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *CircuitsProviderNetworksDeleteNoContent) Code() int {
 }
 
 func (o *CircuitsProviderNetworksDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksDeleteNoContent", 204)
 }
 
 func (o *CircuitsProviderNetworksDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksDeleteNoContent", 204)
 }
 
 func (o *CircuitsProviderNetworksDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *CircuitsProviderNetworksDeleteDefault) Code() int {
 }
 
 func (o *CircuitsProviderNetworksDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuits_provider-networks_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuits_provider-networks_delete default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsProviderNetworksDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuits_provider-networks_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuits_provider-networks_delete default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsProviderNetworksDeleteDefault) GetPayload() interface{} {

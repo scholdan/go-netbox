@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimRackReservationsPartialUpdateOK) Code() int {
 }
 
 func (o *DcimRackReservationsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcimRackReservationsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcimRackReservationsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimRackReservationsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcimRackReservationsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcimRackReservationsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimRackReservationsPartialUpdateOK) GetPayload() *models.RackReservation {
@@ -173,11 +176,13 @@ func (o *DcimRackReservationsPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimRackReservationsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackReservationsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimRackReservationsPartialUpdateDefault) GetPayload() interface{} {

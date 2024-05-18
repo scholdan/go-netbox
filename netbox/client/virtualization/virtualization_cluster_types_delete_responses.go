@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -98,11 +99,11 @@ func (o *VirtualizationClusterTypesDeleteNoContent) Code() int {
 }
 
 func (o *VirtualizationClusterTypesDeleteNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesDeleteNoContent", 204)
 }
 
 func (o *VirtualizationClusterTypesDeleteNoContent) String() string {
-	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesDeleteNoContent ", 204)
+	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesDeleteNoContent", 204)
 }
 
 func (o *VirtualizationClusterTypesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -159,11 +160,13 @@ func (o *VirtualizationClusterTypesDeleteDefault) Code() int {
 }
 
 func (o *VirtualizationClusterTypesDeleteDefault) Error() string {
-	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_delete default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterTypesDeleteDefault) String() string {
-	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_delete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_delete default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterTypesDeleteDefault) GetPayload() interface{} {

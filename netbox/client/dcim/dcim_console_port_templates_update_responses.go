@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimConsolePortTemplatesUpdateOK) Code() int {
 }
 
 func (o *DcimConsolePortTemplatesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesUpdateOK %s", 200, payload)
 }
 
 func (o *DcimConsolePortTemplatesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesUpdateOK %s", 200, payload)
 }
 
 func (o *DcimConsolePortTemplatesUpdateOK) GetPayload() *models.ConsolePortTemplate {
@@ -173,11 +176,13 @@ func (o *DcimConsolePortTemplatesUpdateDefault) Code() int {
 }
 
 func (o *DcimConsolePortTemplatesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsolePortTemplatesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsolePortTemplatesUpdateDefault) GetPayload() interface{} {

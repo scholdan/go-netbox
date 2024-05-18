@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamL2vpnTerminationsPartialUpdateOK) Code() int {
 }
 
 func (o *IpamL2vpnTerminationsPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamL2vpnTerminationsPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsPartialUpdateOK %s", 200, payload)
 }
 
 func (o *IpamL2vpnTerminationsPartialUpdateOK) GetPayload() *models.L2VPNTermination {
@@ -173,11 +176,13 @@ func (o *IpamL2vpnTerminationsPartialUpdateDefault) Code() int {
 }
 
 func (o *IpamL2vpnTerminationsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/{id}/][%d] ipam_l2vpn-terminations_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/{id}/][%d] ipam_l2vpn-terminations_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamL2vpnTerminationsPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/{id}/][%d] ipam_l2vpn-terminations_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/{id}/][%d] ipam_l2vpn-terminations_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamL2vpnTerminationsPartialUpdateDefault) GetPayload() interface{} {

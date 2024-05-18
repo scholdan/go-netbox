@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimDeviceRolesListOK) Code() int {
 }
 
 func (o *DcimDeviceRolesListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcimDeviceRolesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcimDeviceRolesListOK %s", 200, payload)
 }
 
 func (o *DcimDeviceRolesListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcimDeviceRolesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcimDeviceRolesListOK %s", 200, payload)
 }
 
 func (o *DcimDeviceRolesListOK) GetPayload() *DcimDeviceRolesListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimDeviceRolesListDefault) Code() int {
 }
 
 func (o *DcimDeviceRolesListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcim_device-roles_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcim_device-roles_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceRolesListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcim_device-roles_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcim_device-roles_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceRolesListDefault) GetPayload() interface{} {

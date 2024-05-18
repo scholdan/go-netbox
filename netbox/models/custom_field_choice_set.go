@@ -371,11 +371,11 @@ func (m *CustomFieldChoiceSet) UnmarshalBinary(b []byte) error {
 type CustomFieldChoiceSetBaseChoices struct {
 
 	// label
-	// Enum: [IATA (Airport codes) ISO 3166 (Country codes) UN/LOCODE (Location codes)]
+	// Enum: ["IATA (Airport codes)","ISO 3166 (Country codes)","UN/LOCODE (Location codes)"]
 	Label string `json:"label,omitempty"`
 
 	// * `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)
-	// Enum: [IATA ISO_3166 UN_LOCODE]
+	// Enum: ["IATA","ISO_3166","UN_LOCODE"]
 	Value string `json:"value,omitempty"`
 }
 

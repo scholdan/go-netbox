@@ -910,12 +910,12 @@ type PowerFeedPhase struct {
 
 	// label
 	// Required: true
-	// Enum: [Single phase Three-phase]
+	// Enum: ["Single phase","Three-phase"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [single-phase three-phase]
+	// Enum: ["single-phase","three-phase"]
 	Value *string `json:"value"`
 }
 
@@ -1066,12 +1066,12 @@ type PowerFeedStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Offline Active Planned Failed]
+	// Enum: ["Offline","Active","Planned","Failed"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [offline active planned failed]
+	// Enum: ["offline","active","planned","failed"]
 	Value *string `json:"value"`
 }
 
@@ -1234,12 +1234,12 @@ type PowerFeedSupply struct {
 
 	// label
 	// Required: true
-	// Enum: [AC DC]
+	// Enum: ["AC","DC"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [ac dc]
+	// Enum: ["ac","dc"]
 	Value *string `json:"value"`
 }
 
@@ -1390,12 +1390,12 @@ type PowerFeedType struct {
 
 	// label
 	// Required: true
-	// Enum: [Primary Redundant]
+	// Enum: ["Primary","Redundant"]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [primary redundant]
+	// Enum: ["primary","redundant"]
 	Value *string `json:"value"`
 }
 

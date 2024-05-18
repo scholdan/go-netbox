@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimVirtualDeviceContextsListOK) Code() int {
 }
 
 func (o *DcimVirtualDeviceContextsListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/][%d] dcimVirtualDeviceContextsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/][%d] dcimVirtualDeviceContextsListOK %s", 200, payload)
 }
 
 func (o *DcimVirtualDeviceContextsListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/][%d] dcimVirtualDeviceContextsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/][%d] dcimVirtualDeviceContextsListOK %s", 200, payload)
 }
 
 func (o *DcimVirtualDeviceContextsListOK) GetPayload() *DcimVirtualDeviceContextsListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimVirtualDeviceContextsListDefault) Code() int {
 }
 
 func (o *DcimVirtualDeviceContextsListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/][%d] dcim_virtual-device-contexts_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/][%d] dcim_virtual-device-contexts_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualDeviceContextsListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/][%d] dcim_virtual-device-contexts_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/][%d] dcim_virtual-device-contexts_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimVirtualDeviceContextsListDefault) GetPayload() interface{} {

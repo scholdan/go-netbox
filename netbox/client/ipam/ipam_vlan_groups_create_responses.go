@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamVlanGroupsCreateCreated) Code() int {
 }
 
 func (o *IpamVlanGroupsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipamVlanGroupsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipamVlanGroupsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamVlanGroupsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipamVlanGroupsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipamVlanGroupsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamVlanGroupsCreateCreated) GetPayload() *models.VLANGroup {
@@ -173,11 +176,13 @@ func (o *IpamVlanGroupsCreateDefault) Code() int {
 }
 
 func (o *IpamVlanGroupsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipam_vlan-groups_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipam_vlan-groups_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlanGroupsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipam_vlan-groups_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipam_vlan-groups_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamVlanGroupsCreateDefault) GetPayload() interface{} {

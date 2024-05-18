@@ -21,6 +21,7 @@ package wireless
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *WirelessWirelessLansCreateCreated) Code() int {
 }
 
 func (o *WirelessWirelessLansCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wirelessWirelessLansCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wirelessWirelessLansCreateCreated %s", 201, payload)
 }
 
 func (o *WirelessWirelessLansCreateCreated) String() string {
-	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wirelessWirelessLansCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wirelessWirelessLansCreateCreated %s", 201, payload)
 }
 
 func (o *WirelessWirelessLansCreateCreated) GetPayload() *models.WirelessLAN {
@@ -173,11 +176,13 @@ func (o *WirelessWirelessLansCreateDefault) Code() int {
 }
 
 func (o *WirelessWirelessLansCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wireless_wireless-lans_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wireless_wireless-lans_create default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLansCreateDefault) String() string {
-	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wireless_wireless-lans_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wireless_wireless-lans_create default %s", o._statusCode, payload)
 }
 
 func (o *WirelessWirelessLansCreateDefault) GetPayload() interface{} {

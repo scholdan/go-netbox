@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimDevicesNapalmOK) Code() int {
 }
 
 func (o *DcimDevicesNapalmOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcimDevicesNapalmOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcimDevicesNapalmOK %s", 200, payload)
 }
 
 func (o *DcimDevicesNapalmOK) String() string {
-	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcimDevicesNapalmOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcimDevicesNapalmOK %s", 200, payload)
 }
 
 func (o *DcimDevicesNapalmOK) GetPayload() *models.DeviceNAPALM {
@@ -173,11 +176,13 @@ func (o *DcimDevicesNapalmDefault) Code() int {
 }
 
 func (o *DcimDevicesNapalmDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcim_devices_napalm default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcim_devices_napalm default %s", o._statusCode, payload)
 }
 
 func (o *DcimDevicesNapalmDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcim_devices_napalm default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcim_devices_napalm default %s", o._statusCode, payload)
 }
 
 func (o *DcimDevicesNapalmDefault) GetPayload() interface{} {

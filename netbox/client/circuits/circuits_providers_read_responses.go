@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *CircuitsProvidersReadOK) Code() int {
 }
 
 func (o *CircuitsProvidersReadOK) Error() string {
-	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuitsProvidersReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuitsProvidersReadOK %s", 200, payload)
 }
 
 func (o *CircuitsProvidersReadOK) String() string {
-	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuitsProvidersReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuitsProvidersReadOK %s", 200, payload)
 }
 
 func (o *CircuitsProvidersReadOK) GetPayload() *models.Provider {
@@ -173,11 +176,13 @@ func (o *CircuitsProvidersReadDefault) Code() int {
 }
 
 func (o *CircuitsProvidersReadDefault) Error() string {
-	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuits_providers_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuits_providers_read default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsProvidersReadDefault) String() string {
-	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuits_providers_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuits_providers_read default %s", o._statusCode, payload)
 }
 
 func (o *CircuitsProvidersReadDefault) GetPayload() interface{} {

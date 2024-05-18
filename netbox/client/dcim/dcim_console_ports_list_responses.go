@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *DcimConsolePortsListOK) Code() int {
 }
 
 func (o *DcimConsolePortsListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/console-ports/][%d] dcimConsolePortsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-ports/][%d] dcimConsolePortsListOK %s", 200, payload)
 }
 
 func (o *DcimConsolePortsListOK) String() string {
-	return fmt.Sprintf("[GET /dcim/console-ports/][%d] dcimConsolePortsListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-ports/][%d] dcimConsolePortsListOK %s", 200, payload)
 }
 
 func (o *DcimConsolePortsListOK) GetPayload() *DcimConsolePortsListOKBody {
@@ -178,11 +181,13 @@ func (o *DcimConsolePortsListDefault) Code() int {
 }
 
 func (o *DcimConsolePortsListDefault) Error() string {
-	return fmt.Sprintf("[GET /dcim/console-ports/][%d] dcim_console-ports_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-ports/][%d] dcim_console-ports_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsolePortsListDefault) String() string {
-	return fmt.Sprintf("[GET /dcim/console-ports/][%d] dcim_console-ports_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /dcim/console-ports/][%d] dcim_console-ports_list default %s", o._statusCode, payload)
 }
 
 func (o *DcimConsolePortsListDefault) GetPayload() interface{} {

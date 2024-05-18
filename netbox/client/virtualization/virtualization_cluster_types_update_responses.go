@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationClusterTypesUpdateOK) Code() int {
 }
 
 func (o *VirtualizationClusterTypesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationClusterTypesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationClusterTypesUpdateOK) GetPayload() *models.ClusterType {
@@ -173,11 +176,13 @@ func (o *VirtualizationClusterTypesUpdateDefault) Code() int {
 }
 
 func (o *VirtualizationClusterTypesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterTypesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationClusterTypesUpdateDefault) GetPayload() interface{} {

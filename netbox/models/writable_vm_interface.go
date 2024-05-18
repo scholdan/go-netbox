@@ -83,7 +83,7 @@ type WritableVMInterface struct {
 	MacAddress *string `json:"mac_address,omitempty"`
 
 	// Mode
-	// Enum: [access tagged tagged-all]
+	// Enum: ["access","tagged","tagged-all"]
 	Mode string `json:"mode,omitempty"`
 
 	// MTU

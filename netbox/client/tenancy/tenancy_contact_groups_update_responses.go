@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *TenancyContactGroupsUpdateOK) Code() int {
 }
 
 func (o *TenancyContactGroupsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyContactGroupsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tenancy/contact-groups/{id}/][%d] tenancyContactGroupsUpdateOK %s", 200, payload)
 }
 
 func (o *TenancyContactGroupsUpdateOK) GetPayload() *models.ContactGroup {
@@ -173,11 +176,13 @@ func (o *TenancyContactGroupsUpdateDefault) Code() int {
 }
 
 func (o *TenancyContactGroupsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactGroupsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tenancy/contact-groups/{id}/][%d] tenancy_contact-groups_update default %s", o._statusCode, payload)
 }
 
 func (o *TenancyContactGroupsUpdateDefault) GetPayload() interface{} {

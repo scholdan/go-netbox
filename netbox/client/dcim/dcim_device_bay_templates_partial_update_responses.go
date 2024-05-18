@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *DcimDeviceBayTemplatesPartialUpdateOK) Code() int {
 }
 
 func (o *DcimDeviceBayTemplatesPartialUpdateOK) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcimDeviceBayTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcimDeviceBayTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimDeviceBayTemplatesPartialUpdateOK) String() string {
-	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcimDeviceBayTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcimDeviceBayTemplatesPartialUpdateOK %s", 200, payload)
 }
 
 func (o *DcimDeviceBayTemplatesPartialUpdateOK) GetPayload() *models.DeviceBayTemplate {
@@ -173,11 +176,13 @@ func (o *DcimDeviceBayTemplatesPartialUpdateDefault) Code() int {
 }
 
 func (o *DcimDeviceBayTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcim_device-bay-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcim_device-bay-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceBayTemplatesPartialUpdateDefault) String() string {
-	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcim_device-bay-templates_partial_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcim_device-bay-templates_partial_update default %s", o._statusCode, payload)
 }
 
 func (o *DcimDeviceBayTemplatesPartialUpdateDefault) GetPayload() interface{} {

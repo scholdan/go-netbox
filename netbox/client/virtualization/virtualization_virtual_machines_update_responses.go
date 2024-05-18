@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *VirtualizationVirtualMachinesUpdateOK) Code() int {
 }
 
 func (o *VirtualizationVirtualMachinesUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualMachinesUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesUpdateOK %s", 200, payload)
 }
 
 func (o *VirtualizationVirtualMachinesUpdateOK) GetPayload() *models.VirtualMachineWithConfigContext {
@@ -173,11 +176,13 @@ func (o *VirtualizationVirtualMachinesUpdateDefault) Code() int {
 }
 
 func (o *VirtualizationVirtualMachinesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualMachinesUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_update default %s", o._statusCode, payload)
 }
 
 func (o *VirtualizationVirtualMachinesUpdateDefault) GetPayload() interface{} {

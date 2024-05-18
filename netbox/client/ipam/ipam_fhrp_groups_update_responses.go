@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamFhrpGroupsUpdateOK) Code() int {
 }
 
 func (o *IpamFhrpGroupsUpdateOK) Error() string {
-	return fmt.Sprintf("[PUT /ipam/fhrp-groups/{id}/][%d] ipamFhrpGroupsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/fhrp-groups/{id}/][%d] ipamFhrpGroupsUpdateOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupsUpdateOK) String() string {
-	return fmt.Sprintf("[PUT /ipam/fhrp-groups/{id}/][%d] ipamFhrpGroupsUpdateOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/fhrp-groups/{id}/][%d] ipamFhrpGroupsUpdateOK %s", 200, payload)
 }
 
 func (o *IpamFhrpGroupsUpdateOK) GetPayload() *models.FHRPGroup {
@@ -173,11 +176,13 @@ func (o *IpamFhrpGroupsUpdateDefault) Code() int {
 }
 
 func (o *IpamFhrpGroupsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /ipam/fhrp-groups/{id}/][%d] ipam_fhrp-groups_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/fhrp-groups/{id}/][%d] ipam_fhrp-groups_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupsUpdateDefault) String() string {
-	return fmt.Sprintf("[PUT /ipam/fhrp-groups/{id}/][%d] ipam_fhrp-groups_update default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /ipam/fhrp-groups/{id}/][%d] ipam_fhrp-groups_update default %s", o._statusCode, payload)
 }
 
 func (o *IpamFhrpGroupsUpdateDefault) GetPayload() interface{} {

@@ -124,7 +124,7 @@ type WritableConsoleServerPort struct {
 	// Speed
 	//
 	// Port speed in bits per second
-	// Enum: [1200 2400 4800 9600 19200 38400 57600 115200]
+	// Enum: [1200,2400,4800,9600,19200,38400,57600,115200]
 	Speed *int64 `json:"speed"`
 
 	// tags
@@ -133,7 +133,7 @@ type WritableConsoleServerPort struct {
 	// Type
 	//
 	// Physical port type
-	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 mini-din-8 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
+	// Enum: ["de-9","db-25","rj-11","rj-12","rj-45","mini-din-8","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]
 	Type string `json:"type"`
 
 	// Url

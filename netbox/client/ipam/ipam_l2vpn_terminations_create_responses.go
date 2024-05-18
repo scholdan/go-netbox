@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamL2vpnTerminationsCreateCreated) Code() int {
 }
 
 func (o *IpamL2vpnTerminationsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamL2vpnTerminationsCreateCreated) String() string {
-	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsCreateCreated  %+v", 201, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsCreateCreated %s", 201, payload)
 }
 
 func (o *IpamL2vpnTerminationsCreateCreated) GetPayload() *models.L2VPNTermination {
@@ -173,11 +176,13 @@ func (o *IpamL2vpnTerminationsCreateDefault) Code() int {
 }
 
 func (o *IpamL2vpnTerminationsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamL2vpnTerminationsCreateDefault) String() string {
-	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_create default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_create default %s", o._statusCode, payload)
 }
 
 func (o *IpamL2vpnTerminationsCreateDefault) GetPayload() interface{} {

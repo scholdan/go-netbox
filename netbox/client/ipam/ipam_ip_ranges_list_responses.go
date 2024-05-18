@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -106,11 +107,13 @@ func (o *IpamIPRangesListOK) Code() int {
 }
 
 func (o *IpamIPRangesListOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/][%d] ipamIpRangesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/][%d] ipamIpRangesListOK %s", 200, payload)
 }
 
 func (o *IpamIPRangesListOK) String() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/][%d] ipamIpRangesListOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/][%d] ipamIpRangesListOK %s", 200, payload)
 }
 
 func (o *IpamIPRangesListOK) GetPayload() *IpamIPRangesListOKBody {
@@ -178,11 +181,13 @@ func (o *IpamIPRangesListDefault) Code() int {
 }
 
 func (o *IpamIPRangesListDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/][%d] ipam_ip-ranges_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/][%d] ipam_ip-ranges_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPRangesListDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/ip-ranges/][%d] ipam_ip-ranges_list default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/ip-ranges/][%d] ipam_ip-ranges_list default %s", o._statusCode, payload)
 }
 
 func (o *IpamIPRangesListDefault) GetPayload() interface{} {

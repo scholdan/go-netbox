@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -101,11 +102,13 @@ func (o *IpamPrefixesReadOK) Code() int {
 }
 
 func (o *IpamPrefixesReadOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipamPrefixesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipamPrefixesReadOK %s", 200, payload)
 }
 
 func (o *IpamPrefixesReadOK) String() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipamPrefixesReadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipamPrefixesReadOK %s", 200, payload)
 }
 
 func (o *IpamPrefixesReadOK) GetPayload() *models.Prefix {
@@ -173,11 +176,13 @@ func (o *IpamPrefixesReadDefault) Code() int {
 }
 
 func (o *IpamPrefixesReadDefault) Error() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipam_prefixes_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipam_prefixes_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesReadDefault) String() string {
-	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipam_prefixes_read default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipam_prefixes_read default %s", o._statusCode, payload)
 }
 
 func (o *IpamPrefixesReadDefault) GetPayload() interface{} {
