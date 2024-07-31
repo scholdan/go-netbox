@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/fbreckle/go-netbox/models"
+	"github.com/scholdan/go-netbox/models"
 )
 
 // NewIpamL2vpnTerminationsUpdateParams creates a new IpamL2vpnTerminationsUpdateParams object,

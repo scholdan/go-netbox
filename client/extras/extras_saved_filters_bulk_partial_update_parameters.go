@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/fbreckle/go-netbox/models"
+	"github.com/scholdan/go-netbox/models"
 )
 
 // NewExtrasSavedFiltersBulkPartialUpdateParams creates a new ExtrasSavedFiltersBulkPartialUpdateParams object,

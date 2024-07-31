@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/fbreckle/go-netbox/models"
+	"github.com/scholdan/go-netbox/models"
 )
 
 // NewIpamVlanGroupsUpdateParams creates a new IpamVlanGroupsUpdateParams object,

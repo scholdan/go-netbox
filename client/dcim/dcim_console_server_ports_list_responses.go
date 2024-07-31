@@ -18,7 +18,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/fbreckle/go-netbox/models"
+	"github.com/scholdan/go-netbox/models"
 )
 
 // DcimConsoleServerPortsListReader is a Reader for the DcimConsoleServerPortsList structure.

@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/fbreckle/go-netbox/models"
+	"github.com/scholdan/go-netbox/models"
 )
 
 // TenancyContactsReadReader is a Reader for the TenancyContactsRead structure.

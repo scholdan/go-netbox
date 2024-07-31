@@ -33,7 +33,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/fbreckle/go-netbox/netbox/models"
+	"github.com/scholdan/go-netbox/netbox/models"
 )
 
 // VirtualizationClustersListReader is a Reader for the VirtualizationClustersList structure.

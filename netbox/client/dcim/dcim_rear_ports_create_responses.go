@@ -28,7 +28,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/fbreckle/go-netbox/netbox/models"
+	"github.com/scholdan/go-netbox/netbox/models"
 )
 
 // DcimRearPortsCreateReader is a Reader for the DcimRearPortsCreate structure.

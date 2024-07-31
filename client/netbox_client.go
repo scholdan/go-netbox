@@ -10,17 +10,17 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/fbreckle/go-netbox/client/circuits"
-	"github.com/fbreckle/go-netbox/client/dcim"
-	"github.com/fbreckle/go-netbox/client/extras"
-	"github.com/fbreckle/go-netbox/client/ipam"
-	"github.com/fbreckle/go-netbox/client/operations"
-	"github.com/fbreckle/go-netbox/client/status"
-	"github.com/fbreckle/go-netbox/client/tenancy"
-	"github.com/fbreckle/go-netbox/client/users"
-	"github.com/fbreckle/go-netbox/client/virtualization"
-	"github.com/fbreckle/go-netbox/client/vpn"
-	"github.com/fbreckle/go-netbox/client/wireless"
+	"github.com/scholdan/go-netbox/client/circuits"
+	"github.com/scholdan/go-netbox/client/dcim"
+	"github.com/scholdan/go-netbox/client/extras"
+	"github.com/scholdan/go-netbox/client/ipam"
+	"github.com/scholdan/go-netbox/client/operations"
+	"github.com/scholdan/go-netbox/client/status"
+	"github.com/scholdan/go-netbox/client/tenancy"
+	"github.com/scholdan/go-netbox/client/users"
+	"github.com/scholdan/go-netbox/client/virtualization"
+	"github.com/scholdan/go-netbox/client/vpn"
+	"github.com/scholdan/go-netbox/client/wireless"
 )
 
 // Default netbox HTTP client.
