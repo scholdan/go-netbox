@@ -3,7 +3,7 @@ module github.com/scholdan/go-netbox
 go 1.19
 
 require (
-	github.com/fbreckle/go-netbox v0.0.0-20240605151924-91a3f439c86c
+	github.com/scholdan/go-netbox v0.0.0-20240731112208-4aa381cc493b
 	github.com/go-openapi/errors v0.20.3
 	github.com/go-openapi/runtime v0.24.1
 	github.com/go-openapi/strfmt v0.21.3
