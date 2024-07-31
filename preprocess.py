@@ -290,7 +290,7 @@ for path, path_spec in data["paths"].items():
                     }
 
 # Allow unsetting some optional attributes
-# This implements https://github.com/fbreckle/go-netbox/commit/23f80e06cb3da6f0fd9974a2d986c09826e518b5
+# This implements https://github.com/scholdan/go-netbox/commit/23f80e06cb3da6f0fd9974a2d986c09826e518b5
 for prop, prop_spec in data["definitions"]["WritableIPAddress"]["properties"].items():
     if (
         "x-nullable" in prop_spec
@@ -378,7 +378,7 @@ data["definitions"]["WritableDeviceType"]["properties"]["is_full_depth"][
     "x-omitempty"
 ] = False
 
-# This implements https://github.com/fbreckle/go-netbox/commit/1363e14cfc7bce4bd3d5ee93c09ca70543c51279
+# This implements https://github.com/scholdan/go-netbox/commit/1363e14cfc7bce4bd3d5ee93c09ca70543c51279
 for prop, prop_spec in data["definitions"]["WritableVirtualMachineWithConfigContext"][
     "properties"
 ].items():
@@ -487,7 +487,7 @@ for definition, definition_spec in data["definitions"].items():
             del prop_spec["minimum"]
             logging.info(f"deleted minimum of {definition}.{prop}")
 
-# Add custom fields to PrefixLength (https://github.com/fbreckle/go-netbox/pull/11)
+# Add custom fields to PrefixLength (https://github.com/scholdan/go-netbox/pull/11)
 data["definitions"]["PrefixLength"]["properties"]["custom_fields"] = {
     "title": "Custom fields",
     "type": "object",

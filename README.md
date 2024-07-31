@@ -1,7 +1,7 @@
 go-netbox 
 =========
 
-[![GoDoc](http://godoc.org/github.com/fbreckle/go-netbox?status.svg)](http://godoc.org/github.com/fbreckle/go-netbox) [![Build Status](https://github.com/fbreckle/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/fbreckle/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/fbreckle/go-netbox)](https://goreportcard.com/report/github.com/fbreckle/go-netbox)
+[![GoDoc](http://godoc.org/github.com/scholdan/go-netbox?status.svg)](http://godoc.org/github.com/scholdan/go-netbox) [![Build Status](https://github.com/scholdan/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/scholdan/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/scholdan/go-netbox)](https://goreportcard.com/report/github.com/scholdan/go-netbox)
 
 Package `netbox` provides an API 2.0 client for [netbox-community's NetBox](https://github.com/netbox-community/netbox)
 IPAM and DCIM service.
@@ -51,9 +51,9 @@ Change `models.ip_address.AssignedObject` type to prevent json marshalling error
 
 Add `x-omitempty: false` to some attributes, allowing them to be set to their empty value. [issue](https://github.com/netbox-community/go-netbox/issues/107)
 
-Change ConfigContext type for VMs and Devices [#2](https://github.com/fbreckle/go-netbox/pull/2)
+Change ConfigContext type for VMs and Devices [#2](https://github.com/scholdan/go-netbox/pull/2)
 
-Fix LocalConfigContext to support arbitrary JSON object [#4](https://github.com/fbreckle/go-netbox/pull/4)
+Fix LocalConfigContext to support arbitrary JSON object [#4](https://github.com/scholdan/go-netbox/pull/4)
 
 Changes to allow `available_ips` to be created. (2b418d0d6d13d1edd0320d9424096f8f7d2cbbec)
 1. model returned by paths /*/available-ips/ from AvailableIP to IPAddress
@@ -63,12 +63,12 @@ Changes to allow `available_ips` to be created. (2b418d0d6d13d1edd0320d9424096f8
 Using the client
 ================
 
-The `github.com/fbreckle/go-netbox/netbox` package has some convenience functions for creating clients with the most common
+The `github.com/scholdan/go-netbox/netbox` package has some convenience functions for creating clients with the most common
 configurations you are likely to need while connecting to NetBox. `NewNetboxAt` allows you to specify a hostname
 (including port, if you need it), and `NewNetboxWithAPIKey` allows you to specify both a hostname:port and API token.
 ```golang
 import (
-    "github.com/fbreckle/go-netbox/netbox"
+    "github.com/scholdan/go-netbox/netbox"
 )
 ...
     c := netbox.NewNetboxAt("your.netbox.host:8000")
@@ -90,8 +90,8 @@ import (
 	"os"
 
 	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/fbreckle/go-netbox/netbox/client"
-	"github.com/fbreckle/go-netbox/netbox/client/dcim"
+	"github.com/scholdan/go-netbox/netbox/client"
+	"github.com/scholdan/go-netbox/netbox/client/dcim"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -126,7 +126,7 @@ Go Module support
 
 Go 1.13+
 
-`go get github.com/fbreckle/go-netbox`
+`go get github.com/scholdan/go-netbox`
 
 
 More complex client configuration
