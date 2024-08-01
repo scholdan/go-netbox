@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/scholdan/go-netbox/netbox/client/circuits"
+	"github.com/scholdan/go-netbox/tree/master/netbox/client/circuits"
 	"github.com/scholdan/go-netbox/netbox/client/dcim"
 	"github.com/scholdan/go-netbox/netbox/client/extras"
 	"github.com/scholdan/go-netbox/netbox/client/ipam"
