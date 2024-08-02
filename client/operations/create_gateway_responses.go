@@ -31,7 +31,7 @@ func (o *CreateGatewayReader) ReadResponse(response runtime.ClientResponse, cons
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("[POST /plugins/nb-gateways/] createGateway", response, response.Code())
+		return nil, runtime.NewAPIError("[POST /plugins/nb-gateways] createGateway", response, response.Code())
 	}
 }
 
@@ -81,12 +81,12 @@ func (o *CreateGatewayCreated) Code() int {
 
 func (o *CreateGatewayCreated) Error() string {
 	payload, _ := json.Marshal(o.Payload)
-	return fmt.Sprintf("[POST /plugins/nb-gateways/][%d] createGatewayCreated %s", 201, payload)
+	return fmt.Sprintf("[POST /plugins/nb-gateways][%d] createGatewayCreated %s", 201, payload)
 }
 
 func (o *CreateGatewayCreated) String() string {
 	payload, _ := json.Marshal(o.Payload)
-	return fmt.Sprintf("[POST /plugins/nb-gateways/][%d] createGatewayCreated %s", 201, payload)
+	return fmt.Sprintf("[POST /plugins/nb-gateways][%d] createGatewayCreated %s", 201, payload)
 }
 
 func (o *CreateGatewayCreated) GetPayload() *models.Gateway {

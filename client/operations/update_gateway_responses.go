@@ -31,7 +31,7 @@ func (o *UpdateGatewayReader) ReadResponse(response runtime.ClientResponse, cons
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("[PUT /gateways/{id}] updateGateway", response, response.Code())
+		return nil, runtime.NewAPIError("[PUT /plugins/nb-gateways/{id}] updateGateway", response, response.Code())
 	}
 }
 
@@ -81,12 +81,12 @@ func (o *UpdateGatewayOK) Code() int {
 
 func (o *UpdateGatewayOK) Error() string {
 	payload, _ := json.Marshal(o.Payload)
-	return fmt.Sprintf("[PUT /gateways/{id}][%d] updateGatewayOK %s", 200, payload)
+	return fmt.Sprintf("[PUT /plugins/nb-gateways/{id}][%d] updateGatewayOK %s", 200, payload)
 }
 
 func (o *UpdateGatewayOK) String() string {
 	payload, _ := json.Marshal(o.Payload)
-	return fmt.Sprintf("[PUT /gateways/{id}][%d] updateGatewayOK %s", 200, payload)
+	return fmt.Sprintf("[PUT /plugins/nb-gateways/{id}][%d] updateGatewayOK %s", 200, payload)
 }
 
 func (o *UpdateGatewayOK) GetPayload() *models.Gateway {

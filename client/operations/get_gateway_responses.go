@@ -31,7 +31,7 @@ func (o *GetGatewayReader) ReadResponse(response runtime.ClientResponse, consume
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("[GET /gateways/{id}] getGateway", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /plugins/nb-gateways/{id}] getGateway", response, response.Code())
 	}
 }
 
@@ -81,12 +81,12 @@ func (o *GetGatewayOK) Code() int {
 
 func (o *GetGatewayOK) Error() string {
 	payload, _ := json.Marshal(o.Payload)
-	return fmt.Sprintf("[GET /gateways/{id}][%d] getGatewayOK %s", 200, payload)
+	return fmt.Sprintf("[GET /plugins/nb-gateways/{id}][%d] getGatewayOK %s", 200, payload)
 }
 
 func (o *GetGatewayOK) String() string {
 	payload, _ := json.Marshal(o.Payload)
-	return fmt.Sprintf("[GET /gateways/{id}][%d] getGatewayOK %s", 200, payload)
+	return fmt.Sprintf("[GET /plugins/nb-gateways/{id}][%d] getGatewayOK %s", 200, payload)
 }
 
 func (o *GetGatewayOK) GetPayload() *models.Gateway {

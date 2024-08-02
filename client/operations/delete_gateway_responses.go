@@ -27,7 +27,7 @@ func (o *DeleteGatewayReader) ReadResponse(response runtime.ClientResponse, cons
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("[DELETE /gateways/{id}] deleteGateway", response, response.Code())
+		return nil, runtime.NewAPIError("[DELETE /plugins/nb-gateways/{id}] deleteGateway", response, response.Code())
 	}
 }
 
@@ -75,11 +75,11 @@ func (o *DeleteGatewayNoContent) Code() int {
 }
 
 func (o *DeleteGatewayNoContent) Error() string {
-	return fmt.Sprintf("[DELETE /gateways/{id}][%d] deleteGatewayNoContent", 204)
+	return fmt.Sprintf("[DELETE /plugins/nb-gateways/{id}][%d] deleteGatewayNoContent", 204)
 }
 
 func (o *DeleteGatewayNoContent) String() string {
-	return fmt.Sprintf("[DELETE /gateways/{id}][%d] deleteGatewayNoContent", 204)
+	return fmt.Sprintf("[DELETE /plugins/nb-gateways/{id}][%d] deleteGatewayNoContent", 204)
 }
 
 func (o *DeleteGatewayNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

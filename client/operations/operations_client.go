@@ -80,7 +80,7 @@ func (a *Client) CreateGateway(params *CreateGatewayParams, authInfo runtime.Cli
 	op := &runtime.ClientOperation{
 		ID:                 "createGateway",
 		Method:             "POST",
-		PathPattern:        "/plugins/nb-gateways/",
+		PathPattern:        "/plugins/nb-gateways",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"http"},
@@ -119,7 +119,7 @@ func (a *Client) DeleteGateway(params *DeleteGatewayParams, authInfo runtime.Cli
 	op := &runtime.ClientOperation{
 		ID:                 "deleteGateway",
 		Method:             "DELETE",
-		PathPattern:        "/gateways/{id}",
+		PathPattern:        "/plugins/nb-gateways/{id}",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"http"},
@@ -158,7 +158,7 @@ func (a *Client) GetGateway(params *GetGatewayParams, authInfo runtime.ClientAut
 	op := &runtime.ClientOperation{
 		ID:                 "getGateway",
 		Method:             "GET",
-		PathPattern:        "/gateways/{id}",
+		PathPattern:        "/plugins/nb-gateways/{id}",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"http"},
@@ -197,7 +197,7 @@ func (a *Client) ListGateways(params *ListGatewaysParams, authInfo runtime.Clien
 	op := &runtime.ClientOperation{
 		ID:                 "listGateways",
 		Method:             "GET",
-		PathPattern:        "/plugins/nb-gateways/",
+		PathPattern:        "/plugins/nb-gateways",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"http"},
@@ -236,7 +236,7 @@ func (a *Client) UpdateGateway(params *UpdateGatewayParams, authInfo runtime.Cli
 	op := &runtime.ClientOperation{
 		ID:                 "updateGateway",
 		Method:             "PUT",
-		PathPattern:        "/gateways/{id}",
+		PathPattern:        "/plugins/nb-gateways/{id}",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"http"},
