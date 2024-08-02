@@ -69455,7 +69455,7 @@
         }
       ]
     },
-    "/gateways": {
+    "/plugins/nb-gateways": {
       "get": {
         "summary": "List all gateways",
         "operationId": "listGateways",
@@ -69494,7 +69494,7 @@
         }
       }
     },
-    "/gateways/{id}": {
+    "/plugins/nb-gateways/{id}": {
       "get": {
         "summary": "Retrieve a specific gateway",
         "operationId": "getGateway",
